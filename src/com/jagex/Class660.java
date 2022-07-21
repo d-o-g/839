@@ -15,7 +15,7 @@ public class Class660 {
         Vector3f vector3f = Client.camera.getPosition();
         Client.cameraX = -224503671 * ((int) vector3f.x - (2051316501 * class553.x << 9));
         Class268.cameraY = -1128143643 * -(int) vector3f.y;
-        Client.cameraZ = ((int) vector3f.z - (class553.y * -180305283 << 9)) * -187933039;
+        Client.cameraZ = ((int) vector3f.z - (class553.z * -180305283 << 9)) * -187933039;
         Class155.cameraPitch = ((int) (Client.camera.getPitch((byte) 1) * 2607.5945876176133) & 0x3fff) * -1300105055;
         Class550.cameraYaw = ((int) (Client.camera.getYaw() * 2607.5945876176133) & 0x3fff) * -1726145155;
         IncomingFrameMeta.anInt4473 = 0;

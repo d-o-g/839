@@ -96,8 +96,8 @@ public class LoadedEntity {
         Class197.method3862();
         HashedVariableCollection.aBool1483 = true;
         ReflectionRequest.resetActiveRequests();
-        for (int i_4_ = 0; i_4_ < Client.aClass75Array10623.length; i_4_++) {
-            Client.aClass75Array10623[i_4_] = null;
+        for (int i_4_ = 0; i_4_ < Client.hintArrows.length; i_4_++) {
+            Client.hintArrows[i_4_] = null;
         }
         Client.componentSelected = false;
         Client.anInt10692 = ((int) (Math.random() * 100.0) - 50) * 2058003129;

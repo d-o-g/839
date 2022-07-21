@@ -81,7 +81,7 @@ public class Class628 {
         int i_0_ = 394202151 * aClass553_8047.level;
         CoordGrid class553 = Client.scene.getBase();
         int i_1_ = aClass553_8047.x * 2051316501 - class553.x * 2051316501;
-        int i_2_ = aClass553_8047.y * -180305283 - -180305283 * class553.y;
+        int i_2_ = aClass553_8047.z * -180305283 - -180305283 * class553.z;
         if (i_1_ < 0 || i_2_ < 0 || i_1_ >= Client.scene.getMapWidth()
                 || i_2_ >= Client.scene.getMapLength() || Client.scene.getGraph() == null) {
             return null;

@@ -56,8 +56,8 @@ public class Class622 implements Identifiable {
                 aClass622_8006, aClass622_8013, aClass622_8007, aClass622_8008, aClass622_8010, aClass622_8012};
     }
 
-    static void method10436(Toolkit class134, Component component, int i, int i_2_, byte i_3_) {
-        if (null != Client.localPlayer) {
+    static void processMinimapRendering(Toolkit class134, Component component, int i, int i_2_, byte i_3_) {
+        if (Client.localPlayer != null) {
             class134.method2456();
             Class211 class211 = null;
             ClippingMask class129 = null;
@@ -111,7 +111,7 @@ public class Class622 implements Identifiable {
                 for (IntegerNode class480_sub24 = (IntegerNode) Class63.aClass644_948.head(); null != class480_sub24; class480_sub24 = (IntegerNode) Class63.aClass644_948.next()) {
                     int i_10_ = -1189875169 * class480_sub24.value;
                     int i_11_ = (class488.anIntArray6670[i_10_] >> 14 & 0x3fff) - base.x * 2051316501;
-                    int i_12_ = (class488.anIntArray6670[i_10_] & 0x3fff) - base.y * -180305283;
+                    int i_12_ = (class488.anIntArray6670[i_10_] & 0x3fff) - base.z * -180305283;
                     int i_13_ = 2 + i_11_ * 4 - i_4_ / 128;
                     int i_14_ = i_12_ * 4 + 2 - i_5_ / 128;
                     Component.method7346(class134, class129, component, i, i_2_, i_13_, i_14_,
@@ -137,15 +137,15 @@ public class Class622 implements Identifiable {
                     if (level == Client.floorLevel * -1503545849) {
                         int x = (int) (deque.linkedKey * -4821875126325281949L & 0x3fffL) - 2051316501 * base.x;
                         int y = (int) (-4821875126325281949L * deque.linkedKey >> 14 & 0x3fffL)
-                                - base.y * -180305283;
+                                - base.z * -180305283;
                         int absoluteX = 2 + 4 * x - i_4_ / 128;
                         int absoluteY = 4 * y + 2 - i_5_ / 128;
                         Class369.addMapSprite(component, class129, i, i_2_, absoluteX, absoluteY, Client.mapDots[0]);
                     }
                 }
-                Class545.method9301(class134, i_4_, i_5_, component, class129, i, i_2_);
-                CutsceneObject.method3483(i_4_, i_5_, component, class129, i, i_2_, 237098637);
-                Orientation.method815(i_4_, i_5_, component, class211, i, i_2_, -864966782);
+                Class545.renderNpcsOnMinimap(class134, i_4_, i_5_, component, class129, i, i_2_);
+                CutsceneObject.renderPlayersOnMinimap(i_4_, i_5_, component, class129, i, i_2_, 237098637);
+                Orientation.renderHintArrowsOnMinimap(i_4_, i_5_, component, class211, i, i_2_, -864966782);
                 if (Client.mapState * 1212513917 != 6) {
                     if (-1 != Class63.destinationX * 1134492539) {
                         int i_23_ = 2 + 243002860 * Class63.destinationX - i_4_ / 128

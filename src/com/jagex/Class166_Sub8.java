@@ -30,8 +30,8 @@ public class Class166_Sub8 extends CutsceneAction {
 
     @Override
     public void execute() {
-        Class477_Sub6.create(1611577177 * ProxyingVariableLoader.localPlane, worldX * -1773617279, 450736437 * worldZ,
-                SceneGraph.getAverageHeight(worldX * -1773617279, 450736437 * worldZ, 1611577177 * ProxyingVariableLoader.localPlane),
+        Class477_Sub6.push(SceneGraph.localPlane * 1611577177, worldX * -1773617279, 450736437 * worldZ,
+                SceneGraph.getAverageHeight(worldX * -1773617279, 450736437 * worldZ, 1611577177 * SceneGraph.localPlane),
                 longetivity * -1491678849, 1001180253 * anInt9548, aString9545);
     }
 

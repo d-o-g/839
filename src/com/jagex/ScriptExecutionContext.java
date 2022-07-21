@@ -2464,7 +2464,7 @@ public class ScriptExecutionContext {
         } else if (i_8_ >= Client.scene.getMapWidth()) {
             i_8_ = Client.scene.getMapWidth();
         }
-        i_9_ -= class553.y * -180305283;
+        i_9_ -= class553.z * -180305283;
         if (i_9_ < 0) {
             i_9_ = 0;
         } else if (i_9_ >= Client.scene.getMapLength()) {
@@ -2698,7 +2698,7 @@ public class ScriptExecutionContext {
         quaternion.multiplyBy(quaternion_6_);
         CoordGrid class553 = Client.scene.getBase();
         int i_7_ = 2051316501 * class553.x << 9;
-        int i_8_ = -180305283 * class553.y << 9;
+        int i_8_ = -180305283 * class553.z << 9;
         if (mobile != null) {
             class281_sub2.method15237(mobile, new Vector3f(i_0_, i_1_, i_2_), quaternion, bool, i_5_,
                     Client.scene.method7696().tileHeights, Client.scene.method7775(), i_7_, i_8_);

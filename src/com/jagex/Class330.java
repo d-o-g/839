@@ -63,7 +63,7 @@ public class Class330 implements Interface43 {
                         int i_25_ = i_24_ >> 14;
                         int i_26_ = i_24_ & 0x3fff;
                         i_22_ = (int) vector3f.x - (256 + (i_25_ - class553.x * 2051316501) * 512);
-                        i_23_ = (int) vector3f.z - ((i_26_ - -180305283 * class553.y) * 512 + 256);
+                        i_23_ = (int) vector3f.z - ((i_26_ - -180305283 * class553.z) * 512 + 256);
                     } else if ((i_19_ & 0x8000) != 0) {
                         int i_27_ = i_19_ & 0x7fff;
                         Player class600_sub1_sub3_sub1_sub1 = Client.players[i_27_];

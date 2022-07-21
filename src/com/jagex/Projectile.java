@@ -85,11 +85,11 @@ public class Projectile extends SceneEntity {
         }
 
         Projectile projectile = new Projectile(Client.scene.getGraph(), graphic,
-                BaseVarpDefinitionLoader.floorLevel * -1123616625, -1123616625 * BaseVarpDefinitionLoader.floorLevel,
+                SceneGraph.floorLevel * -1123616625, -1123616625 * SceneGraph.floorLevel,
                 originX, originZ, initialHeight, delay + Client.engineCycle, longetivity + Client.engineCycle, verticalPitch,
                 initialDisplacement, senderIndex, targetIndex, heightOffset, bool, equipmentSlot, i_21_);
         projectile.target(targetX, targetZ,
-                SceneGraph.getAverageHeight(targetX, targetZ, BaseVarpDefinitionLoader.floorLevel * -1123616625)
+                SceneGraph.getAverageHeight(targetX, targetZ, SceneGraph.floorLevel * -1123616625)
                         - heightOffset, delay + Client.engineCycle);
         Client.projectiles.pushBack(new CacheableProjectile(projectile));
     }

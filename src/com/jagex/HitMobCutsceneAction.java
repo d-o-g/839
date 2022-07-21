@@ -39,7 +39,7 @@ public class HitMobCutsceneAction extends CutsceneAction {
         }
     }
 
-    static final void method15091(int i, int i_3_, int i_4_, int i_5_, int i_6_, int i_7_) {
+    static final void renderSceneEntities(int i, int i_3_, int i_4_, int i_5_, int i_6_, int i_7_) {
         int players = Class80.playerCount * -1784886003;
         int[] playerIndices = Class80.playerIndices;
         Client.anInt10907 = 0;
@@ -251,11 +251,11 @@ public class HitMobCutsceneAction extends CutsceneAction {
                 if (mobile instanceof Player) {
                     if (index >= 0) {
                         int i_31_ = 0;
-                        Class75[] class75s = Client.aClass75Array10623;
-                        for (Class75 class75 : class75s) {
-                            if (class75 != null && 10 == -335735335 * class75.anInt1123
-                                    && class75.anInt1117 * 1326506857 == playerIndices[index]) {
-                                Sprite class116 = Sprite.headicons[-1698639133 * class75.anInt1116];
+                        HintArrow[] hintArrows = Client.hintArrows;
+                        for (HintArrow hintArrow : hintArrows) {
+                            if (hintArrow != null && 10 == -335735335 * hintArrow.type
+                                    && hintArrow.targetIndex * 1326506857 == playerIndices[index]) {
+                                Sprite class116 = Sprite.headicons[-1698639133 * hintArrow.id];
                                 if (class116.method2119() > i_31_) {
                                     i_31_ = class116.method2119();
                                 }
@@ -269,19 +269,19 @@ public class HitMobCutsceneAction extends CutsceneAction {
                     }
                 } else {
                     int i_33_ = 0;
-                    Class75[] class75s = Client.aClass75Array10623;
-                    for (Class75 class75 : class75s) {
-                        if (class75 != null && class75.anInt1123 * -335735335 == 1
-                                && 1326506857 * class75.anInt1117 == Client.npcIndices[index - players]) {
-                            Sprite class116 = Sprite.headicons[class75.anInt1116 * -1698639133];
+                    HintArrow[] hintArrows = Client.hintArrows;
+                    for (HintArrow hintArrow : hintArrows) {
+                        if (hintArrow != null && hintArrow.type * -335735335 == 1
+                                && 1326506857 * hintArrow.targetIndex == Client.npcIndices[index - players]) {
+                            Sprite class116 = Sprite.headicons[hintArrow.id * -1698639133];
                             if (class116.method2119() > i_33_) {
                                 i_33_ = class116.method2119();
                             }
                             boolean bool_35_;
-                            if (0 == -693261749 * class75.anInt1120) {
+                            if (hintArrow.flashRate * -693261749 == 0) {
                                 bool_35_ = true;
                             } else {
-                                int i_36_ = EntityQueue.getFps() * 1000 / (-693261749 * class75.anInt1120) / 2;
+                                int i_36_ = EntityQueue.getFps() * 1000 / (-693261749 * hintArrow.flashRate) / 2;
                                 bool_35_ = Client.engineCycle % (2 * i_36_) < i_36_;
                             }
                             if (bool_35_) {

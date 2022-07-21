@@ -39,7 +39,7 @@ public class Class530 {
                 is[i_4_][i_3_][i_5_] = i_2_;
             }
         }
-        if (3 != ProxyingVariableLoader.localPlane * 1611577177) {
+        if (3 != SceneGraph.localPlane * 1611577177) {
             for (int i_6_ = 0; i_6_ < 2; i_6_++) {
                 Client.anIntArray10746[i_6_] = -1000000;
                 Client.anIntArray10747[i_6_] = 1000000;
@@ -61,11 +61,11 @@ public class Class530 {
                         return;
                     }
                     i_7_ = (int) vector3f_9_.x - (2051316501 * class553.x << 9);
-                    i_8_ = (int) vector3f_9_.z - (class553.y * -180305283 << 9);
+                    i_8_ = (int) vector3f_9_.z - (class553.z * -180305283 << 9);
                     if (i_7_ < 0
                             || i_8_ < 0
-                            || i_7_ >> 9 >= class425.flags[1611577177 * ProxyingVariableLoader.localPlane].length
-                            || i_8_ >> 9 >= class425.flags[1611577177 * ProxyingVariableLoader.localPlane][i_7_ >> 9].length) {
+                            || i_7_ >> 9 >= class425.flags[1611577177 * SceneGraph.localPlane].length
+                            || i_8_ >> 9 >= class425.flags[1611577177 * SceneGraph.localPlane][i_7_ >> 9].length) {
                         return;
                     }
                 } else if (2 == Client.mapState * 1212513917) {
@@ -75,7 +75,7 @@ public class Class530 {
                     i_7_ = Class156.anInt1886 * 1601470857;
                     i_8_ = TurnMobCutsceneAction.anInt9433 * 56240793;
                 }
-                if (0 != (class425.flags[1611577177 * ProxyingVariableLoader.localPlane][i_7_ >> 9][i_8_ >> 9] & 0x4)) {
+                if (0 != (class425.flags[1611577177 * SceneGraph.localPlane][i_7_ >> 9][i_8_ >> 9] & 0x4)) {
                     Class480_Sub31_Sub2.method17300(sceneGraph.tiles, 0, i_7_ >> 9, i_8_ >> 9,
                             false, -1907978845);
                 } else {
@@ -84,11 +84,11 @@ public class Class530 {
                     if (1212513917 * Client.mapState == 3) {
                         Vector3f vector3f_12_ = Client.camera.method4876().method5224();
                         i_10_ = ((int) vector3f_12_.x >> 9) - 2051316501 * class553.x;
-                        i_11_ = ((int) vector3f_12_.z >> 9) - -180305283 * class553.y;
+                        i_11_ = ((int) vector3f_12_.z >> 9) - -180305283 * class553.z;
                         if (i_10_ < 0
                                 || i_11_ < 0
-                                || i_10_ >= class425.flags[ProxyingVariableLoader.localPlane * 1611577177].length
-                                || i_11_ >= class425.flags[ProxyingVariableLoader.localPlane * 1611577177][i_10_].length) {
+                                || i_10_ >= class425.flags[SceneGraph.localPlane * 1611577177].length
+                                || i_11_ >= class425.flags[SceneGraph.localPlane * 1611577177][i_10_].length) {
                             return;
                         }
                     } else {
@@ -129,7 +129,7 @@ public class Class530 {
                                                 new StringBuilder().append(i_10_).append(Class60.COMMA).append(i_11_)
                                                         .append(" ").append(i_13_).append(Class60.COMMA).append(i_14_)
                                                         .append(" ").append(2051316501 * class553.x)
-                                                        .append(Class60.COMMA).append(-180305283 * class553.y)
+                                                        .append(Class60.COMMA).append(-180305283 * class553.z)
                                                         .toString(), new RuntimeException());
                                     }
                                     break;
@@ -148,19 +148,19 @@ public class Class530 {
                                             } else if (i_10_ > i_13_) {
                                                 i_10_--;
                                             }
-                                            if ((class425.flags[ProxyingVariableLoader.localPlane * 1611577177][i_10_][i_11_] & 0x4) != 0) {
+                                            if ((class425.flags[SceneGraph.localPlane * 1611577177][i_10_][i_11_] & 0x4) != 0) {
                                                 Class480_Sub31_Sub2.method17300(sceneGraph.tiles,
                                                         1, i_10_, i_11_, false, 366908592);
                                                 break while_6_;
                                             }
-                                            if (i_11_ + 1 < class425.flags[ProxyingVariableLoader.localPlane * 1611577177][i_10_].length
-                                                    && 0 != (class425.flags[1611577177 * ProxyingVariableLoader.localPlane][i_10_][1 + i_11_] & 0x4)) {
+                                            if (i_11_ + 1 < class425.flags[SceneGraph.localPlane * 1611577177][i_10_].length
+                                                    && 0 != (class425.flags[1611577177 * SceneGraph.localPlane][i_10_][1 + i_11_] & 0x4)) {
                                                 Class480_Sub31_Sub2.method17300(sceneGraph.tiles,
                                                         1, i_10_, 1 + i_11_, false, -1511304944);
                                                 break while_6_;
                                             }
                                             if (i_11_ > 0
-                                                    && (class425.flags[ProxyingVariableLoader.localPlane * 1611577177][i_10_][i_11_ - 1] & 0x4) != 0) {
+                                                    && (class425.flags[SceneGraph.localPlane * 1611577177][i_10_][i_11_ - 1] & 0x4) != 0) {
                                                 Class480_Sub31_Sub2.method17300(sceneGraph.tiles,
                                                         1, i_10_, i_11_ - 1, false, -1713049728);
                                                 break while_6_;
@@ -170,8 +170,8 @@ public class Class530 {
                                                 i_19_ -= 65536;
                                                 if (i_11_ < i_14_) {
                                                     i_11_++;
-                                                    if (1 + i_11_ < class425.flags[1611577177 * ProxyingVariableLoader.localPlane][i_10_].length
-                                                            && (class425.flags[1611577177 * ProxyingVariableLoader.localPlane][i_10_][1 + i_11_] & 0x4) != 0) {
+                                                    if (1 + i_11_ < class425.flags[1611577177 * SceneGraph.localPlane][i_10_].length
+                                                            && (class425.flags[1611577177 * SceneGraph.localPlane][i_10_][1 + i_11_] & 0x4) != 0) {
                                                         Class480_Sub31_Sub2.method17300(
                                                                 sceneGraph.tiles, 1, i_10_,
                                                                 i_11_ + 1, false, 429865690);
@@ -179,7 +179,7 @@ public class Class530 {
                                                     }
                                                 } else if (i_11_ > i_14_
                                                         && --i_11_ > 0
-                                                        && (class425.flags[1611577177 * ProxyingVariableLoader.localPlane][i_10_][i_11_ - 1] & 0x4) != 0) {
+                                                        && (class425.flags[1611577177 * SceneGraph.localPlane][i_10_][i_11_ - 1] & 0x4) != 0) {
                                                     break;
                                                 }
                                             }
@@ -199,19 +199,19 @@ public class Class530 {
                                         } else if (i_11_ > i_14_) {
                                             i_11_--;
                                         }
-                                        if ((class425.flags[1611577177 * ProxyingVariableLoader.localPlane][i_10_][i_11_] & 0x4) != 0) {
+                                        if ((class425.flags[1611577177 * SceneGraph.localPlane][i_10_][i_11_] & 0x4) != 0) {
                                             Class480_Sub31_Sub2.method17300(sceneGraph.tiles, 1,
                                                     i_10_, i_11_, false, 361781745);
                                             break while_7_;
                                         }
-                                        if (1 + i_10_ < class425.flags[1611577177 * ProxyingVariableLoader.localPlane].length
-                                                && 0 != (class425.flags[ProxyingVariableLoader.localPlane * 1611577177][1 + i_10_][i_11_] & 0x4)) {
+                                        if (1 + i_10_ < class425.flags[1611577177 * SceneGraph.localPlane].length
+                                                && 0 != (class425.flags[SceneGraph.localPlane * 1611577177][1 + i_10_][i_11_] & 0x4)) {
                                             Class480_Sub31_Sub2.method17300(sceneGraph.tiles, 1,
                                                     i_10_ + 1, i_11_, false, 837135482);
                                             break while_7_;
                                         }
                                         if (i_10_ > 0
-                                                && (class425.flags[1611577177 * ProxyingVariableLoader.localPlane][i_10_ - 1][i_11_] & 0x4) != 0) {
+                                                && (class425.flags[1611577177 * SceneGraph.localPlane][i_10_ - 1][i_11_] & 0x4) != 0) {
                                             Class480_Sub31_Sub2.method17300(sceneGraph.tiles, 1,
                                                     i_10_ - 1, i_11_, false, -239819047);
                                             break while_7_;
@@ -220,8 +220,8 @@ public class Class530 {
                                         if (i_21_ >= 65536) {
                                             i_21_ -= 65536;
                                             if (i_10_ < i_13_) {
-                                                if (++i_10_ + 1 < class425.flags[1611577177 * ProxyingVariableLoader.localPlane].length
-                                                        && 0 != (class425.flags[ProxyingVariableLoader.localPlane * 1611577177][i_10_ + 1][i_11_] & 0x4)) {
+                                                if (++i_10_ + 1 < class425.flags[1611577177 * SceneGraph.localPlane].length
+                                                        && 0 != (class425.flags[SceneGraph.localPlane * 1611577177][i_10_ + 1][i_11_] & 0x4)) {
                                                     Class480_Sub31_Sub2.method17300(
                                                             sceneGraph.tiles, 1, i_10_ + 1, i_11_,
                                                             false, -1202586804);
@@ -229,7 +229,7 @@ public class Class530 {
                                                 }
                                             } else if (i_10_ > i_13_
                                                     && --i_10_ > 0
-                                                    && (class425.flags[ProxyingVariableLoader.localPlane * 1611577177][i_10_ - 1][i_11_] & 0x4) != 0) {
+                                                    && (class425.flags[SceneGraph.localPlane * 1611577177][i_10_ - 1][i_11_] & 0x4) != 0) {
                                                 break;
                                             }
                                         }
@@ -243,9 +243,9 @@ public class Class530 {
                 }
             } else {
                 int i_22_ = SceneGraph.getAverageHeight(2006359481 * Client.cameraX, Client.cameraZ * 1829446257,
-                        ProxyingVariableLoader.localPlane * 1611577177);
+                        SceneGraph.localPlane * 1611577177);
                 if (i_22_ - Class268.cameraY * 1525233901 < 3200
-                        && (class425.flags[ProxyingVariableLoader.localPlane * 1611577177][2006359481 * Client.cameraX >> 9][1829446257 * Client.cameraZ >> 9] & 0x4) != 0) {
+                        && (class425.flags[SceneGraph.localPlane * 1611577177][2006359481 * Client.cameraX >> 9][1829446257 * Client.cameraZ >> 9] & 0x4) != 0) {
                     Class480_Sub31_Sub2.method17300(sceneGraph.tiles, 1,
                             Client.cameraX * 2006359481 >> 9, 1829446257 * Client.cameraZ >> 9, false, -763590060);
                 }

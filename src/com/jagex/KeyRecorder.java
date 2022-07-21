@@ -153,7 +153,7 @@ public abstract class KeyRecorder {
                 int dx = (int) vector3f.x
                         - (1251007232 * npc.anInt11786 - class553.x * 1151014144 - class553.x * 1151014144);
                 int dz = (int) vector3f.z
-                        - (npc.anInt11787 * -1265829632 - 1086487808 * class553.y - class553.y * 1086487808);
+                        - (npc.anInt11787 * -1265829632 - 1086487808 * class553.z - class553.z * 1086487808);
 
                 if (dx != 0 || dz != 0) {
                     npc.turn((int) (Math.atan2(dx, dz) * 2607.5945876176133) & 0x3fff);

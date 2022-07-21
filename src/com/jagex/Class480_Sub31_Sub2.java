@@ -10,12 +10,12 @@ public class Class480_Sub31_Sub2 extends Cacheable implements Definition, Interf
     static final boolean method17300(SceneGraphTile[][][] sceneGraphTiles, int i, int x, int z, boolean bool, int i_6_) {
         byte[][][] is = Client.scene.method7694();
         byte i_7_ = bool ? (byte) 1 : (byte) (764752929 * Client.anInt10730 & 0xff);
-        if (is[ProxyingVariableLoader.localPlane * 1611577177][x][z] == i_7_) {
+        if (is[SceneGraph.localPlane * 1611577177][x][z] == i_7_) {
             return false;
         }
 
         TileFlags flags = Client.scene.method7775();
-        if (0 == (flags.flags[ProxyingVariableLoader.localPlane * 1611577177][x][z] & 0x4)) {
+        if (0 == (flags.flags[SceneGraph.localPlane * 1611577177][x][z] & 0x4)) {
             return false;
         }
 
@@ -23,7 +23,7 @@ public class Class480_Sub31_Sub2 extends Cacheable implements Definition, Interf
         int i_9_ = 0;
         Client.anIntArray10713[i_8_] = x;
         Client.anIntArray10594[i_8_++] = z;
-        is[ProxyingVariableLoader.localPlane * 1611577177][x][z] = i_7_;
+        is[SceneGraph.localPlane * 1611577177][x][z] = i_7_;
 
         while (i_9_ != i_8_) {
             int i_10_ = Client.anIntArray10713[i_9_] & 0xffff;
@@ -33,12 +33,12 @@ public class Class480_Sub31_Sub2 extends Cacheable implements Definition, Interf
             int i_14_ = Client.anIntArray10594[i_9_] >> 16 & 0xff;
             i_9_ = 1 + i_9_ & 0xfff;
             boolean bool_15_ = false;
-            if ((flags.flags[1611577177 * ProxyingVariableLoader.localPlane][i_10_][i_13_] & 0x4) == 0) {
+            if ((flags.flags[1611577177 * SceneGraph.localPlane][i_10_][i_13_] & 0x4) == 0) {
                 bool_15_ = true;
             }
             boolean bool_16_ = false;
             if (null != sceneGraphTiles) {
-                int i_17_ = 1 + ProxyingVariableLoader.localPlane * 1611577177;
+                int i_17_ = 1 + SceneGraph.localPlane * 1611577177;
                 while_5_:
                 for (; i_17_ <= 3; i_17_++) {
                     if (sceneGraphTiles[i_17_] != null && 0 == (flags.flags[i_17_][i_10_][i_13_] & 0x8)) {
@@ -115,7 +115,7 @@ public class Class480_Sub31_Sub2 extends Cacheable implements Definition, Interf
                 }
             }
             if (bool_16_) {
-                int i_32_ = Client.scene.getGraph().levels1[1611577177 * ProxyingVariableLoader.localPlane + 1]
+                int i_32_ = Client.scene.getGraph().levels1[1611577177 * SceneGraph.localPlane + 1]
                         .getTileHeight(i_10_, i_13_);
                 if (Client.anIntArray10746[i] < i_32_) {
                     Client.anIntArray10746[i] = i_32_;
@@ -134,70 +134,70 @@ public class Class480_Sub31_Sub2 extends Cacheable implements Definition, Interf
                 }
             }
             if (!bool_15_) {
-                if (i_10_ >= 1 && i_7_ != is[1611577177 * ProxyingVariableLoader.localPlane][i_10_ - 1][i_13_]) {
+                if (i_10_ >= 1 && i_7_ != is[1611577177 * SceneGraph.localPlane][i_10_ - 1][i_13_]) {
                     Client.anIntArray10713[i_8_] = i_10_ - 1 | 0x120000 | ~0x2cffffff;
                     Client.anIntArray10594[i_8_] = i_13_ | 0x130000;
                     i_8_ = i_8_ + 1 & 0xfff;
-                    is[ProxyingVariableLoader.localPlane * 1611577177][i_10_ - 1][i_13_] = i_7_;
+                    is[SceneGraph.localPlane * 1611577177][i_10_ - 1][i_13_] = i_7_;
                 }
                 if (++i_13_ < Client.scene.getMapLength()) {
                     if (i_10_ - 1 >= 0
-                            && i_7_ != is[ProxyingVariableLoader.localPlane * 1611577177][i_10_ - 1][i_13_]
-                            && 0 == (flags.flags[ProxyingVariableLoader.localPlane * 1611577177][i_10_][i_13_] & 0x4)
-                            && 0 == (flags.flags[1611577177 * ProxyingVariableLoader.localPlane][i_10_ - 1][i_13_ - 1] & 0x4)) {
+                            && i_7_ != is[SceneGraph.localPlane * 1611577177][i_10_ - 1][i_13_]
+                            && 0 == (flags.flags[SceneGraph.localPlane * 1611577177][i_10_][i_13_] & 0x4)
+                            && 0 == (flags.flags[1611577177 * SceneGraph.localPlane][i_10_ - 1][i_13_ - 1] & 0x4)) {
                         Client.anIntArray10713[i_8_] = i_10_ - 1 | 0x120000 | 0x52000000;
                         Client.anIntArray10594[i_8_] = i_13_ | 0x130000;
                         i_8_ = i_8_ + 1 & 0xfff;
-                        is[1611577177 * ProxyingVariableLoader.localPlane][i_10_ - 1][i_13_] = i_7_;
+                        is[1611577177 * SceneGraph.localPlane][i_10_ - 1][i_13_] = i_7_;
                     }
-                    if (i_7_ != is[1611577177 * ProxyingVariableLoader.localPlane][i_10_][i_13_]) {
+                    if (i_7_ != is[1611577177 * SceneGraph.localPlane][i_10_][i_13_]) {
                         Client.anIntArray10713[i_8_] = i_10_ | 0x520000 | 0x13000000;
                         Client.anIntArray10594[i_8_] = i_13_ | 0x530000;
                         i_8_ = 1 + i_8_ & 0xfff;
-                        is[1611577177 * ProxyingVariableLoader.localPlane][i_10_][i_13_] = i_7_;
+                        is[1611577177 * SceneGraph.localPlane][i_10_][i_13_] = i_7_;
                     }
                     if (1 + i_10_ < Client.scene.getMapWidth()
-                            && is[1611577177 * ProxyingVariableLoader.localPlane][i_10_ + 1][i_13_] != i_7_
-                            && (flags.flags[1611577177 * ProxyingVariableLoader.localPlane][i_10_][i_13_] & 0x4) == 0
-                            && 0 == (flags.flags[1611577177 * ProxyingVariableLoader.localPlane][1 + i_10_][i_13_ - 1] & 0x4)) {
+                            && is[1611577177 * SceneGraph.localPlane][i_10_ + 1][i_13_] != i_7_
+                            && (flags.flags[1611577177 * SceneGraph.localPlane][i_10_][i_13_] & 0x4) == 0
+                            && 0 == (flags.flags[1611577177 * SceneGraph.localPlane][1 + i_10_][i_13_ - 1] & 0x4)) {
                         Client.anIntArray10713[i_8_] = i_10_ + 1 | 0x520000 | ~0x6dffffff;
                         Client.anIntArray10594[i_8_] = i_13_ | 0x530000;
                         i_8_ = i_8_ + 1 & 0xfff;
-                        is[ProxyingVariableLoader.localPlane * 1611577177][1 + i_10_][i_13_] = i_7_;
+                        is[SceneGraph.localPlane * 1611577177][1 + i_10_][i_13_] = i_7_;
                     }
                 }
                 i_13_--;
                 if (i_10_ + 1 < Client.scene.getMapWidth()
-                        && is[1611577177 * ProxyingVariableLoader.localPlane][1 + i_10_][i_13_] != i_7_) {
+                        && is[1611577177 * SceneGraph.localPlane][1 + i_10_][i_13_] != i_7_) {
                     Client.anIntArray10713[i_8_] = i_10_ + 1 | 0x920000 | 0x53000000;
                     Client.anIntArray10594[i_8_] = i_13_ | 0x930000;
                     i_8_ = i_8_ + 1 & 0xfff;
-                    is[ProxyingVariableLoader.localPlane * 1611577177][i_10_ + 1][i_13_] = i_7_;
+                    is[SceneGraph.localPlane * 1611577177][i_10_ + 1][i_13_] = i_7_;
                 }
                 if (--i_13_ >= 0) {
                     if (i_10_ - 1 >= 0
-                            && is[ProxyingVariableLoader.localPlane * 1611577177][i_10_ - 1][i_13_] != i_7_
-                            && (flags.flags[1611577177 * ProxyingVariableLoader.localPlane][i_10_][i_13_] & 0x4) == 0
-                            && 0 == (flags.flags[ProxyingVariableLoader.localPlane * 1611577177][i_10_ - 1][1 + i_13_] & 0x4)) {
+                            && is[SceneGraph.localPlane * 1611577177][i_10_ - 1][i_13_] != i_7_
+                            && (flags.flags[1611577177 * SceneGraph.localPlane][i_10_][i_13_] & 0x4) == 0
+                            && 0 == (flags.flags[SceneGraph.localPlane * 1611577177][i_10_ - 1][1 + i_13_] & 0x4)) {
                         Client.anIntArray10713[i_8_] = i_10_ - 1 | 0xd20000 | 0x12000000;
                         Client.anIntArray10594[i_8_] = i_13_ | 0xd30000;
                         i_8_ = i_8_ + 1 & 0xfff;
-                        is[ProxyingVariableLoader.localPlane * 1611577177][i_10_ - 1][i_13_] = i_7_;
+                        is[SceneGraph.localPlane * 1611577177][i_10_ - 1][i_13_] = i_7_;
                     }
-                    if (is[ProxyingVariableLoader.localPlane * 1611577177][i_10_][i_13_] != i_7_) {
+                    if (is[SceneGraph.localPlane * 1611577177][i_10_][i_13_] != i_7_) {
                         Client.anIntArray10713[i_8_] = i_10_ | 0xd20000 | ~0x6cffffff;
                         Client.anIntArray10594[i_8_] = i_13_ | 0xd30000;
                         i_8_ = 1 + i_8_ & 0xfff;
-                        is[ProxyingVariableLoader.localPlane * 1611577177][i_10_][i_13_] = i_7_;
+                        is[SceneGraph.localPlane * 1611577177][i_10_][i_13_] = i_7_;
                     }
                     if (1 + i_10_ < Client.scene.getMapWidth()
-                            && is[ProxyingVariableLoader.localPlane * 1611577177][i_10_ + 1][i_13_] != i_7_
-                            && (flags.flags[ProxyingVariableLoader.localPlane * 1611577177][i_10_][i_13_] & 0x4) == 0
-                            && (flags.flags[1611577177 * ProxyingVariableLoader.localPlane][1 + i_10_][1 + i_13_] & 0x4) == 0) {
+                            && is[SceneGraph.localPlane * 1611577177][i_10_ + 1][i_13_] != i_7_
+                            && (flags.flags[SceneGraph.localPlane * 1611577177][i_10_][i_13_] & 0x4) == 0
+                            && (flags.flags[1611577177 * SceneGraph.localPlane][1 + i_10_][1 + i_13_] & 0x4) == 0) {
                         Client.anIntArray10713[i_8_] = 1 + i_10_ | 0x920000 | ~0x2dffffff;
                         Client.anIntArray10594[i_8_] = i_13_ | 0x930000;
                         i_8_ = 1 + i_8_ & 0xfff;
-                        is[ProxyingVariableLoader.localPlane * 1611577177][i_10_ + 1][i_13_] = i_7_;
+                        is[SceneGraph.localPlane * 1611577177][i_10_ + 1][i_13_] = i_7_;
                     }
                 }
             }

@@ -69,7 +69,7 @@ public class ReflectiveDefinitionProvider<T extends Definition> implements Defin
                 Vector3f vector3f = Client.localPlayer.getCoordinateSpace().translation;
                 CoordGrid class553 = Client.scene.getBase();
                 if (Class495.aClass480_Sub31_Sub18_6808.method17861(Client.localPlayer.plane, ((int) vector3f.x >> 9)
-                        + 2051316501 * class553.x, class553.y * -180305283 + ((int) vector3f.z >> 9), is)) {
+                        + 2051316501 * class553.x, class553.z * -180305283 + ((int) vector3f.z >> 9), is)) {
                     i_8_ = is[1] - Class495.anInt6849;
                     i_9_ = is[2] - Class495.anInt6823;
                 }

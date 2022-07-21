@@ -1014,7 +1014,7 @@ public class Component {
                             }
                             if (anInt2356 * -1563899471 == component.contentType * 1584180271 && Client.cutsceneStatus * 2087248539 == 3) {
                                 if (5 != component.type * 1558474223 || component.method4298(Class60.activeToolkit) != null) {
-                                    Class622.method10436(Class60.activeToolkit, component, i_12_, i_13_, (byte) 79);
+                                    Class622.processMinimapRendering(Class60.activeToolkit, component, i_12_, i_13_, (byte) 79);
                                     Class60.activeToolkit.method2760(i_2_, i_3_, i_4_, i_5_);
                                 }
                                 continue;

@@ -2220,7 +2220,7 @@ public class ScriptInterpreter {
                 if (null != Client.gameConnection) {
                     OutgoingFrame frame = OutgoingFrame.prepare(OutgoingFrameMeta.aClass366_3952,
                             Client.gameConnection.encryptor);
-                    frame.payload.writeShort(-180305283 * class553.y);
+                    frame.payload.writeShort(-180305283 * class553.z);
                     frame.payload.writeLEShort(2051316501 * class553.x);
                     frame.payload.writeByteS(class624.getId());
                     Client.gameConnection.sendFrame(frame);
@@ -2311,7 +2311,7 @@ public class ScriptInterpreter {
                 } else if (i_8_8 >= Client.scene.getMapWidth()) {
                     i_8_8 = Client.scene.getMapWidth();
                 }
-                i_9_9 -= class5535.y * -180305283;
+                i_9_9 -= class5535.z * -180305283;
                 if (i_9_9 < 0) {
                     i_9_9 = 0;
                 } else if (i_9_9 >= Client.scene.getMapLength()) {
@@ -3705,7 +3705,7 @@ public class ScriptInterpreter {
                 int i_8_4 = context.anIntArray7942[3 + context.anInt7924 * 1841827045];
                 CoordGrid class5531 = Client.scene.getBase();
                 ResourceManager.method6709((i_5_10 >> 14 & 0x3fff) - 2051316501 * class5531.x, (i_5_10 & 0x3fff)
-                        - class5531.y * -180305283, i_6_11 << 2, i_7_7, i_8_4, false);
+                        - class5531.z * -180305283, i_6_11 << 2, i_7_7, i_8_4, false);
                 break;
             case 998:
                 context.anIntArray7942[(context.anInt7924 += 1122685165) * 1841827045 - 1] = GraphicsCard.windowMode();
@@ -4300,7 +4300,7 @@ public class ScriptInterpreter {
                     } else if (i_4_20 >= Client.scene.getMapWidth()) {
                         i_4_20 = Client.scene.getMapWidth();
                     }
-                    i_5_24 -= class5534.y * -180305283;
+                    i_5_24 -= class5534.z * -180305283;
                     if (i_5_24 < 0) {
                         i_5_24 = 0;
                     } else if (i_5_24 >= Client.scene.getMapLength()) {
@@ -5002,7 +5002,7 @@ public class ScriptInterpreter {
                 int i_4_19 = context.anIntArray7942[context.anInt7924 * 1841827045 + 3];
                 CoordGrid class5533 = Client.scene.getBase();
                 Class148.method3177((i_1_41 >> 14 & 0x3fff) - class5533.x * 2051316501, (i_1_41 & 0x3fff) - -180305283
-                        * class5533.y, i_2_33 << 2, i_3_29, i_4_19);
+                        * class5533.z, i_2_33 << 2, i_3_29, i_4_19);
                 break;
             case 825:
                 ScriptExecutionContext.method8725(context);

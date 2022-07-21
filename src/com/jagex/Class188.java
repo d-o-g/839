@@ -109,7 +109,7 @@ public class Class188 implements Identifiable {
 
             CoordGrid offset = Client.scene.getBase();
             int x = mapX + (dx << 6) - offset.x * 2051316501;
-            int z = (dz << 6) + mapZ - -180305283 * offset.y;
+            int z = (dz << 6) + mapZ - -180305283 * offset.z;
 
             player.aPlayerMapDot_11782 = global.aPlayerMapDot_562;
             player.clanmate = global.clanmate;

@@ -2,7 +2,6 @@ package com.jagex;
 
 public abstract class BaseVarpDefinitionLoader implements DefinitionLoader<Varp> {
     public static int anInt1130;
-    static int floorLevel;
     protected int count;
 
     BaseVarpDefinitionLoader(GameContext context, Language language, int count) {

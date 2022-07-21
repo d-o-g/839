@@ -444,7 +444,7 @@ public abstract class Mobile extends SceneEntity implements GameCharacter {
         Vector3f vector3f = getCoordinateSpace().translation;
         CoordGrid class553 = Client.scene.getBase();
         int i_74_ = class553.x * 2051316501 + ((int) vector3f.x >> 9);
-        int i_75_ = ((int) vector3f.z >> 9) + -180305283 * class553.y;
+        int i_75_ = ((int) vector3f.z >> 9) + -180305283 * class553.z;
         return new CoordGrid(plane, i_74_, i_75_);
     }
 
@@ -453,7 +453,7 @@ public abstract class Mobile extends SceneEntity implements GameCharacter {
         CoordGrid class553 = Client.scene.getBase();
         int i_76_ = -1992939008 * class553.x + (int) vector3f.x;
         int i_77_ = (int) vector3f.y;
-        int i_78_ = (int) vector3f.z + class553.y * -2121991680;
+        int i_78_ = (int) vector3f.z + class553.z * -2121991680;
         return new Vector4i(plane, i_76_, i_77_, i_78_);
     }
 

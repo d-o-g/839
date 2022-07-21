@@ -19,16 +19,15 @@ public class Class25 implements Identifiable {
     }
 
     static final void method779(int i, int i_4_, int i_5_, int i_6_, int i_7_, int i_8_) {
-        for (Class477_Sub6 class477_sub6 = (Class477_Sub6) Client.aClass649_10779.head(); null != class477_sub6; class477_sub6 = (Class477_Sub6) Client.aClass649_10779
-                .next()) {
-            if (Client.engineCycle >= 2055331721 * class477_sub6.longetivity) {
-                class477_sub6.unlink();
+        for (Class477_Sub6 entity = Client.aClass649_10779.head(); null != entity; entity = Client.aClass649_10779.next()) {
+            if (Client.engineCycle >= 2055331721 * entity.longevity) {
+                entity.unlink();
             } else {
-                Class42.method1043(class477_sub6.plane * -497300789, (1295997365 * class477_sub6.localX << 9) + 256,
-                        256 + (-747868851 * class477_sub6.localZ << 9), 0, 1876516974 * class477_sub6.heightOffset,
+                Class42.method1043(entity.level * -497300789, (1295997365 * entity.localX << 9) + 256,
+                        256 + (-747868851 * entity.localZ << 9), 0, 1876516974 * entity.heightOffset,
                         false, false);
-                Class450.b12Full.method2293(class477_sub6.aString10083, (int) (Client.aFloatArray10736[0] + i),
-                        (int) (Client.aFloatArray10736[1] + i_4_), ~0xffffff | class477_sub6.anInt10082 * 518060783, 0);
+                Class450.b12Full.method2293(entity.aString10083, (int) (Client.aFloatArray10736[0] + i),
+                        (int) (Client.aFloatArray10736[1] + i_4_), ~0xffffff | entity.anInt10082 * 518060783, 0);
             }
         }
     }

@@ -321,7 +321,7 @@ public class Scene {
             byte[] is = aByteArrayArray5248[i_151_];
             if (is != null) {
                 int regionSceneX = 64 * (regionIds[i_151_] >> 8) - 2051316501 * aClass553_5219.x;
-                int regionSceneY = (regionIds[i_151_] & 0xff) * 64 - aClass553_5219.y * -180305283;
+                int regionSceneY = (regionIds[i_151_] & 0xff) * 64 - aClass553_5219.z * -180305283;
                 if (format.isDynamic()) {
                     regionSceneX = 10;
                     regionSceneY = 10;
@@ -335,7 +335,7 @@ public class Scene {
             is = aByteArrayArray5233[i_151_];
             if (null != is) {
                 int regionSceneX = (regionIds[i_151_] >> 8) * 64 - 2051316501 * aClass553_5219.x;
-                int regionSceneY = (regionIds[i_151_] & 0xff) * 64 - -180305283 * aClass553_5219.y;
+                int regionSceneY = (regionIds[i_151_] & 0xff) * 64 - -180305283 * aClass553_5219.z;
                 if (format.isDynamic()) {
                     regionSceneX = 10;
                     regionSceneY = 10;
@@ -816,7 +816,7 @@ public class Scene {
                     8 * (this.centreY * -41048943 - (18804445 * mapLength >> 4)));
             aClass480_Sub31_Sub18_5230 = Class495.method8552(
                     mapWidth * -1171509167 / 2 + aClass553_5219.x * 2051316501, -1171509167 * mapWidth / 2
-                            + aClass553_5219.y * -180305283);
+                            + aClass553_5219.z * -180305283);
             aClass488_5231 = null;
 
             if (!aBool5244) {
@@ -827,7 +827,7 @@ public class Scene {
 
     void method7715(int i) {
         int dx = 2051316501 * aClass553_5219.x - 2051316501 * aClass553_5220.x;
-        int dz = -180305283 * aClass553_5219.y - aClass553_5220.y * -180305283;
+        int dz = -180305283 * aClass553_5219.z - aClass553_5220.z * -180305283;
 
         if (13 == i) {
             for (int index = 0; index < -999337347 * Client.anInt10862; index++) {
@@ -918,13 +918,13 @@ public class Scene {
             }
         }
 
-        Class75[] class75s = Client.aClass75Array10623;
-        for (Class75 class752 : class75s) {
-            Class75 class75 = class752;
+        HintArrow[] hintArrows = Client.hintArrows;
+        for (HintArrow class752 : hintArrows) {
+            HintArrow hintArrow = class752;
 
-            if (class75 != null) {
-                class75.anInt1119 -= 592564736 * dx;
-                class75.anInt1122 -= dz * 1171577344;
+            if (hintArrow != null) {
+                hintArrow.x -= 592564736 * dx;
+                hintArrow.z -= dz * 1171577344;
             }
         }
 
@@ -980,7 +980,7 @@ public class Scene {
             int x = (int) (items.linkedKey * -4821875126325281949L & 0x3fffL);
             int localX = x - 2051316501 * aClass553_5219.x;
             int z = (int) (-4821875126325281949L * items.linkedKey >> 14 & 0x3fffL);
-            int localZ = z - aClass553_5219.y * -180305283;
+            int localZ = z - aClass553_5219.z * -180305283;
 
             if (null != graph) {
                 if (localX < 0 || localZ < 0 || localX >= mapWidth * -1171509167 || localZ >= mapLength * 18804445
@@ -1047,20 +1047,20 @@ public class Scene {
                 int regionX = regionIds[index] >> 8;
                 int regionZ = regionIds[index] & 0xff;
                 int dx = 64 * regionX - aClass553_5219.x * 2051316501;
-                int dz = 64 * regionZ - aClass553_5219.y * -180305283;
+                int dz = 64 * regionZ - aClass553_5219.z * -180305283;
 
                 if (!aBool5244 && null != TurnMobCutsceneAction.aClass186_9434) {
                     TurnMobCutsceneAction.aClass186_9434.method3615();
                 }
 
-                class436_sub1.method7245(buffer, dx, dz, aClass553_5219.x * 2051316501, aClass553_5219.y * -180305283);
+                class436_sub1.method7245(buffer, dx, dz, aClass553_5219.x * 2051316501, aClass553_5219.z * -180305283);
                 class436_sub1.method15408(Class60.activeToolkit, buffer, dx, dz);
             }
         }
 
         for (int index = 0; index < count; index++) {
             int i_66_ = (regionIds[index] >> 8) * 64 - 2051316501 * aClass553_5219.x;
-            int i_67_ = 64 * (regionIds[index] & 0xff) - -180305283 * aClass553_5219.y;
+            int i_67_ = 64 * (regionIds[index] & 0xff) - -180305283 * aClass553_5219.z;
             byte[] is_68_ = is[index];
 
             if (null == is_68_ && -41048943 * centreY < 800) {
@@ -1123,7 +1123,7 @@ public class Scene {
             byte[] is_84_ = is[i_83_];
             if (null != is_84_) {
                 int i_85_ = (regionIds[i_83_] >> 8) * 64 - 2051316501 * aClass553_5219.x;
-                int i_86_ = (regionIds[i_83_] & 0xff) * 64 - -180305283 * aClass553_5219.y;
+                int i_86_ = (regionIds[i_83_] & 0xff) * 64 - -180305283 * aClass553_5219.z;
                 if (!aBool5244) {
                     TurnMobCutsceneAction.aClass186_9434.method3615();
                 }
@@ -1138,11 +1138,11 @@ public class Scene {
     void method7727() {
         method7712(SceneGraphSize.valueOf(Class199.preferences.buildArea.getValue()));
         int i_87_ = aClass553_5219.x * 2051316501;
-        int i_88_ = -180305283 * aClass553_5219.y;
+        int i_88_ = -180305283 * aClass553_5219.z;
         int i_89_ = (2006359481 * Client.cameraX >> 12) + (i_87_ >> 3);
         int i_90_ = (i_88_ >> 3) + (Client.cameraZ * 1829446257 >> 12);
         Client.localPlayer.plane = (byte) 0;
-        ProxyingVariableLoader.localPlane = 0;
+        SceneGraph.localPlane = 0;
         Client.localPlayer.move(8, 8);
         int i_91_ = 18;
         regionIds = new int[i_91_];
@@ -1356,7 +1356,7 @@ public class Scene {
                     int i_142_ = i_140_ >> 7 & 0x3f;
                     int i_143_ = i_140_ & 0x3f;
                     int i_144_ = (regionIds[i_135_] >> 8) * 64 - aClass553_5219.x * 2051316501 + i_142_;
-                    int i_145_ = i_143_ + (regionIds[i_135_] & 0xff) * 64 - -180305283 * aClass553_5219.y;
+                    int i_145_ = i_143_ + (regionIds[i_135_] & 0xff) * 64 - -180305283 * aClass553_5219.z;
                     NpcDefinition npcDefinition = NpcDefinition.loader.get(buffer.readUShort());
                     ObjectNode class480_sub25 = Client.npcTable.get(i_139_);
                     if (class480_sub25 == null && (npcDefinition.movementCapabilities & 0x1) > 0 && i_144_ >= 0

@@ -18,7 +18,7 @@ public class AnimateObjectCutsceneAction extends CutsceneAction {
 
     static final void method15078(int i) {
         Client.aBool10643 = false;
-        if (ProxyingVariableLoader.localPlane * 1611577177 != 3) {
+        if (SceneGraph.localPlane * 1611577177 != 3) {
             Vector3f vector3f = Client.localPlayer.getCoordinateSpace().translation;
             TileFlags class425 = Client.scene.method7775();
             if (1212513917 * Client.mapState == 2 || 3 == 1212513917 * Client.mapState
@@ -32,9 +32,9 @@ public class AnimateObjectCutsceneAction extends CutsceneAction {
                         return;
                     }
                     i_0_ = (int) vector3f_2_.x - (2051316501 * class553.x << 9);
-                    i_1_ = (int) vector3f_2_.z - (-180305283 * class553.y << 9);
-                    if (i_0_ < 0 || i_1_ < 0 || i_0_ >> 9 >= class425.flags[1611577177 * ProxyingVariableLoader.localPlane].length
-                            || i_1_ >> 9 >= class425.flags[ProxyingVariableLoader.localPlane * 1611577177][i_0_ >> 9].length) {
+                    i_1_ = (int) vector3f_2_.z - (-180305283 * class553.z << 9);
+                    if (i_0_ < 0 || i_1_ < 0 || i_0_ >> 9 >= class425.flags[1611577177 * SceneGraph.localPlane].length
+                            || i_1_ >> 9 >= class425.flags[SceneGraph.localPlane * 1611577177][i_0_ >> 9].length) {
                         return;
                     }
                 } else if (2 == Client.mapState * 1212513917) {
@@ -44,7 +44,7 @@ public class AnimateObjectCutsceneAction extends CutsceneAction {
                     i_0_ = 1601470857 * Class156.anInt1886;
                     i_1_ = 56240793 * TurnMobCutsceneAction.anInt9433;
                 }
-                if ((class425.flags[1611577177 * ProxyingVariableLoader.localPlane][i_0_ >> 9][i_1_ >> 9] & 0x4) != 0) {
+                if ((class425.flags[1611577177 * SceneGraph.localPlane][i_0_ >> 9][i_1_ >> 9] & 0x4) != 0) {
                     Client.aBool10643 = true;
                 } else {
                     int i_3_;
@@ -52,9 +52,9 @@ public class AnimateObjectCutsceneAction extends CutsceneAction {
                     if (1212513917 * Client.mapState == 3) {
                         Vector3f vector3f_5_ = Client.camera.method4876().method5224();
                         i_3_ = ((int) vector3f_5_.x >> 9) - 2051316501 * class553.x;
-                        i_4_ = ((int) vector3f_5_.z >> 9) - class553.y * -180305283;
-                        if (i_3_ < 0 || i_4_ < 0 || i_3_ >= class425.flags[ProxyingVariableLoader.localPlane * 1611577177].length
-                                || i_4_ >= class425.flags[1611577177 * ProxyingVariableLoader.localPlane][i_3_].length) {
+                        i_4_ = ((int) vector3f_5_.z >> 9) - class553.z * -180305283;
+                        if (i_3_ < 0 || i_4_ < 0 || i_3_ >= class425.flags[SceneGraph.localPlane * 1611577177].length
+                                || i_4_ >= class425.flags[1611577177 * SceneGraph.localPlane][i_3_].length) {
                             return;
                         }
                     } else {
@@ -93,7 +93,7 @@ public class AnimateObjectCutsceneAction extends CutsceneAction {
                                                 new StringBuilder().append(i_3_).append(Class60.COMMA).append(i_4_)
                                                         .append(" ").append(i_6_).append(Class60.COMMA).append(i_7_)
                                                         .append(" ").append(2051316501 * class553.x)
-                                                        .append(Class60.COMMA).append(class553.y * -180305283)
+                                                        .append(Class60.COMMA).append(class553.z * -180305283)
                                                         .toString(), new RuntimeException());
                                     }
                                     break;
@@ -112,17 +112,17 @@ public class AnimateObjectCutsceneAction extends CutsceneAction {
                                             } else if (i_3_ > i_6_) {
                                                 i_3_--;
                                             }
-                                            if (0 != (class425.flags[ProxyingVariableLoader.localPlane * 1611577177][i_3_][i_4_] & 0x4)) {
+                                            if (0 != (class425.flags[SceneGraph.localPlane * 1611577177][i_3_][i_4_] & 0x4)) {
                                                 Client.aBool10643 = true;
                                                 return;
                                             }
-                                            if (1 + i_4_ < class425.flags[1611577177 * ProxyingVariableLoader.localPlane][i_3_].length
-                                                    && (class425.flags[1611577177 * ProxyingVariableLoader.localPlane][i_3_][i_4_ + 1] & 0x4) != 0) {
+                                            if (1 + i_4_ < class425.flags[1611577177 * SceneGraph.localPlane][i_3_].length
+                                                    && (class425.flags[1611577177 * SceneGraph.localPlane][i_3_][i_4_ + 1] & 0x4) != 0) {
                                                 Client.aBool10643 = true;
                                                 return;
                                             }
                                             if (i_4_ > 0
-                                                    && (class425.flags[1611577177 * ProxyingVariableLoader.localPlane][i_3_][i_4_ - 1] & 0x4) != 0) {
+                                                    && (class425.flags[1611577177 * SceneGraph.localPlane][i_3_][i_4_ - 1] & 0x4) != 0) {
                                                 Client.aBool10643 = true;
                                                 return;
                                             }
@@ -130,14 +130,14 @@ public class AnimateObjectCutsceneAction extends CutsceneAction {
                                             if (i_12_ >= 65536) {
                                                 i_12_ -= 65536;
                                                 if (i_4_ < i_7_) {
-                                                    if (++i_4_ + 1 < class425.flags[1611577177 * ProxyingVariableLoader.localPlane][i_3_].length
-                                                            && 0 != (class425.flags[ProxyingVariableLoader.localPlane * 1611577177][i_3_][i_4_ + 1] & 0x4)) {
+                                                    if (++i_4_ + 1 < class425.flags[1611577177 * SceneGraph.localPlane][i_3_].length
+                                                            && 0 != (class425.flags[SceneGraph.localPlane * 1611577177][i_3_][i_4_ + 1] & 0x4)) {
                                                         Client.aBool10643 = true;
                                                         return;
                                                     }
                                                 } else if (i_4_ > i_7_
                                                         && --i_4_ > 0
-                                                        && 0 != (class425.flags[1611577177 * ProxyingVariableLoader.localPlane][i_3_][i_4_ - 1] & 0x4)) {
+                                                        && 0 != (class425.flags[1611577177 * SceneGraph.localPlane][i_3_][i_4_ - 1] & 0x4)) {
                                                     break;
                                                 }
                                             }
@@ -157,17 +157,17 @@ public class AnimateObjectCutsceneAction extends CutsceneAction {
                                         } else if (i_4_ > i_7_) {
                                             i_4_--;
                                         }
-                                        if (0 != (class425.flags[1611577177 * ProxyingVariableLoader.localPlane][i_3_][i_4_] & 0x4)) {
+                                        if (0 != (class425.flags[1611577177 * SceneGraph.localPlane][i_3_][i_4_] & 0x4)) {
                                             Client.aBool10643 = true;
                                             return;
                                         }
-                                        if (i_3_ + 1 < class425.flags[ProxyingVariableLoader.localPlane * 1611577177].length
-                                                && 0 != (class425.flags[1611577177 * ProxyingVariableLoader.localPlane][i_3_ + 1][i_4_] & 0x4)) {
+                                        if (i_3_ + 1 < class425.flags[SceneGraph.localPlane * 1611577177].length
+                                                && 0 != (class425.flags[1611577177 * SceneGraph.localPlane][i_3_ + 1][i_4_] & 0x4)) {
                                             Client.aBool10643 = true;
                                             return;
                                         }
                                         if (i_3_ > 0
-                                                && (class425.flags[1611577177 * ProxyingVariableLoader.localPlane][i_3_ - 1][i_4_] & 0x4) != 0) {
+                                                && (class425.flags[1611577177 * SceneGraph.localPlane][i_3_ - 1][i_4_] & 0x4) != 0) {
                                             Client.aBool10643 = true;
                                             return;
                                         }
@@ -176,14 +176,14 @@ public class AnimateObjectCutsceneAction extends CutsceneAction {
                                             i_14_ -= 65536;
                                             if (i_3_ < i_6_) {
                                                 i_3_++;
-                                                if (1 + i_3_ < class425.flags[1611577177 * ProxyingVariableLoader.localPlane].length
-                                                        && 0 != (class425.flags[ProxyingVariableLoader.localPlane * 1611577177][1 + i_3_][i_4_] & 0x4)) {
+                                                if (1 + i_3_ < class425.flags[1611577177 * SceneGraph.localPlane].length
+                                                        && 0 != (class425.flags[SceneGraph.localPlane * 1611577177][1 + i_3_][i_4_] & 0x4)) {
                                                     Client.aBool10643 = true;
                                                     return;
                                                 }
                                             } else if (i_3_ > i_6_
                                                     && --i_3_ > 0
-                                                    && 0 != (class425.flags[ProxyingVariableLoader.localPlane * 1611577177][i_3_ - 1][i_4_] & 0x4)) {
+                                                    && 0 != (class425.flags[SceneGraph.localPlane * 1611577177][i_3_ - 1][i_4_] & 0x4)) {
                                                 break;
                                             }
                                         }
@@ -197,9 +197,9 @@ public class AnimateObjectCutsceneAction extends CutsceneAction {
                 }
             } else {
                 int i_15_ = SceneGraph.getAverageHeight(2006359481 * Client.cameraX, Client.cameraZ * 1829446257,
-                        ProxyingVariableLoader.localPlane * 1611577177);
+                        SceneGraph.localPlane * 1611577177);
                 if (i_15_ - 1525233901 * Class268.cameraY < 3200
-                        && (class425.flags[1611577177 * ProxyingVariableLoader.localPlane][2006359481 * Client.cameraX >> 9][Client.cameraZ * 1829446257 >> 9] & 0x4) != 0) {
+                        && (class425.flags[1611577177 * SceneGraph.localPlane][2006359481 * Client.cameraX >> 9][Client.cameraZ * 1829446257 >> 9] & 0x4) != 0) {
                     Client.aBool10643 = true;
                 }
             }
@@ -305,7 +305,7 @@ public class AnimateObjectCutsceneAction extends CutsceneAction {
                 } else if (3 == Client.mapState * 1212513917) {
                     CoordGrid class553 = Client.scene.getBase();
                     int i_22_ = class553.x * 2051316501 << 9;
-                    int i_23_ = -180305283 * class553.y << 9;
+                    int i_23_ = -180305283 * class553.z << 9;
                     if (5632020189464950403L * Class171.aLong1960 <= 0L) {
                         Class171.aLong1960 = TimeUtil.time() * 9097145590394488875L;
                     }
@@ -480,7 +480,7 @@ public class AnimateObjectCutsceneAction extends CutsceneAction {
                             }
                             CoordGrid base = Client.scene.getBase();
                             Client.teleport(plane, Client.localPlayer.pathX[0] + 2051316501 * base.x,
-                                    Client.localPlayer.pathZ[0] + base.y * -180305283);
+                                    Client.localPlayer.pathZ[0] + base.z * -180305283);
                         }
                         for (int i_32_ = 0; i_32_ < 5; i_32_++) {
                             Client.anIntArray10877[i_32_]++;

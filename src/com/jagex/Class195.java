@@ -77,7 +77,7 @@ public class Class195 {
 
         CoordGrid base = Client.scene.getBase();
         frame.payload.writeLEShortA(base.x * 2051316501 + sceneX);
-        frame.payload.writeShort(base.y * -180305283 + sceneZ);
+        frame.payload.writeShort(base.z * -180305283 + sceneZ);
         frame.payload.writeByteS(ThemeMusicVolumeNormaliser.method3755() ? 1 : 0);
         Class63.destinationX = sceneX * -517887053;
         Class63.destinationY = sceneZ * 224109565;

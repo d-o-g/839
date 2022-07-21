@@ -47,7 +47,7 @@ public class ResourceManager {
             Client.cameraX = Class282.anInt3162 * 805643776 + -1638364928;
             Client.cameraZ = -866217728 + -666016256 * VoiceOverVolumeNormaliser.anInt1993;
             Class268.cameraY = (SceneGraph.getAverageHeight(Client.cameraX * 2006359481, Client.cameraZ * 1829446257,
-                    1611577177 * ProxyingVariableLoader.localPlane) - Class166_Sub6.anInt9539 * 1611257481)
+                    1611577177 * SceneGraph.localPlane) - Class166_Sub6.anInt9539 * 1611257481)
                     * -1128143643;
         }
 

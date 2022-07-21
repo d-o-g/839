@@ -45,7 +45,7 @@ public class Class467_Sub2 extends Class467 {
                         Client.gameConnection.encryptor);
                 frame.payload.writeLEShortA(-800680953 * Client.anInt10756);
                 frame.payload.writeShortA(Client.anInt10867 * -224153241);
-                frame.payload.writeShortA(tertiary + base.y * -180305283);
+                frame.payload.writeShortA(tertiary + base.z * -180305283);
                 frame.payload.writeLEShort(primary);
                 frame.payload.writeByteA(ThemeMusicVolumeNormaliser.method3755() ? 1 : 0);
                 frame.payload.writeInt(SceneGraph.anInt6751 * 1969702363);
@@ -94,7 +94,7 @@ public class Class467_Sub2 extends Class467 {
 
             if (op == 23) {
                 if (Client.localPrivilege * 1667858447 > 0 && CutsceneVariableProvider.method3346()) {
-                    Client.teleport(Client.localPlayer.plane, secondary + base.x * 2051316501, tertiary + base.y
+                    Client.teleport(Client.localPlayer.plane, secondary + base.x * 2051316501, tertiary + base.z
                             * -180305283);
                 } else {
                     OutgoingFrame frame = Class195.createWalkFrame(primary, secondary, tertiary);
@@ -247,7 +247,7 @@ public class Class467_Sub2 extends Class467 {
                     Client.anInt10679 = 0;
                     OutgoingFrame class480_sub15 = OutgoingFrame.prepare(meta2, Client.gameConnection.encryptor);
                     class480_sub15.payload.writeByte(ThemeMusicVolumeNormaliser.method3755() ? 1 : 0);
-                    class480_sub15.payload.writeLEShortA(tertiary + base.y * -180305283);
+                    class480_sub15.payload.writeLEShortA(tertiary + base.z * -180305283);
                     class480_sub15.payload.writeShortA(base.x * 2051316501 + secondary);
                     class480_sub15.payload.writeInt((int) (primaryL >>> 32) & 0x7fffffff);
                     Client.gameConnection.sendFrame(class480_sub15);
@@ -266,7 +266,7 @@ public class Class467_Sub2 extends Class467 {
                     class480_sub15.payload.writeLEShortA(-800680953 * Client.anInt10756);
                     class480_sub15.payload.writeLEShort(2051316501 * base.x + secondary);
                     class480_sub15.payload.writeShortA(Client.anInt10867 * -224153241);
-                    class480_sub15.payload.writeShort(tertiary + -180305283 * base.y);
+                    class480_sub15.payload.writeShort(tertiary + -180305283 * base.z);
                     class480_sub15.payload.writeMEInt(1969702363 * SceneGraph.anInt6751);
                     Client.gameConnection.sendFrame(class480_sub15);
                     Class20.setDestination(secondary, tertiary);
@@ -274,7 +274,7 @@ public class Class467_Sub2 extends Class467 {
                 if (60 == op) {
                     if (1667858447 * Client.localPrivilege > 0 && CutsceneVariableProvider.method3346()) {
                         Client.teleport(Client.localPlayer.plane, base.x * 2051316501 + secondary, -180305283
-                                * base.y + tertiary);
+                                * base.z + tertiary);
                     } else {
                         Client.crosshairX = -1837674915 * mousex;
                         Client.crosshairY = 1535894177 * mousey;
@@ -282,7 +282,7 @@ public class Class467_Sub2 extends Class467 {
                         Client.anInt10679 = 0;
                         OutgoingFrame class480_sub15 = OutgoingFrame.prepare(OutgoingFrameMeta.aClass366_3986,
                                 Client.gameConnection.encryptor);
-                        class480_sub15.payload.writeLEShort(-180305283 * base.y + tertiary);
+                        class480_sub15.payload.writeLEShort(-180305283 * base.z + tertiary);
                         class480_sub15.payload.writeLEShort(2051316501 * base.x + secondary);
                         Client.gameConnection.sendFrame(class480_sub15);
                     }
@@ -296,7 +296,7 @@ public class Class467_Sub2 extends Class467 {
                             Client.gameConnection.encryptor);
                     class480_sub15.payload.writeByteA(ThemeMusicVolumeNormaliser.method3755() ? 1 : 0);
                     class480_sub15.payload.writeLEShortA(Client.anInt10756 * -800680953);
-                    class480_sub15.payload.writeLEShort(-180305283 * base.y + tertiary);
+                    class480_sub15.payload.writeLEShort(-180305283 * base.z + tertiary);
                     class480_sub15.payload.writeShortA(base.x * 2051316501 + secondary);
                     class480_sub15.payload.writeLEShort(-224153241 * Client.anInt10867);
                     class480_sub15.payload.writeIMEInt(1969702363 * SceneGraph.anInt6751);
@@ -330,7 +330,7 @@ public class Class467_Sub2 extends Class467 {
                     Client.crosshairState = -216409942;
                     Client.anInt10679 = 0;
                     OutgoingFrame class480_sub15 = OutgoingFrame.prepare(class366_12_, Client.gameConnection.encryptor);
-                    class480_sub15.payload.writeLEShort(base.y * -180305283 + tertiary);
+                    class480_sub15.payload.writeLEShort(base.z * -180305283 + tertiary);
                     class480_sub15.payload.writeShort(secondary + 2051316501 * base.x);
                     class480_sub15.payload.writeByteS((notsure ? 2 : 0)
                             | (ThemeMusicVolumeNormaliser.method3755() ? 1 : 0));

@@ -193,7 +193,7 @@ public class Class570 {
             int localZ = position & 0x3fff;
             CoordGrid class553 = Client.scene.getBase();
             localX -= class553.x * 2051316501;
-            localZ -= class553.y * -180305283;
+            localZ -= class553.z * -180305283;
             Client.animateObject(plane, localX, localZ, group, type, orientation, animation, i_9_);
             context.currentFrame = null;
             return true;
@@ -241,7 +241,7 @@ public class Class570 {
             return true;
         }
         if (context.currentFrame == IncomingFrameMeta.SPAWN_ANIMABLE) {
-            HostNameIdentifier.decodeRegionUpdate(ZoneProt.SPAWN_ANIMABLE);
+            HostNameIdentifier.decodeZoneProtUpdate(ZoneProt.SPAWN_ANIMABLE);
             context.currentFrame = null;
             return true;
         }
@@ -269,7 +269,7 @@ public class Class570 {
             return true;
         }
         if (IncomingFrameMeta.REMOVE_GROUND_ITEM == context.currentFrame) {
-            HostNameIdentifier.decodeRegionUpdate(ZoneProt.REMOVE_GROUND_ITEM);
+            HostNameIdentifier.decodeZoneProtUpdate(ZoneProt.REMOVE_GROUND_ITEM);
             context.currentFrame = null;
             return true;
         }
@@ -458,7 +458,7 @@ public class Class570 {
             return true;
         }
         if (IncomingFrameMeta.aClass386_4333 == context.currentFrame) {
-            HostNameIdentifier.decodeRegionUpdate(ZoneProt.aClass358_3820);
+            HostNameIdentifier.decodeZoneProtUpdate(ZoneProt.aClass358_3820);
             context.currentFrame = null;
             return true;
         }
@@ -850,49 +850,49 @@ public class Class570 {
             int i_121_ = i_119_ & 0x1f;
 
             if (0 == i_121_) {
-                Client.aClass75Array10623[i_120_] = null;
+                Client.hintArrows[i_120_] = null;
                 context.currentFrame = null;
                 return true;
             }
 
-            Class75 class75 = new Class75();
-            class75.anInt1123 = i_121_ * 1250564713;
-            class75.anInt1116 = buffer.readUByte() * 238093003;
+            HintArrow hintArrow = new HintArrow();
+            hintArrow.type = i_121_ * 1250564713;
+            hintArrow.id = buffer.readUByte() * 238093003;
 
-            if (class75.anInt1116 * -1698639133 >= 0 && class75.anInt1116 * -1698639133 < Sprite.headicons.length) {
-                if (1 == class75.anInt1123 * -335735335 || -335735335 * class75.anInt1123 == 10) {
-                    class75.anInt1117 = buffer.readUShort() * -233186087;
-                    class75.anInt1120 = buffer.readUShort() * 1000230755;
+            if (hintArrow.id * -1698639133 >= 0 && hintArrow.id * -1698639133 < Sprite.headicons.length) {
+                if (hintArrow.type * -335735335 == 1 || hintArrow.type * -335735335 == 10) {
+                    hintArrow.targetIndex = buffer.readUShort() * -233186087;
+                    hintArrow.flashRate = buffer.readUShort() * 1000230755;
                     buffer.caret += 737601220;
-                } else if (class75.anInt1123 * -335735335 >= 2 && class75.anInt1123 * -335735335 <= 6) {
-                    if (2 == class75.anInt1123 * -335735335) {
-                        class75.anInt1119 = -1851201280;
-                        class75.anInt1122 = -1561694976;
-                    } else if (-335735335 * class75.anInt1123 == 3) {
-                        class75.anInt1119 = 0;
-                        class75.anInt1122 = -1561694976;
-                    } else if (4 == -335735335 * class75.anInt1123) {
-                        class75.anInt1119 = 592564736;
-                        class75.anInt1122 = -1561694976;
-                    } else if (5 == -335735335 * class75.anInt1123) {
-                        class75.anInt1119 = -1851201280;
-                        class75.anInt1122 = 0;
-                    } else if (6 == -335735335 * class75.anInt1123) {
-                        class75.anInt1119 = -1851201280;
-                        class75.anInt1122 = 1171577344;
+                } else if (hintArrow.type * -335735335 >= 2 && hintArrow.type * -335735335 <= 6) {
+                    if (hintArrow.type * -335735335 == 2) {
+                        hintArrow.x = -1851201280;
+                        hintArrow.z = -1561694976;
+                    } else if (hintArrow.type * -335735335 == 3) {
+                        hintArrow.x = 0;
+                        hintArrow.z = -1561694976;
+                    } else if (hintArrow.type * -335735335 == 4) {
+                        hintArrow.x = 592564736;
+                        hintArrow.z = -1561694976;
+                    } else if (hintArrow.type * -335735335 == 5) {
+                        hintArrow.x = -1851201280;
+                        hintArrow.z = 0;
+                    } else if (hintArrow.type * -335735335 == 6) {
+                        hintArrow.x = -1851201280;
+                        hintArrow.z = 1171577344;
                     }
 
-                    class75.anInt1123 = -1793837870;
-                    class75.anInt1118 = buffer.readUByte() * -406200473;
+                    hintArrow.type = -1793837870;
+                    hintArrow.level = buffer.readUByte() * -406200473;
                     CoordGrid class553 = Client.scene.getBase();
-                    class75.anInt1119 += (buffer.readUShort() - 2051316501 * class553.x << 9) * -1315854103;
-                    class75.anInt1122 += (buffer.readUShort() - class553.y * -180305283 << 9) * 1705175661;
-                    class75.anInt1124 = (buffer.readUByte() << 2) * 1873633851;
-                    class75.anInt1121 = buffer.readUShort() * -658166427;
+                    hintArrow.x += (buffer.readUShort() - 2051316501 * class553.x << 9) * -1315854103;
+                    hintArrow.z += (buffer.readUShort() - class553.z * -180305283 << 9) * 1705175661;
+                    hintArrow.heightOffset = (buffer.readUByte() << 2) * 1873633851;
+                    hintArrow.anInt1121 = buffer.readUShort() * -658166427;
                 }
 
-                class75.anInt1115 = buffer.readInt() * 1173898881;
-                Client.aClass75Array10623[i_120_] = class75;
+                hintArrow.model = buffer.readInt() * 1173898881;
+                Client.hintArrows[i_120_] = hintArrow;
             }
 
             context.currentFrame = null;
@@ -912,7 +912,7 @@ public class Class570 {
             return true;
         }
         if (context.currentFrame == IncomingFrameMeta.SPAWN_PRIVATE_GROUND_ITEM) {
-            HostNameIdentifier.decodeRegionUpdate(ZoneProt.SPAWN_PRIVATE_GROUND_ITEM);
+            HostNameIdentifier.decodeZoneProtUpdate(ZoneProt.SPAWN_PRIVATE_GROUND_ITEM);
             context.currentFrame = null;
             return true;
         }
@@ -980,7 +980,7 @@ public class Class570 {
             return true;
         }
         if (IncomingFrameMeta.SPAWN_FIRED_PROJECTILE == context.currentFrame) {
-            HostNameIdentifier.decodeRegionUpdate(ZoneProt.SPAWN_FIRED_PROJECTILE);
+            HostNameIdentifier.decodeZoneProtUpdate(ZoneProt.SPAWN_FIRED_PROJECTILE);
             context.currentFrame = null;
             return true;
         }
@@ -1114,7 +1114,7 @@ public class Class570 {
             return true;
         }
         if (IncomingFrameMeta.ANIMATE_OBJECT_REGION_UPDATE == context.currentFrame) {
-            HostNameIdentifier.decodeRegionUpdate(ZoneProt.ANIMATE_OBJECT);
+            HostNameIdentifier.decodeZoneProtUpdate(ZoneProt.ANIMATE_OBJECT);
             context.currentFrame = null;
             return true;
         }
@@ -1159,7 +1159,7 @@ public class Class570 {
 
             CoordGrid class553 = Client.scene.getBase();
             int i_171_ = i_163_ - -192334294 * class553.x;
-            int i_172_ = i_166_ - class553.y * -360610566;
+            int i_172_ = i_166_ - class553.z * -360610566;
             i_162_ += i_171_;
             i_157_ += i_172_;
 
@@ -1209,7 +1209,7 @@ public class Class570 {
         if (IncomingFrameMeta.SET_LOCAL_REGION == context.currentFrame) {
             Class185.localRegionX = (buffer.readByte() << 3) * -32265385;
             Class164.localRegionZ = (buffer.readByte() << 3) * 211413053;
-            BaseVarpDefinitionLoader.floorLevel = buffer.readUByteS() * -1776605585;
+            SceneGraph.floorLevel = buffer.readUByteS() * -1776605585;
             context.currentFrame = null;
             return true;
         }
@@ -1649,7 +1649,7 @@ public class Class570 {
             return true;
         }
         if (IncomingFrameMeta.aClass386_4336 == context.currentFrame) {
-            HostNameIdentifier.decodeRegionUpdate(ZoneProt.aClass358_3824);
+            HostNameIdentifier.decodeZoneProtUpdate(ZoneProt.aClass358_3824);
             context.currentFrame = null;
             return true;
         }
@@ -1674,7 +1674,7 @@ public class Class570 {
                 CoordGrid class553 = Client.scene.getBase();
                 int plane = position >> 28 & 0x3;
                 int x = (position >> 14 & 0x3fff) - class553.x * 2051316501;
-                int z = (position & 0x3fff) - class553.y * -180305283;
+                int z = (position & 0x3fff) - class553.z * -180305283;
 
                 if (x >= 0 && z >= 0 && x < Client.scene.getMapWidth()
                         && z < Client.scene.getMapLength()) {
@@ -1952,7 +1952,7 @@ public class Class570 {
                 } else if (x >= Client.scene.getMapWidth()) {
                     x = Client.scene.getMapWidth();
                 }
-                z -= class553.y * -180305283;
+                z -= class553.z * -180305283;
                 if (z < 0) {
                     z = 0;
                 } else if (z >= Client.scene.getMapLength()) {
@@ -2040,7 +2040,7 @@ public class Class570 {
             return true;
         }
         if (IncomingFrameMeta.aClass386_4460 == context.currentFrame) {
-            HostNameIdentifier.decodeRegionUpdate(ZoneProt.SET_GROUND_ITEM_AMOUNT);
+            HostNameIdentifier.decodeZoneProtUpdate(ZoneProt.SET_GROUND_ITEM_AMOUNT);
             context.currentFrame = null;
             return true;
         }
@@ -2128,11 +2128,11 @@ public class Class570 {
         if (context.currentFrame == IncomingFrameMeta.GROUPED_REGION_UPDATE) {
             Class164.localRegionZ = (buffer.readByte() << 3) * 211413053;
             Class185.localRegionX = (buffer.readNegatedByte(2030529681) << 3) * -32265385;
-            BaseVarpDefinitionLoader.floorLevel = buffer.readUByteS() * -1776605585;
+            SceneGraph.floorLevel = buffer.readUByteS() * -1776605585;
 
             while (buffer.caret * -165875887 < context.currentFrameSize * -842560185) {
                 ZoneProt update = ZoneProt.values()[buffer.readUByte()];
-                HostNameIdentifier.decodeRegionUpdate(update);
+                HostNameIdentifier.decodeZoneProtUpdate(update);
             }
 
             context.currentFrame = null;
@@ -2151,7 +2151,7 @@ public class Class570 {
             return false;
         }
         if (context.currentFrame == IncomingFrameMeta.aClass386_4469) {
-            HostNameIdentifier.decodeRegionUpdate(ZoneProt.SPAWN_PROJECTILE);
+            HostNameIdentifier.decodeZoneProtUpdate(ZoneProt.SPAWN_PROJECTILE);
             context.currentFrame = null;
             return true;
         }
@@ -2180,7 +2180,7 @@ public class Class570 {
             return true;
         }
         if (IncomingFrameMeta.aClass386_4431 == context.currentFrame) {
-            BaseVarpDefinitionLoader.floorLevel = buffer.readUByte() * -1776605585;
+            SceneGraph.floorLevel = buffer.readUByte() * -1776605585;
             Class164.localRegionZ = (buffer.readByte() << 3) * 211413053;
             Class185.localRegionX = (buffer.readByteS() << 3) * -32265385;
             CoordGrid class553 = Client.scene.getBase();
@@ -2190,9 +2190,9 @@ public class Class570 {
                 int x = (int) (deque.linkedKey * -4821875126325281949L & 0x3fffL);
                 int localX = x - class553.x * 2051316501;
                 int z = (int) (deque.linkedKey * -4821875126325281949L >> 14 & 0x3fffL);
-                int localZ = z - -180305283 * class553.y;
+                int localZ = z - -180305283 * class553.z;
 
-                if (i_314_ == BaseVarpDefinitionLoader.floorLevel * -1123616625
+                if (i_314_ == SceneGraph.floorLevel * -1123616625
                         && localX >= Class185.localRegionX * 1507881063
                         && localX < 1507881063 * Class185.localRegionX + 8
                         && localZ >= 1606151957 * Class164.localRegionZ
@@ -2200,7 +2200,7 @@ public class Class570 {
                     deque.unlink();
                     if (localX >= 0 && localZ >= 0 && localX < Client.scene.getMapWidth()
                             && localZ < Client.scene.getMapLength()) {
-                        FloatRaster.method1727(-1123616625 * BaseVarpDefinitionLoader.floorLevel, localX, localZ);
+                        FloatRaster.method1727(-1123616625 * SceneGraph.floorLevel, localX, localZ);
                     }
                 }
             }
@@ -2210,7 +2210,7 @@ public class Class570 {
                         && 1155137153 * sceneMod.localX < 8 + Class185.localRegionX * 1507881063
                         && sceneMod.localZ * 51547319 >= 1606151957 * Class164.localRegionZ
                         && sceneMod.localZ * 51547319 < 1606151957 * Class164.localRegionZ + 8
-                        && -618261599 * sceneMod.plane == -1123616625 * BaseVarpDefinitionLoader.floorLevel) {
+                        && -618261599 * sceneMod.plane == -1123616625 * SceneGraph.floorLevel) {
                     sceneMod.aBool10063 = true;
                 }
             }
@@ -2221,7 +2221,7 @@ public class Class570 {
                         && sceneMod.localX * 1155137153 < 1507881063 * Class185.localRegionX + 8
                         && sceneMod.localZ * 51547319 >= 1606151957 * Class164.localRegionZ
                         && 51547319 * sceneMod.localZ < 1606151957 * Class164.localRegionZ + 8
-                        && -1123616625 * BaseVarpDefinitionLoader.floorLevel == -618261599 * sceneMod.plane) {
+                        && -1123616625 * SceneGraph.floorLevel == -618261599 * sceneMod.plane) {
                     sceneMod.aBool10063 = true;
                 }
             }
@@ -2392,7 +2392,7 @@ public class Class570 {
             return true;
         }
         if (IncomingFrameMeta.SPAWN_PUBLIC_GROUND_ITEM == context.currentFrame) {
-            HostNameIdentifier.decodeRegionUpdate(ZoneProt.SPAWN_PUBLIC_GROUND_ITEM);
+            HostNameIdentifier.decodeZoneProtUpdate(ZoneProt.SPAWN_PUBLIC_GROUND_ITEM);
             context.currentFrame = null;
             return true;
         }
@@ -2505,7 +2505,7 @@ public class Class570 {
             return true;
         }
         if (IncomingFrameMeta.aClass386_4392 == context.currentFrame) {
-            HostNameIdentifier.decodeRegionUpdate(ZoneProt.aClass358_3822);
+            HostNameIdentifier.decodeZoneProtUpdate(ZoneProt.aClass358_3822);
             context.currentFrame = null;
             return true;
         }
@@ -2573,7 +2573,7 @@ public class Class570 {
             return true;
         }
         if (IncomingFrameMeta.aClass386_4300 == context.currentFrame) {
-            HostNameIdentifier.decodeRegionUpdate(ZoneProt.aClass358_3826);
+            HostNameIdentifier.decodeZoneProtUpdate(ZoneProt.aClass358_3826);
             context.currentFrame = null;
             return true;
         }
@@ -2842,7 +2842,7 @@ public class Class570 {
             return true;
         }
         if (context.currentFrame == IncomingFrameMeta.aClass386_4372) {
-            HostNameIdentifier.decodeRegionUpdate(ZoneProt.aClass358_3823);
+            HostNameIdentifier.decodeZoneProtUpdate(ZoneProt.aClass358_3823);
             context.currentFrame = null;
             return true;
         }
@@ -2923,7 +2923,7 @@ public class Class570 {
             return true;
         }
         if (context.currentFrame == IncomingFrameMeta.aClass386_4298) {
-            HostNameIdentifier.decodeRegionUpdate(ZoneProt.aClass358_3833);
+            HostNameIdentifier.decodeZoneProtUpdate(ZoneProt.aClass358_3833);
             context.currentFrame = null;
             return true;
         }

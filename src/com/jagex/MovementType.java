@@ -109,14 +109,14 @@ public class MovementType implements Identifiable {
         int centralRegionX = -55942707 * Class215.anInt2196 >> 9;
         int centralRegionZ = Class115.anInt1444 * -457862351 >> 9;
         int i_3_ = SceneGraph.getAverageHeight(-55942707 * Class215.anInt2196, Class115.anInt1444 * -457862351,
-                1611577177 * ProxyingVariableLoader.localPlane);
+                1611577177 * SceneGraph.localPlane);
         int i_4_ = 0;
 
         if (centralRegionX > 3 && centralRegionZ > 3 && centralRegionX < Client.scene.getMapWidth() - 4
                 && centralRegionZ < Client.scene.getMapLength() - 4) {
             for (int x = centralRegionX - 4; x <= centralRegionX + 4; x++) {
                 for (int z = centralRegionZ - 4; z <= centralRegionZ + 4; z++) {
-                    int plane = 1611577177 * ProxyingVariableLoader.localPlane;
+                    int plane = 1611577177 * SceneGraph.localPlane;
                     if (plane < 3 && flags.isBridge(x, z)) {
                         plane++;
                     }

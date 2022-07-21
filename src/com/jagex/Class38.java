@@ -104,7 +104,7 @@ public class Class38 {
                         * -1128143643;
                 Client.cameraZ = -187933039
                         * (int) (Class512.anInt7004 * -2126389539 + f
-                        * (vector4i.z * -980788885 - class553.y * -2121991680 - -2126389539
+                        * (vector4i.z * -980788885 - class553.z * -2121991680 - -2126389539
                         * Class512.anInt7004));
                 i_10_ = -(1686504405 * Class550.cameraYaw) - 2012215581 * AsynchronousHttpRequestCreator.anInt4613
                         & 0x3fff;
@@ -124,7 +124,7 @@ public class Class38 {
                 int i_12_ = (int) Client.aFloat10787 + Client.anInt10615 * 1902938021 & 0x3fff;
                 Vector3f vector3f = Client.localPlayer.getCoordinateSpace().translation;
                 NativeLibraryLoadException.method17347(Class215.anInt2196 * -55942707,
-                        SceneGraph.getAverageHeight((int) vector3f.x, (int) vector3f.z, ProxyingVariableLoader.localPlane * 1611577177)
+                        SceneGraph.getAverageHeight((int) vector3f.x, (int) vector3f.z, SceneGraph.localPlane * 1611577177)
                                 - Client.anInt10912 * -1160922663, -457862351 * Class115.anInt1444, i_11_, i_12_,
                         3 * (i_11_ >> 3) + 600 << 2, i, -70033577);
                 Client.cameraX = -224503671

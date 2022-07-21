@@ -8,7 +8,7 @@ public class Class619 {
     }
 
     public static Model method10416(Toolkit toolkit, int yaw, int pitch, int roll, int dy, int key) {
-        Model model = (Model) Class75.aClass168_1125.get(key);
+        Model model = (Model) HintArrow.aClass168_1125.get(key);
         int attributes = 2055;
 
         if (null == model) {
@@ -22,7 +22,7 @@ public class Class619 {
             }
 
             model = toolkit.createModel(base, attributes, 1963112619 * UnderlayDefinitionLoader.anInt10585, 64, 768);
-            Class75.aClass168_1125.put(key, model);
+            HintArrow.aClass168_1125.put(key, model);
         }
 
         model = model.method2890((byte) 6, attributes, true);

@@ -10,7 +10,9 @@ public class SceneGraph {
 
     static final int anInt6739 = 4;
     public static boolean renderLight = true;
+    public static int localPlane;
     static int anInt6751;
+    static int floorLevel;
     public int length;
     public int tileScale;
     public int levelCount;

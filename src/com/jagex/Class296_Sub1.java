@@ -9,7 +9,7 @@ public class Class296_Sub1 extends Class296 {
     static final void method15196(int i, int i_6_, int i_7_, int i_8_) {
         Toolkit.method2868(Class60.activeToolkit);
         Class25.method779(i, i_6_, i_7_, i_8_, 256, 256);
-        HitMobCutsceneAction.method15091(i, i_6_, i_7_, i_8_, 256, 256);
+        HitMobCutsceneAction.renderSceneEntities(i, i_6_, i_7_, i_8_, 256, 256);
         Class208.method3994(i, i_6_, i_7_, i_8_, 256, 256);
         PlayerVariable.method14016(i, i_6_, i_7_, i_8_);
     }

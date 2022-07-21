@@ -84,7 +84,7 @@ public class Class224 implements Definition {
 
     @Override
     public void decode(Buffer buffer) {
-        for (; ; ) {
+        while (true) {
             int opcode = buffer.readUByte();
             if (0 == opcode) {
                 break;

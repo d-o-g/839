@@ -18,7 +18,7 @@ public class Class580 {
     }
 
     static void method9829(int i) {
-        Class75.aClass168_1125.sweep(i);
+        HintArrow.aClass168_1125.sweep(i);
     }
 
     void decode(Buffer buffer) {

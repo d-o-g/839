@@ -54,7 +54,7 @@ public class HostNameIdentifier implements Runnable {
         return UrlResourceRequest.method1572(is);
     }
 
-    static final void decodeRegionUpdate(ZoneProt update) {
+    static final void decodeZoneProtUpdate(ZoneProt update) {
         BitBuffer buffer = Client.gameConnection.buffer;
 
         if (update == ZoneProt.aClass358_3833) {
@@ -81,7 +81,7 @@ public class HostNameIdentifier implements Runnable {
                             && Client.localPlayer.pathZ[0] >= z - distance
                             && Client.localPlayer.pathZ[0] <= distance + z) {
                         Vector3f vector3f = new Vector3f(x << 9, 0.0F, z << 9);
-                        int i_13_ = -1123616625 * BaseVarpDefinitionLoader.floorLevel;
+                        int i_13_ = -1123616625 * SceneGraph.floorLevel;
                         TurnMobCutsceneAction.aClass186_9434.method3710(Class171.aClass171_1947, i_5_, i_8_, i_10_,
                                 Class156.aClass156_1876.method3293(), Class167.aClass167_1927, 0.0F, i_7_ << 9,
                                 vector3f, i_13_, i_11_, i_9_);
@@ -92,7 +92,7 @@ public class HostNameIdentifier implements Runnable {
             int positionOffset = buffer.readUByte();
             CoordGrid class553 = Client.scene.getBase();
             int localZ = (positionOffset & 0x7) + 1606151957 * Class164.localRegionZ;
-            int z = -180305283 * class553.y + localZ;
+            int z = -180305283 * class553.z + localZ;
             int localX = 1507881063 * Class185.localRegionX + (positionOffset >> 4 & 0x7);
             int x = class553.x * 2051316501 + localX;
             int id = buffer.readUShort();
@@ -100,21 +100,21 @@ public class HostNameIdentifier implements Runnable {
             int amount = buffer.readUShort();
 
             if (Client.groundItems != null) {
-                ItemDeque deque = Client.groundItems.get(-1123616625 * BaseVarpDefinitionLoader.floorLevel << 28
+                ItemDeque deque = Client.groundItems.get(-1123616625 * SceneGraph.floorLevel << 28
                         | z << 14 | x);
                 if (null != deque) {
                     for (Item next = deque.items.head(); null != next; next = deque.items.next()) {
                         if (id == 1659909117 * next.id && oldAmount == next.amount * 392072967) {
                             next.unlink();
                             next.amount = amount * -1157124425;
-                            Item.addGroundItem(next, x, z, BaseVarpDefinitionLoader.floorLevel * -1123616625);
+                            Item.addGroundItem(next, x, z, SceneGraph.floorLevel * -1123616625);
                             break;
                         }
                     }
 
                     if (localX >= 0 && localZ >= 0 && localX < Client.scene.getMapWidth()
                             && localZ < Client.scene.getMapLength()) {
-                        FloatRaster.method1727(-1123616625 * BaseVarpDefinitionLoader.floorLevel, localX, localZ);
+                        FloatRaster.method1727(-1123616625 * SceneGraph.floorLevel, localX, localZ);
                     }
                 }
             }
@@ -122,7 +122,7 @@ public class HostNameIdentifier implements Runnable {
             int positionOffset = buffer.readNegatedUByte();
             CoordGrid class553 = Client.scene.getBase();
             int localZ = 1606151957 * Class164.localRegionZ + (positionOffset & 0x7);
-            int z = -180305283 * class553.y + localZ;
+            int z = -180305283 * class553.z + localZ;
             int localX = (positionOffset >> 4 & 0x7) + 1507881063 * Class185.localRegionX;
             int x = class553.x * 2051316501 + localX;
             int id = buffer.readUShortA();
@@ -133,10 +133,10 @@ public class HostNameIdentifier implements Runnable {
                 boolean bool = localX >= 0 && localZ >= 0 && localX < Client.scene.getMapWidth()
                         && localZ < Client.scene.getMapLength();
                 if (bool || Client.scene.method7675().method7536()) {
-                    Item.addGroundItem(new Item(id, amount), x, z, -1123616625 * BaseVarpDefinitionLoader.floorLevel);
+                    Item.addGroundItem(new Item(id, amount), x, z, -1123616625 * SceneGraph.floorLevel);
 
                     if (bool) {
-                        FloatRaster.method1727(BaseVarpDefinitionLoader.floorLevel * -1123616625, localX, localZ);
+                        FloatRaster.method1727(SceneGraph.floorLevel * -1123616625, localX, localZ);
                     }
                 }
             }
@@ -145,11 +145,11 @@ public class HostNameIdentifier implements Runnable {
             int positionOffset = buffer.readUByte();
             CoordGrid class553 = Client.scene.getBase();
             int localZ = Class164.localRegionZ * 1606151957 + (positionOffset & 0x7);
-            int z = class553.y * -180305283 + localZ;
+            int z = class553.z * -180305283 + localZ;
             int localX = (positionOffset >> 4 & 0x7) + 1507881063 * Class185.localRegionX;
             int x = class553.x * 2051316501 + localX;
 
-            ItemDeque deque = Client.groundItems.get(-1123616625 * BaseVarpDefinitionLoader.floorLevel << 28 | z << 14
+            ItemDeque deque = Client.groundItems.get(-1123616625 * SceneGraph.floorLevel << 28 | z << 14
                     | x);
             if (deque != null) {
                 for (Item item = deque.items.head(); item != null; item = deque.items.next()) {
@@ -165,7 +165,7 @@ public class HostNameIdentifier implements Runnable {
 
                 if (localX >= 0 && localZ >= 0 && localX < Client.scene.getMapWidth()
                         && localZ < Client.scene.getMapLength()) {
-                    FloatRaster.method1727(-1123616625 * BaseVarpDefinitionLoader.floorLevel, localX, localZ);
+                    FloatRaster.method1727(-1123616625 * SceneGraph.floorLevel, localX, localZ);
                 }
             }
         } else if (ZoneProt.aClass358_3820 == update) {
@@ -173,14 +173,13 @@ public class HostNameIdentifier implements Runnable {
             int positionOffset = buffer.readUByte();
             int localX = Class185.localRegionX * 1507881063 + (positionOffset >> 4 & 0x7);
             int localZ = (positionOffset & 0x7) + 1606151957 * Class164.localRegionZ;
-            int longetivity = buffer.readUShort();
+            int longevity = buffer.readUShort();
             int heightOffset = buffer.readUByte();
             int i_41_ = buffer.readUTriByte();
             String string = buffer.readString();
 
             if (Client.scene.method7675() != SceneFormat.aSceneFormat_5152) {
-                Class477_Sub6.create(-1123616625 * BaseVarpDefinitionLoader.floorLevel, localX, localZ, heightOffset,
-                        longetivity, i_41_, string);
+                Class477_Sub6.push(SceneGraph.floorLevel * -1123616625, localX, localZ, heightOffset, longevity, i_41_, string);
             }
         } else if (ZoneProt.aClass358_3829 == update) {
             int positionOffset = buffer.readUByte();
@@ -208,7 +207,7 @@ public class HostNameIdentifier implements Runnable {
                             && Client.localPlayer.pathZ[0] >= localZ - distance
                             && Client.localPlayer.pathZ[0] <= localZ + distance) {
                         Vector3f vector3f = new Vector3f(localX << 9, 0.0F, localZ << 9);
-                        int i_53_ = BaseVarpDefinitionLoader.floorLevel * -1123616625;
+                        int i_53_ = SceneGraph.floorLevel * -1123616625;
                         int i_54_ = bool ? Class156.aClass156_1877.method3293() : Class156.aClass156_1876.method3293();
                         TurnMobCutsceneAction.aClass186_9434.method3710(Class171.aClass171_1947, i_45_, i_48_, i_50_,
                                 i_54_, Class167.aClass167_1927, 0.0F, i_47_ << 9, vector3f, i_53_, i_51_, i_49_);
@@ -220,7 +219,7 @@ public class HostNameIdentifier implements Runnable {
             int positionOffset = buffer.readUByteS();
             CoordGrid class553 = Client.scene.getBase();
             int localZ = 1606151957 * Class164.localRegionZ + (positionOffset & 0x7);
-            int z = localZ + class553.y * -180305283;
+            int z = localZ + class553.z * -180305283;
             int localX = Class185.localRegionX * 1507881063 + (positionOffset >> 4 & 0x7);
             int x = localX + 2051316501 * class553.x;
             int amount = buffer.readLEUShortA();
@@ -228,10 +227,10 @@ public class HostNameIdentifier implements Runnable {
                     && localZ < Client.scene.getMapLength();
 
             if (bool || Client.scene.method7675().method7536()) {
-                Item.addGroundItem(new Item(id, amount), x, z, BaseVarpDefinitionLoader.floorLevel * -1123616625);
+                Item.addGroundItem(new Item(id, amount), x, z, SceneGraph.floorLevel * -1123616625);
 
                 if (bool) {
-                    FloatRaster.method1727(-1123616625 * BaseVarpDefinitionLoader.floorLevel, localX, localZ);
+                    FloatRaster.method1727(-1123616625 * SceneGraph.floorLevel, localX, localZ);
                 }
             }
         } else if (update == ZoneProt.SPAWN_ANIMABLE) {
@@ -260,15 +259,15 @@ public class HostNameIdentifier implements Runnable {
                     } else {
                         int worldX = 256 + 512 * localX;
                         int worldZ = localZ * 512 + 256;
-                        int collisionPlane = -1123616625 * BaseVarpDefinitionLoader.floorLevel;
+                        int collisionPlane = -1123616625 * SceneGraph.floorLevel;
 
                         if (collisionPlane < 3 && Client.scene.method7775().isBridge(localX, localZ)) {
                             collisionPlane++;
                         }
 
                         DynamicEntity animable = new DynamicEntity(Client.scene.getGraph(), graphic,
-                                i_67_, BaseVarpDefinitionLoader.floorLevel * -1123616625, collisionPlane, worldX,
-                                SceneGraph.getAverageHeight(worldX, worldZ, BaseVarpDefinitionLoader.floorLevel
+                                i_67_, SceneGraph.floorLevel * -1123616625, collisionPlane, worldX,
+                                SceneGraph.getAverageHeight(worldX, worldZ, SceneGraph.floorLevel
                                         * -1123616625)
                                         - heightOffset, worldZ, localX, localX, localZ, localZ, i_68_, false, i_69_);
                         Client.cacheableDynamicEntities.put(localX << 16 | localZ, new CacheableDynamicEntity(animable));
@@ -286,7 +285,7 @@ public class HostNameIdentifier implements Runnable {
 
             if (Client.scene.method7675().method7536() || localX >= 0 && localZ >= 0
                     && localX < Client.scene.getMapWidth() && localZ < Client.scene.getMapLength()) {
-                FullScreenAdapter.method13393(-1123616625 * BaseVarpDefinitionLoader.floorLevel, localX, localZ, group,
+                FullScreenAdapter.method13393(-1123616625 * SceneGraph.floorLevel, localX, localZ, group,
                         -1, type, orientation);
             }
         } else if (update == ZoneProt.aClass358_3826) {
@@ -308,7 +307,7 @@ public class HostNameIdentifier implements Runnable {
             }
 
             if ((attributes & 0x1) == 1) {
-                SocketProvider.method13762(-1123616625 * BaseVarpDefinitionLoader.floorLevel, localX, localZ, group,
+                SocketProvider.method13762(-1123616625 * SceneGraph.floorLevel, localX, localZ, group,
                         i_89_, type, null);
             } else {
                 int[] is = null;
@@ -342,7 +341,7 @@ public class HostNameIdentifier implements Runnable {
                 }
 
                 SocketProvider
-                        .method13762(-1123616625 * BaseVarpDefinitionLoader.floorLevel, localX, localZ, group, i_89_,
+                        .method13762(-1123616625 * SceneGraph.floorLevel, localX, localZ, group, i_89_,
                                 type,
                                 new Class540(2098922587613350483L * SceneMod.aLong10071, is, is_92_, is_95_));
                 SceneMod.aLong10071 += 3866542625567148507L;
@@ -382,14 +381,14 @@ public class HostNameIdentifier implements Runnable {
                     initialDisplacement <<= 2;
 
                     Projectile projectile = new Projectile(Client.scene.getGraph(), graphic,
-                            BaseVarpDefinitionLoader.floorLevel * -1123616625, BaseVarpDefinitionLoader.floorLevel
+                            SceneGraph.floorLevel * -1123616625, SceneGraph.floorLevel
                             * -1123616625, localX, localZ, i_105_, delay + Client.engineCycle, longetivity
                             + Client.engineCycle, verticalPitch, initialDisplacement, 0, targetIndex, heightOffset_,
                             bool, -1, i_111_);
                     projectile.target(
                             targetX,
                             targetZ,
-                            SceneGraph.getAverageHeight(targetX, targetZ, BaseVarpDefinitionLoader.floorLevel
+                            SceneGraph.getAverageHeight(targetX, targetZ, SceneGraph.floorLevel
                                     * -1123616625)
                                     - heightOffset_, Client.engineCycle + delay);
                     Client.projectiles.pushBack(new CacheableProjectile(projectile));
@@ -407,7 +406,7 @@ public class HostNameIdentifier implements Runnable {
             int animation = buffer.readInt();
 
             if (Client.scene.method7675() != SceneFormat.aSceneFormat_5152) {
-                Client.animateObject(BaseVarpDefinitionLoader.floorLevel * -1123616625, x, z, group, type,
+                Client.animateObject(SceneGraph.floorLevel * -1123616625, x, z, group, type,
                         orientation, animation, i_112_);
             }
         } else if (ZoneProt.SPAWN_FIRED_PROJECTILE == update) {
@@ -473,7 +472,7 @@ public class HostNameIdentifier implements Runnable {
 
             if (Client.scene.method7675().method7536() || localX >= 0 && localZ >= 0
                     && localX < Client.scene.getMapWidth() && localZ < Client.scene.getMapLength()) {
-                FullScreenAdapter.method13393(BaseVarpDefinitionLoader.floorLevel * -1123616625, localX, localZ, group,
+                FullScreenAdapter.method13393(SceneGraph.floorLevel * -1123616625, localX, localZ, group,
                         i_146_, type, orientation);
             }
         } else {

@@ -31,7 +31,7 @@ public class Class148 {
         if (BefriendedPlayer.anInt576 * -1261726809 >= 100) {
             int i_11_ = 256 + ComponentKeyRecord.cameraViewX * -1733418496;
             int i_12_ = 256 + -1589428736 * Class51.cameraViewZ;
-            int i_13_ = SceneGraph.getAverageHeight(i_11_, i_12_, ProxyingVariableLoader.localPlane * 1611577177)
+            int i_13_ = SceneGraph.getAverageHeight(i_11_, i_12_, SceneGraph.localPlane * 1611577177)
                     - 1314358423 * Preference.cameraViewY;
             int i_14_ = i_11_ - Client.cameraX * 2006359481;
             int i_15_ = i_13_ - 1525233901 * Class268.cameraY;

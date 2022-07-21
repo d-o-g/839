@@ -22,13 +22,13 @@ public class Class606 {
     }
 
     public ItemPile method10247(short i) {
-        ItemDeque class480_sub3 = Client.groundItems.get(base.level * 394202151 << 28 | base.y * -180305283 << 14 | base.x * 2051316501);
+        ItemDeque class480_sub3 = Client.groundItems.get(base.level * 394202151 << 28 | base.z * -180305283 << 14 | base.x * 2051316501);
         if (class480_sub3 == null) {
             return null;
         }
         CoordGrid class553 = Client.scene.getBase();
         int x = 2051316501 * base.x - class553.x * 2051316501;
-        int y = base.y * -180305283 - -180305283 * class553.y;
+        int y = base.z * -180305283 - -180305283 * class553.z;
         if (x >= 0 && y >= 0 && x < Client.scene.getMapWidth() && y < Client.scene.getMapLength()
                 && Client.scene.getGraph() != null) {
             for (Item item = class480_sub3.items.head(); item != null; item = class480_sub3.items.next()) {

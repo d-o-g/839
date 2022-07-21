@@ -16,7 +16,7 @@ public final class EntityQueue<T extends CacheableEntity> {
 
     static final void method13531() {
         ObjectDefinition.method9291(Class60.activeToolkit);
-        if (Client.anInt10745 * -1388610979 != ProxyingVariableLoader.localPlane * 1611577177) {
+        if (Client.anInt10745 * -1388610979 != SceneGraph.localPlane * 1611577177) {
             Class591.method9995();
         }
     }

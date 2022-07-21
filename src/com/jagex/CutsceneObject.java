@@ -18,7 +18,7 @@ public class CutsceneObject {
         category = CompressionType.findIdentifiable(ObjectCategory.values(), buffer.readUByte());
     }
 
-    static void method3483(int i, int i_14_, Component component, ClippingMask class129, int i_15_, int i_16_, int i_17_) {
+    static void renderPlayersOnMinimap(int i, int i_14_, Component component, ClippingMask class129, int i_15_, int i_16_, int i_17_) {
         int count = -1784886003 * Class80.playerCount;
         int[] indices = Class80.playerIndices;
 

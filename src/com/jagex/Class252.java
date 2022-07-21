@@ -79,7 +79,7 @@ public class Class252 {
                             .method17347(
                                     Class215.anInt2196 * -55942707,
                                     SceneGraph.getAverageHeight((int) vector3f.x, (int) vector3f.z,
-                                            ProxyingVariableLoader.localPlane * 1611577177)
+                                            SceneGraph.localPlane * 1611577177)
                                             - -1160922663
                                             * Client.anInt10912, Class115.anInt1444 * -457862351, i_11_, i_12_,
                                     600 + 3 * (i_11_ >> 3) << 2, i_7_, 935030189);
@@ -95,7 +95,7 @@ public class Class252 {
                     NativeLibraryLoadException.method17347(
                             Class215.anInt2196 * -55942707,
                             SceneGraph.getAverageHeight(Client.anInt10706 * 1327138123, Client.anInt10707 * -2128941351,
-                                    ProxyingVariableLoader.localPlane * 1611577177) - -1160922663 * Client.anInt10912,
+                                    SceneGraph.localPlane * 1611577177) - -1160922663 * Client.anInt10912,
                             Class115.anInt1444 * -457862351, i_13_, i_14_, 600 + 3 * (i_13_ >> 3) << 2, i_7_,
                             -304872783);
                 } else if (4 == Client.mapState * 1212513917) {
@@ -160,10 +160,10 @@ public class Class252 {
                 CoordGrid class553 = Client.scene.getBase();
                 if (Class56.method1348()) {
                     Class50.camera.method4891(class268, Client.aClass405_10612, Client.aClass399_10752,
-                            class553.x * 2051316501 << 9, -180305283 * class553.y << 9, (byte) -33);
+                            class553.x * 2051316501 << 9, -180305283 * class553.z << 9, (byte) -33);
                 } else if (3 == Client.mapState * 1212513917) {
                     Client.camera.method4891(class268, Client.aClass405_10612, Client.aClass399_10752,
-                            2051316501 * class553.x << 9, -180305283 * class553.y << 9, (byte) -33);
+                            2051316501 * class553.x << 9, -180305283 * class553.z << 9, (byte) -33);
                 } else {
                     Client.aClass405_10612.method6742(-(Client.cameraX * 2006359481), -(Class268.cameraY * 1525233901),
                             -(Client.cameraZ * 1829446257));

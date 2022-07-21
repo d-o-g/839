@@ -125,7 +125,7 @@ public class Npc extends Mobile {
     public Vector4i method140() {
         CoordGrid class553 = Client.scene.getBase();
         return Vector4i.create(plane, (int) getCoordinateSpace().translation.x + -1992939008 * class553.x,
-                -(int) getCoordinateSpace().translation.y, (int) getCoordinateSpace().translation.z + -2121991680 * class553.y);
+                -(int) getCoordinateSpace().translation.y, (int) getCoordinateSpace().translation.z + -2121991680 * class553.z);
     }
 
     @Override

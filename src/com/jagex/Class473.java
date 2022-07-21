@@ -85,29 +85,29 @@ public class Class473 {
         highObjects = new LinkedList<>();
         TileFlags flags = Client.scene.method7775();
         CoordGrid class553 = Client.scene.getBase();
-        CoordGrid class553_0_ = new CoordGrid(ProxyingVariableLoader.localPlane * 1611577177, anIntArray6544[0], anIntArray6538[0]);
+        CoordGrid class553_0_ = new CoordGrid(SceneGraph.localPlane * 1611577177, anIntArray6544[0], anIntArray6538[0]);
 
         for (int i_1_ = 1; i_1_ < anInt6540 * -2039617599; i_1_++) {
-            CoordGrid class553_2_ = new CoordGrid(1611577177 * ProxyingVariableLoader.localPlane, anIntArray6544[i_1_],
+            CoordGrid class553_2_ = new CoordGrid(1611577177 * SceneGraph.localPlane, anIntArray6544[i_1_],
                     anIntArray6538[i_1_]);
 
             while (2051316501 * class553_0_.x != class553_2_.x * 2051316501
-                    || -180305283 * class553_0_.y != -180305283 * class553_2_.y) {
+                    || -180305283 * class553_0_.z != -180305283 * class553_2_.z) {
                 if (2051316501 * class553_0_.x < class553_2_.x * 2051316501) {
                     class553_0_.x += -1155670979;
                 } else if (class553_0_.x * 2051316501 > class553_2_.x * 2051316501) {
                     class553_0_.x -= -1155670979;
                 }
 
-                if (-180305283 * class553_0_.y < class553_2_.y * -180305283) {
-                    class553_0_.y += 2125481685;
-                } else if (class553_0_.y * -180305283 > class553_2_.y * -180305283) {
-                    class553_0_.y -= 2125481685;
+                if (-180305283 * class553_0_.z < class553_2_.z * -180305283) {
+                    class553_0_.z += 2125481685;
+                } else if (class553_0_.z * -180305283 > class553_2_.z * -180305283) {
+                    class553_0_.z -= 2125481685;
                 }
 
-                int plane = 1611577177 * ProxyingVariableLoader.localPlane;
+                int plane = 1611577177 * SceneGraph.localPlane;
                 int localX = 2051316501 * class553_0_.x - class553.x * 2051316501;
-                int localZ = -180305283 * class553_0_.y - -180305283 * class553.y;
+                int localZ = -180305283 * class553_0_.z - -180305283 * class553.z;
 
                 if (localX >= 0 && localX < 173827901 * sceneGraph.width && localZ >= 0
                         && localZ < 134933557 * sceneGraph.length) {
@@ -117,8 +117,8 @@ public class Class473 {
                         plane++;
                     }
 
-                    highObjects.add(new HighObject(sceneGraph, this, ProxyingVariableLoader.localPlane * 1611577177,
-                            plane, worldX, SceneGraph.getAverageHeight(worldX, worldZ, 1611577177 * ProxyingVariableLoader.localPlane),
+                    highObjects.add(new HighObject(sceneGraph, this, SceneGraph.localPlane * 1611577177,
+                            plane, worldX, SceneGraph.getAverageHeight(worldX, worldZ, 1611577177 * SceneGraph.localPlane),
                             worldZ));
                 }
             }

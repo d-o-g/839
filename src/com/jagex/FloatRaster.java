@@ -15,7 +15,7 @@ public class FloatRaster implements NativeAttachBuffer {
     public static void method1727(int plane, int localX, int localZ) {
         CoordGrid class553 = Client.scene.getBase();
         int x = class553.x * 2051316501 + localX;
-        int z = class553.y * -180305283 + localZ;
+        int z = class553.z * -180305283 + localZ;
 
         if (Client.scene.getGraph() != null
                 && Client.scene.method7675() != SceneFormat.aSceneFormat_5152 && localX >= 0 && localZ >= 0

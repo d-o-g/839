@@ -43,7 +43,7 @@ public class Class591 {
             Skill.method9560((byte) (764752929 * Client.anInt10730 - 4 & 0xff));
             Client.method13392(2);
         }
-        Client.anInt10745 = ProxyingVariableLoader.localPlane * 85047597;
+        Client.anInt10745 = SceneGraph.localPlane * 85047597;
     }
 
     static final void method9994(ScriptExecutionContext class613) {

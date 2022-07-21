@@ -62,7 +62,7 @@ public class Class474 {
     }
 
     static void method8101() {
-        Class75.aClass168_1125.clear();
+        HintArrow.aClass168_1125.clear();
     }
 
     public static void init(Applet applet, String os) {

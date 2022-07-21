@@ -42,7 +42,7 @@ public class Class51 {
             CoordGrid class553 = Client.scene.getBase();
             Client.cameraX = ((int) fs[0] - class553.x * -1992939008) * -224503671;
             Class268.cameraY = (int) fs[1] * 1128143643;
-            Client.cameraZ = -187933039 * ((int) fs[2] - -2121991680 * class553.y);
+            Client.cameraZ = -187933039 * ((int) fs[2] - -2121991680 * class553.z);
             float[] fs_13_ = new float[3];
             int i_14_ = 1103687902 * Client.anInt10724;
             for (int i_15_ = 0; i_15_ < 3; i_15_++) {
@@ -75,8 +75,8 @@ public class Class51 {
     static final void method1135() {
         Class255.method4748();
         Client.scene.method7698();
-        for (int i_0_ = 0; i_0_ < Client.aClass75Array10623.length; i_0_++) {
-            Client.aClass75Array10623[i_0_] = null;
+        for (int i_0_ = 0; i_0_ < Client.hintArrows.length; i_0_++) {
+            Client.hintArrows[i_0_] = null;
         }
         for (int i_1_ = 0; i_1_ < Client.aClass473Array10624.length; i_1_++) {
             Client.aClass473Array10624[i_1_] = null;

@@ -76,7 +76,7 @@ public class Player extends Mobile {
                 GlobalPlayer class680 = GlobalPlayer.globals[index] = new GlobalPlayer();
                 MovementType.values();
                 class680.position = 1866509803 * ((player.plane << 28)
-                        + (player.pathX[0] + class553.x * 2051316501 >> 6 << 14) + (-180305283 * class553.y
+                        + (player.pathX[0] + class553.x * 2051316501 >> 6 << 14) + (-180305283 * class553.z
                         + player.pathZ[0] >> 6));
 
                 if (-1 != player.nextDirection * 143575391) {
@@ -230,8 +230,8 @@ public class Player extends Mobile {
                 }
 
                 if (Client.localPlayerIndex * -406165969 == index
-                        && player.plane != 1611577177 * ProxyingVariableLoader.localPlane) {
-                    ProxyingVariableLoader.localPlane = player.plane * -751820567;
+                        && player.plane != 1611577177 * SceneGraph.localPlane) {
+                    SceneGraph.localPlane = player.plane * -751820567;
                 }
             } else {
                 int speed = buffer.readBits(3);
@@ -240,7 +240,7 @@ public class Player extends Mobile {
                 int dx = packed >> 14 & 0x3fff;
                 int dz = packed & 0x3fff;
                 int x = (player.pathX[0] + 2051316501 * class553.x + dx & 0x3fff) - 2051316501 * class553.x;
-                int z = (dz + class553.y * -180305283 + player.pathZ[0] & 0x3fff) - -180305283 * class553.y;
+                int z = (dz + class553.z * -180305283 + player.pathZ[0] & 0x3fff) - -180305283 * class553.z;
 
                 if (MovementType.aClass624_8029.anInt8027 * -1461930423 == speed) {
                     player.move(x, z);
@@ -255,7 +255,7 @@ public class Player extends Mobile {
                 }
 
                 if (index == -406165969 * Client.localPlayerIndex) {
-                    ProxyingVariableLoader.localPlane = -751820567 * player.plane;
+                    SceneGraph.localPlane = -751820567 * player.plane;
                 }
             }
         }
@@ -400,11 +400,11 @@ public class Player extends Mobile {
         CoordGrid class553 = Client.scene.getBase();
 
         player.pathX[0] = localX - 2051316501 * class553.x;
-        player.pathZ[0] = localZ - class553.y * -180305283;
+        player.pathZ[0] = localZ - class553.z * -180305283;
         player.setPosition((player.pathX[0] << 9) + (player.boundSize() << 8), player.method10180().translation.y,
                 (player.pathZ[0] << 9) + (player.boundSize() << 8));
 
-        ProxyingVariableLoader.localPlane = (player.plane = player.collisionPlane = localPlane) * -751820567;
+        SceneGraph.localPlane = (player.plane = player.collisionPlane = localPlane) * -751820567;
         if (Client.scene.method7775().isBridge(player.pathX[0], player.pathZ[0])) {
             player.collisionPlane++;
         }
@@ -802,7 +802,7 @@ public class Player extends Mobile {
     public Vector4i method140() {
         CoordGrid class553 = Client.scene.getBase();
         return Vector4i.create(plane, (int) getCoordinateSpace().translation.x + class553.x * -1992939008,
-                -(int) getCoordinateSpace().translation.y, (int) getCoordinateSpace().translation.z + class553.y * -2121991680);
+                -(int) getCoordinateSpace().translation.y, (int) getCoordinateSpace().translation.z + class553.z * -2121991680);
     }
 
     @Override
@@ -1231,40 +1231,39 @@ public class Player extends Mobile {
             }
         }
         if (this == Client.localPlayer) {
-            for (int i_11_ = Client.aClass75Array10623.length - 1; i_11_ >= 0; i_11_--) {
-                Class75 class75 = Client.aClass75Array10623[i_11_];
-                if (class75 != null && -1294861951 * class75.anInt1115 != -1) {
-                    if (1 == class75.anInt1123 * -335735335) {
-                        ObjectNode class480_sub25 = Client.npcTable.get(1326506857 * class75.anInt1117);
-                        if (null != class480_sub25) {
-                            Npc class600_sub1_sub3_sub1_sub2 = (Npc) class480_sub25.referent;
-                            Vector3f vector3f = Vector3f.difference(
-                                    class600_sub1_sub3_sub1_sub2.getCoordinateSpace().translation,
+            for (int i = Client.hintArrows.length - 1; i >= 0; i--) {
+                HintArrow hintArrow = Client.hintArrows[i];
+                if (hintArrow != null && -1294861951 * hintArrow.model != -1) {
+                    if (hintArrow.type * -335735335 == 1) {
+                        ObjectNode<Npc> node = Client.npcTable.get(hintArrow.targetIndex * 1326506857);
+                        if (node != null) {
+                            Npc npc = node.referent;
+                            Vector3f diff = Vector3f.difference(
+                                    npc.getCoordinateSpace().translation,
                                     Client.localPlayer.getCoordinateSpace().translation);
-                            int i_12_ = (int) vector3f.x;
-                            int i_13_ = (int) vector3f.z;
-                            method18242(toolkit, class405, cachedModels[0], i_12_, i_13_, -1294861951
-                                    * class75.anInt1115, 92160000L);
+                            int dx = (int) diff.x;
+                            int dz = (int) diff.z;
+                            method18242(toolkit, class405, cachedModels[0], dx, dz, hintArrow.model * -1294861951, 92160000L);
                         }
                     }
-                    if (class75.anInt1123 * -335735335 == 2) {
+                    if (hintArrow.type * -335735335 == 2) {
                         Vector3f vector3f = Client.localPlayer.getCoordinateSpace().translation;
-                        long l = class75.anInt1119 * 1671278425 - (int) vector3f.x;
-                        long l_14_ = class75.anInt1122 * -1900171419 - (int) vector3f.z;
-                        long l_15_ = -985121683 * class75.anInt1121 << 9;
+                        long l = hintArrow.x * 1671278425 - (int) vector3f.x;
+                        long l_14_ = hintArrow.z * -1900171419 - (int) vector3f.z;
+                        long l_15_ = hintArrow.anInt1121 * -985121683 << 9;
                         l_15_ *= l_15_;
                         method18242(toolkit, class405, cachedModels[0], l, l_14_, -1294861951
-                                * class75.anInt1115, l_15_);
+                                * hintArrow.model, l_15_);
                     }
-                    if (10 == -335735335 * class75.anInt1123 && class75.anInt1117 * 1326506857 >= 0
-                            && class75.anInt1117 * 1326506857 < Client.players.length) {
-                        Player player = Client.players[1326506857 * class75.anInt1117];
+                    if (10 == -335735335 * hintArrow.type && hintArrow.targetIndex * 1326506857 >= 0
+                            && hintArrow.targetIndex * 1326506857 < Client.players.length) {
+                        Player player = Client.players[1326506857 * hintArrow.targetIndex];
                         if (player != null) {
                             Vector3f difference = Vector3f.difference(player.getCoordinateSpace().translation,
                                     Client.localPlayer.getCoordinateSpace().translation);
                             int i_17_ = (int) difference.x;
                             int i_18_ = (int) difference.z;
-                            method18242(toolkit, class405, cachedModels[0], i_17_, i_18_, class75.anInt1115
+                            method18242(toolkit, class405, cachedModels[0], i_17_, i_18_, hintArrow.model
                                     * -1294861951, 92160000L);
                         }
                     }

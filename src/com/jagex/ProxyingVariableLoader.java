@@ -7,7 +7,6 @@ import java.util.Map;
 
 final class ProxyingVariableLoader implements VariableLoader {
     public static Class678_Sub6 aClass678_Sub6_3003;
-    public static int localPlane;
     public static Map<VarpType, DefinitionLoader<Varp>> parameters;
 
     public static int method5080() {

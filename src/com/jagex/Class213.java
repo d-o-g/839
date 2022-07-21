@@ -21,7 +21,7 @@ public class Class213 {
     }
 
     static void method4020() {
-        Class75.aClass168_1125.clearSoft();
+        HintArrow.aClass168_1125.clearSoft();
     }
 
 }

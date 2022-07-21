@@ -13,7 +13,7 @@ public class Class545 {
         }
     }
 
-    static void method9301(Toolkit toolkit, int i, int i_5_, Component component, ClippingMask clipping, int i_6_, int i_7_) {
+    static void renderNpcsOnMinimap(Toolkit toolkit, int i, int i_5_, Component component, ClippingMask clipping, int i_6_, int i_7_) {
         for (int index = 0; index < 1746328619 * Client.npcCount; index++) {
             ObjectNode<Npc> linkable = Client.npcTable.get(Client.npcIndices[index]);
             if (null != linkable) {

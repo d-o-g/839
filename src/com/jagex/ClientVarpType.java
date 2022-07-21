@@ -157,7 +157,7 @@ final class ClientVarpType extends VarpType {
                 TurnMobCutsceneAction.aClass186_9434.method3590(50, 7340032);
             }
 
-            Class75.method1615(is);
+            HintArrow.method1615(is);
             Class536.setConnectionState(19);
         }
         if (Class262.aClass262_2926 == Class262.aClass262_2650 && LibraryLoader.natives == null) {

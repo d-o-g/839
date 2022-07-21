@@ -250,7 +250,7 @@ public class Class56 {
                     int i_42_ = class488.anIntArray6670[i_41_];
                     if (Client.localPlayer.plane == i_42_ >> 28) {
                         int i_43_ = (i_42_ >> 14 & 0x3fff) - 2051316501 * class553.x;
-                        int i_44_ = (i_42_ & 0x3fff) - -180305283 * class553.y;
+                        int i_44_ = (i_42_ & 0x3fff) - -180305283 * class553.z;
                         if (i_43_ >= 0 && i_43_ < i_5_ && i_44_ >= 0 && i_44_ < i_6_) {
                             Class63.aClass644_948.pushBack(new IntegerNode(i_41_));
                         } else {

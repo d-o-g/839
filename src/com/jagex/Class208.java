@@ -9,13 +9,20 @@ public final class Class208 {
     }
 
     static final void method3994(int i, int i_1_, int i_2_, int i_3_, int i_4_, int i_5_) {
-        Class75[] class75s = Client.aClass75Array10623;
-        for (Class75 class75 : class75s) {
-            if (null != class75 && 2 == -335735335 * class75.anInt1123) {
-                Class42.method1043(407489623 * class75.anInt1118, 1671278425 * class75.anInt1119, class75.anInt1122
-                        * -1900171419, 0, class75.anInt1124 * -768979482, false, false);
+        HintArrow[] hintArrows = Client.hintArrows;
+        for (HintArrow hintArrow : hintArrows) {
+            if (hintArrow != null && hintArrow.type * -335735335 == 2) {
+                Class42.method1043(
+                        hintArrow.level * 407489623,
+                        hintArrow.x * 1671278425,
+                        hintArrow.z * -1900171419,
+                        0,
+                        hintArrow.heightOffset * -768979482,
+                        false,
+                        false
+                );
                 if (Client.aFloatArray10736[0] > -1.0F && Client.engineCycle % 20 < 10) {
-                    Sprite class116 = Sprite.headicons[-1698639133 * class75.anInt1116];
+                    Sprite class116 = Sprite.headicons[-1698639133 * hintArrow.id];
                     int i_8_ = (int) (Client.aFloatArray10736[0] + i - 12.0F);
                     int i_9_ = (int) (i_1_ + Client.aFloatArray10736[1] - 28.0F);
                     class116.method2079(i_8_, i_9_);

@@ -197,7 +197,7 @@ public class PreferenceManager extends Node {
 
     static void method6962(int i) {
         UnderlayDefinitionLoader.anInt10585 = -1617722877 * i;
-        Class75.aClass168_1125.clear();
+        HintArrow.aClass168_1125.clear();
     }
 
     public Buffer encode() {

@@ -93,7 +93,7 @@ public class Class22 implements Identifiable {
         class281_sub3.method15304(vector4i);
         CoordGrid class553 = Client.scene.getBase();
         int i_11_ = 2051316501 * class553.x << 9;
-        int i_12_ = class553.y * -180305283 << 9;
+        int i_12_ = class553.z * -180305283 << 9;
         Class50.camera.method4804(0.02F, Client.scene.method7696().tileHeights,
                 Client.scene.method7775(), i_11_, i_12_);
     }

@@ -29,7 +29,7 @@ public class GraphicsCard {
     static void method2248(boolean bool) {
         CoordGrid class553 = Client.localPlayer.method17970();
         Class480_Sub31_Sub18 class480_sub31_sub18 = Class495.method8552(class553.x * 2051316501, -180305283
-                * class553.y);
+                * class553.z);
         if (null == class480_sub31_sub18) {
             class480_sub31_sub18 = Class495.method8553(Class495.aClass560_6827.anInt7534 * -1885442045);
         }

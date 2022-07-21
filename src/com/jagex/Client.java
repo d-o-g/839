@@ -76,9 +76,9 @@ public final class Client extends Engine {
     public static ObjectNode<Npc>[] npcs;
     public static Class588 aClass588_10855;
     public static Deque<ScriptContext> scriptEvents;
-    public static EntityList aClass649_10779;
+    public static EntityList<Class477_Sub6> aClass649_10779;
     public static HashTable<InterfaceNode> openInterfaces;
-    public static Class75[] aClass75Array10623;
+    public static HintArrow[] hintArrows;
     public static Color[] aColorArray10633;
     public static Color[] aColorArray10641;
     public static Color[] aColorArray10845;
@@ -386,7 +386,7 @@ public final class Client extends Engine {
         aClass405_10715 = new Matrix4x3();
         aBool10616 = true;
         sentPreferences = true;
-        aClass75Array10623 = new Class75[11];
+        hintArrows = new HintArrow[11];
         aClass473Array10624 = new Class473[10];
         aBool10687 = true;
         clientKey = (long) (Math.random() * 9.999999999E9) * 5346905513342728825L;
@@ -464,7 +464,7 @@ public final class Client extends Engine {
         groundItems = new HashTable<>(64);
         projectiles = new Deque<>();
         cacheableDynamicEntities = new HashTable<>(16);
-        aClass649_10779 = new EntityList();
+        aClass649_10779 = new EntityList<>();
         anInt10781 = -897408463;
         anInt10782 = -2101032765;
         anInt10783 = 856791521;
@@ -1631,13 +1631,13 @@ public final class Client extends Engine {
     static final void method13191(int i) {
         int i_5_ = 256 + 537294336 * Class282.anInt3162;
         int i_6_ = 256 + VoiceOverVolumeNormaliser.anInt1993 * 599131648;
-        int i_7_ = SceneGraph.getAverageHeight(i_5_, i_6_, 1611577177 * ProxyingVariableLoader.localPlane) - 1611257481
+        int i_7_ = SceneGraph.getAverageHeight(i_5_, i_6_, 1611577177 * SceneGraph.localPlane) - 1611257481
                 * Class166_Sub6.anInt9539;
         if (MobShadowsPreference.anInt10475 * 1972295663 >= 100) {
             Client.cameraX = -1638364928 + Class282.anInt3162 * 805643776;
             cameraZ = -666016256 * VoiceOverVolumeNormaliser.anInt1993 + -866217728;
             Class268.cameraY = (SceneGraph.getAverageHeight(2006359481 * Client.cameraX, 1829446257 * cameraZ,
-                    ProxyingVariableLoader.localPlane * 1611577177) - Class166_Sub6.anInt9539 * 1611257481)
+                    SceneGraph.localPlane * 1611577177) - Class166_Sub6.anInt9539 * 1611257481)
                     * -1128143643;
         } else {
             if (2006359481 * Client.cameraX < i_5_) {
@@ -1691,7 +1691,7 @@ public final class Client extends Engine {
         }
         i_5_ = ComponentKeyRecord.cameraViewX * -1733418496 + 256;
         i_6_ = 256 + -1589428736 * Class51.cameraViewZ;
-        i_7_ = SceneGraph.getAverageHeight(i_5_, i_6_, 1611577177 * ProxyingVariableLoader.localPlane)
+        i_7_ = SceneGraph.getAverageHeight(i_5_, i_6_, 1611577177 * SceneGraph.localPlane)
                 - Preference.cameraViewY * 1314358423;
         int i_8_ = i_5_ - Client.cameraX * 2006359481;
         int i_9_ = i_7_ - 1525233901 * Class268.cameraY;
@@ -1951,21 +1951,20 @@ public final class Client extends Engine {
                 }
             }
         }
-        for (Class75 class75 : aClass75Array10623) {
-            if (class75 != null) {
-                if (1 == -335735335 * class75.anInt1123) {
-                    ObjectNode class480_sub25 = npcTable.get(class75.anInt1117 * 1326506857);
-                    if (null != class480_sub25) {
-                        Npc class600_sub1_sub3_sub1_sub2 = (Npc) class480_sub25.referent;
-                        if (-2109116613 * class600_sub1_sub3_sub1_sub2.drawPriority >= 0) {
-                            class600_sub1_sub3_sub1_sub2.drawPriority += -1936746496;
+        for (HintArrow hintArrow : hintArrows) {
+            if (hintArrow != null) {
+                if (hintArrow.type * -335735335 == 1) {
+                    ObjectNode<Npc> class480_sub25 = npcTable.get(hintArrow.targetIndex * 1326506857);
+                    if (class480_sub25 != null) {
+                        Npc npc = class480_sub25.referent;
+                        if (npc.drawPriority * -2109116613 >= 0) {
+                            npc.drawPriority += -1936746496;
                         }
                     }
-                } else if (-335735335 * class75.anInt1123 == 10) {
-                    Player class600_sub1_sub3_sub1_sub1 = players[class75.anInt1117 * 1326506857];
-                    if (null != class600_sub1_sub3_sub1_sub1 && Client.localPlayer != class600_sub1_sub3_sub1_sub1
-                            && class600_sub1_sub3_sub1_sub1.drawPriority * -2109116613 >= 0) {
-                        class600_sub1_sub3_sub1_sub1.drawPriority += -1936746496;
+                } else if (hintArrow.type * -335735335 == 10) {
+                    Player player = players[hintArrow.targetIndex * 1326506857];
+                    if (player != null && Client.localPlayer != player && player.drawPriority * -2109116613 >= 0) {
+                        player.drawPriority += -1936746496;
                     }
                 }
             }
@@ -3204,7 +3203,7 @@ public final class Client extends Engine {
                     .append(null != connection.thirdLastFrame ? connection.thirdLastFrame.opcode * -1401090315 : -1)
                     .append(" ").append(connection.currentFrameSize * -842560185).append(Class60.COMMA)
                     .append(localPlayer.pathX[0] + class553.x * 2051316501).append(Class60.COMMA)
-                    .append(localPlayer.pathZ[0] + class553.y * -180305283).append(" ").toString();
+                    .append(localPlayer.pathZ[0] + class553.z * -180305283).append(" ").toString();
             for (int index = 0; index < connection.currentFrameSize * -842560185 && index < 50; index++) {
                 error = new StringBuilder().append(error).append(connection.buffer.payload[index])
                         .append(Class60.COMMA).toString();
@@ -3429,14 +3428,14 @@ public final class Client extends Engine {
                                 + new CoordGrid(localPlayer.plane, (int) pos.x >> 9, (int) pos.z >> 9)
                                 + " Height: "
                                 + SceneGraph.getAverageHeight((int) pos.x - (base.x * 2051316501 << 9),
-                                (int) pos.z - (base.y * -180305283 << 9), localPlayer.plane)
+                                (int) pos.z - (base.z * -180305283 << 9), localPlayer.plane)
                                 + (int) pos.y);
 
                         printToConsole("Look: "
                                 + new CoordGrid(localPlayer.plane, (int) view.x >> 9, (int) view.z >> 9)
                                 + " Height: "
                                 + SceneGraph.getAverageHeight((int) view.x - (base.x * 2051316501 << 9),
-                                (int) pos.z - (base.y * -180305283 << 9), localPlayer.plane)
+                                (int) pos.z - (base.z * -180305283 << 9), localPlayer.plane)
                                 + (int) pos.y);
                     } else {
                         printToConsole("Pos: "
@@ -3444,12 +3443,12 @@ public final class Client extends Engine {
                                 + ","
                                 + (base.x * 2051316501 + (2006359481 * cameraX >> 9) >> 6)
                                 + ","
-                                + (base.y * -180305283 + (1829446257 * cameraZ >> 9) >> 6)
+                                + (base.z * -180305283 + (1829446257 * cameraZ >> 9) >> 6)
                                 + ","
                                 + (2051316501 * base.x + (2006359481 * cameraX >> 9) & 0x3f)
                                 + ","
                                 + (cameraZ * 1829446257 >> 9)
-                                + (-180305283 * base.y & 0x3f)
+                                + (-180305283 * base.z & 0x3f)
                                 + " Height: "
                                 + (SceneGraph.getAverageHeight(2006359481 * cameraX, cameraZ * 1829446257,
                                 localPlayer.plane) - 1525233901 * Class268.cameraY));
@@ -3459,11 +3458,11 @@ public final class Client extends Engine {
                                 .append(",")
                                 .append(2051316501 * base.x + ComponentKeyRecord.cameraViewX * 189552401 >> 6)
                                 .append(",")
-                                .append(-355425889 * Class51.cameraViewZ + -180305283 * base.y >> 6)
+                                .append(-355425889 * Class51.cameraViewZ + -180305283 * base.z >> 6)
                                 .append(",")
                                 .append(ComponentKeyRecord.cameraViewX * 189552401 + base.x * 2051316501 & 0x3f)
                                 .append(",")
-                                .append(-180305283 * base.y + Class51.cameraViewZ * -355425889 & 0x3f)
+                                .append(-180305283 * base.z + Class51.cameraViewZ * -355425889 & 0x3f)
                                 .append(" Height: ")
                                 .append(SceneGraph.getAverageHeight(ComponentKeyRecord.cameraViewX * 189552401,
                                         Class51.cameraViewZ * -355425889, localPlayer.plane)
@@ -4328,17 +4327,17 @@ public final class Client extends Engine {
         try {
             CoordGrid class553 = scene.getBase();
             string = new StringBuilder().append(string).append(class553.x * 2051316501).append(Class60.COMMA)
-                    .append(class553.y * -180305283).append(Class60.COMMA).append(scene.getMapWidth())
+                    .append(class553.z * -180305283).append(Class60.COMMA).append(scene.getMapWidth())
                     .append(Class60.COMMA).append(scene.getMapLength()).append(" ").toString();
             if (Client.localPlayer != null) {
-                string = new StringBuilder().append(string).append(1611577177 * ProxyingVariableLoader.localPlane)
+                string = new StringBuilder().append(string).append(1611577177 * SceneGraph.localPlane)
                         .append(Class60.COMMA).append(2051316501 * class553.x + Client.localPlayer.pathX[0])
-                        .append(Class60.COMMA).append(-180305283 * class553.y + Client.localPlayer.pathZ[0])
+                        .append(Class60.COMMA).append(-180305283 * class553.z + Client.localPlayer.pathZ[0])
                         .append(" ").toString();
             } else {
-                string = new StringBuilder().append(string).append(ProxyingVariableLoader.localPlane * 1611577177)
-                        .append(Class60.COMMA).append(1611577177 * ProxyingVariableLoader.localPlane)
-                        .append(Class60.COMMA).append(1611577177 * ProxyingVariableLoader.localPlane)
+                string = new StringBuilder().append(string).append(SceneGraph.localPlane * 1611577177)
+                        .append(Class60.COMMA).append(1611577177 * SceneGraph.localPlane)
+                        .append(Class60.COMMA).append(1611577177 * SceneGraph.localPlane)
                         .append(Class60.COMMA).append(" ").toString();
             }
             string = new StringBuilder().append(string).append(Class199.preferences.currentToolkit.getValue())

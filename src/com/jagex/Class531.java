@@ -361,7 +361,7 @@ public class Class531 implements Encodeable {
                         }
                         if (elem.node instanceof ItemPile) {
                             int x = class553.x * 2051316501 + i_32_;
-                            int z = class553.y * -180305283 + i_33_;
+                            int z = class553.z * -180305283 + i_33_;
                             ItemDeque deque = Client.groundItems.get(elem.node.plane << 28 | z << 14 | x);
                             if (deque != null) {
                                 int i_61_ = 0;

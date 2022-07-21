@@ -19,38 +19,38 @@ public class Orientation {
         }
     }
 
-    static void method815(int i, int i_16_, Component class226, Class211 class211, int i_17_, int i_18_, int i_19_) {
-        Class75[] class75s = Client.aClass75Array10623;
-        for (Class75 class75 : class75s) {
-            if (null != class75 && -335735335 * class75.anInt1123 != 0 && Client.engineCycle % 20 < 10) {
-                if (1 == -335735335 * class75.anInt1123) {
-                    ObjectNode class480_sub25 = Client.npcTable.get(1326506857 * class75.anInt1117);
+    static void renderHintArrowsOnMinimap(int i, int i_16_, Component class226, Class211 class211, int i_17_, int i_18_, int i_19_) {
+        HintArrow[] hintArrows = Client.hintArrows;
+        for (HintArrow hintArrow : hintArrows) {
+            if (null != hintArrow && -335735335 * hintArrow.type != 0 && Client.engineCycle % 20 < 10) {
+                if (1 == -335735335 * hintArrow.type) {
+                    ObjectNode class480_sub25 = Client.npcTable.get(1326506857 * hintArrow.targetIndex);
                     if (null != class480_sub25) {
                         Npc class600_sub1_sub3_sub1_sub2 = (Npc) class480_sub25.referent;
                         Vector3f vector3f = class600_sub1_sub3_sub1_sub2.getCoordinateSpace().translation;
                         int i_21_ = (int) vector3f.x / 128 - i / 128;
                         int i_22_ = (int) vector3f.z / 128 - i_16_ / 128;
                         StaticGameObject.method18054(class226, class211, i_17_, i_18_, i_21_, i_22_, -1698639133
-                                * class75.anInt1116, 360000L);
+                                * hintArrow.id, 360000L);
                     }
                 }
-                if (-335735335 * class75.anInt1123 == 2) {
-                    int i_23_ = class75.anInt1119 * 1671278425 / 128 - i / 128;
-                    int i_24_ = class75.anInt1122 * -1900171419 / 128 - i_16_ / 128;
-                    long l = class75.anInt1121 * -985121683 << 7;
+                if (-335735335 * hintArrow.type == 2) {
+                    int i_23_ = hintArrow.x * 1671278425 / 128 - i / 128;
+                    int i_24_ = hintArrow.z * -1900171419 / 128 - i_16_ / 128;
+                    long l = hintArrow.anInt1121 * -985121683 << 7;
                     l *= l;
-                    StaticGameObject.method18054(class226, class211, i_17_, i_18_, i_23_, i_24_, class75.anInt1116
+                    StaticGameObject.method18054(class226, class211, i_17_, i_18_, i_23_, i_24_, hintArrow.id
                             * -1698639133, l);
                 }
-                if (-335735335 * class75.anInt1123 == 10 && class75.anInt1117 * 1326506857 >= 0
-                        && 1326506857 * class75.anInt1117 < Client.players.length) {
-                    Player class600_sub1_sub3_sub1_sub1 = Client.players[1326506857 * class75.anInt1117];
+                if (-335735335 * hintArrow.type == 10 && hintArrow.targetIndex * 1326506857 >= 0
+                        && 1326506857 * hintArrow.targetIndex < Client.players.length) {
+                    Player class600_sub1_sub3_sub1_sub1 = Client.players[1326506857 * hintArrow.targetIndex];
                     if (null != class600_sub1_sub3_sub1_sub1) {
                         Vector3f vector3f = class600_sub1_sub3_sub1_sub1.getCoordinateSpace().translation;
                         int i_25_ = (int) vector3f.x / 128 - i / 128;
                         int i_26_ = (int) vector3f.z / 128 - i_16_ / 128;
                         StaticGameObject.method18054(class226, class211, i_17_, i_18_, i_25_, i_26_, -1698639133
-                                * class75.anInt1116, 360000L);
+                                * hintArrow.id, 360000L);
                     }
                 }
             }
