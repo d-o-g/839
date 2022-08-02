@@ -217,14 +217,14 @@ public class StaticBoundary extends Boundary implements SceneObject {
     }
 
     @Override
-    LoadedEntity method16271(Toolkit toolkit) {
+    MouseOverEntity method16271(Toolkit toolkit) {
         Model class143 = config.method8201(toolkit, 2048, false, true);
         if (null == class143) {
             return null;
         }
         Matrix4x3 class405 = updateAndGetMatrix();
         CoordinateSpace coordinateSpace = getCoordinateSpace();
-        LoadedEntity class506 = LoadedEntity.method570(aBool11617);
+        MouseOverEntity class506 = MouseOverEntity.method570(aBool11617);
         int i_0_ = (int) coordinateSpace.translation.x >> 9;
         int i_1_ = (int) coordinateSpace.translation.z >> 9;
         config.method8184(toolkit, class143, class405, i_0_, i_0_, i_1_, i_1_, true);

@@ -227,12 +227,12 @@ public class DynamicBoundary extends Boundary implements SceneObject {
     }
 
     @Override
-    LoadedEntity method16271(Toolkit toolkit) {
+    MouseOverEntity method16271(Toolkit toolkit) {
         if (model == null) {
             return null;
         }
         Matrix4x3 class405 = updateAndGetMatrix();
-        LoadedEntity class506 = LoadedEntity.method570(aBool11601);
+        MouseOverEntity class506 = MouseOverEntity.method570(aBool11601);
         Class379 class379 = definitionLoader.get(-1956476677 * id).aClass379_7439;
         if (class379 != null) {
             model.method2917(class405, null, 0);

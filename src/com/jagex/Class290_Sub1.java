@@ -45,11 +45,11 @@ public class Class290_Sub1 extends Class290 {
                 }
             }
 
-            for (MobileSpotAnimation element : mobile.graphics) {
-                if (-1 != -2008549027 * element.graphic && element.animator.method13515()) {
-                    GraphicDefinition graphic = GraphicDefinition.loader.get(-2008549027 * element.graphic);
-                    if (graphic.aBool7986 && 2053507375 * graphic.animation != -1) {
-                        Animation animation = Animation.loader.get(graphic.animation * 2053507375);
+            for (MobileEffect effect : mobile.effects) {
+                if (-1 != -2008549027 * effect.id && effect.animator.method13515()) {
+                    EffectDefinition definition = EffectDefinition.loader.get(-2008549027 * effect.id);
+                    if (definition.aBool7986 && 2053507375 * definition.animation != -1) {
+                        Animation animation = Animation.loader.get(definition.animation * 2053507375);
                         if (135669775 * mobile.anInt11550 > 0 && 0 == animation.animatingPrecedence * -999236133) {
                             mobile.anInt11513 += 1724688355;
                             Class279.anInt3145 = -717862617 * MovementType.aClass624_8025.id;

@@ -74,7 +74,7 @@ public class Class54 {
                         Script.execute(class480_sub35);
                     }
                     if (null != Client.aClass226_10805 && Client.method17024(Client.aClass226_10801) != null) {
-                        GraphicDefinition.method10406(Client.aClass226_10801, Client.aClass226_10805);
+                        EffectDefinition.method10406(Client.aClass226_10801, Client.aClass226_10805);
                     }
                 } else if ((1 == Client.anInt10780 * -1088062211 || Class436.method7269())
                         && Class56.menuOptionCount * 84366055 > 2) {

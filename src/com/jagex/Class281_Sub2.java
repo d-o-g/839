@@ -36,9 +36,8 @@ public class Class281_Sub2 extends Class281 {
     }
 
     public void method15238() {
-        if (null != character) {
-            character = camera.method4835().get(character.getType(),
-                    character.getIndex());
+        if (character != null) {
+            character = camera.getCharacterProvider().get(character.getType(), character.getIndex());
         }
     }
 
@@ -129,7 +128,7 @@ public class Class281_Sub2 extends Class281 {
         aQuaternion_9749.decode(buffer);
         aBool9751 = buffer.readUByte() == 1;
         anInt9750 = buffer.readUShort() * -301155933;
-        character = camera.method4835().get(class260, i_19_);
+        character = camera.getCharacterProvider().get(class260, i_19_);
     }
 
     Quaternion method15240(int i) {

@@ -1024,7 +1024,7 @@ public class Scene {
 
         Class36.method993();
         Class679.method696();
-        Client.cacheableDynamicEntities.clear();
+        Client.effects.clear();
         Client.projectiles.clear();
         Client.aClass649_10779.clear();
         Class530.method9021();

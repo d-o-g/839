@@ -18,11 +18,11 @@ class Class449 implements Interface37 {
             class650_sub2.method13463();
         }
 
-        for (int i_0_ = 0; i_0_ < mobile.graphics.length; i_0_++) {
-            if (-1 != -2008549027 * mobile.graphics[i_0_].graphic) {
-                Animator animator = mobile.graphics[i_0_].animator;
+        for (int i_0_ = 0; i_0_ < mobile.effects.length; i_0_++) {
+            if (-1 != -2008549027 * mobile.effects[i_0_].id) {
+                Animator animator = mobile.effects[i_0_].animator;
                 if (animator.method13515()) {
-                    GraphicDefinition graphic = GraphicDefinition.loader.get(mobile.graphics[i_0_].graphic
+                    EffectDefinition graphic = EffectDefinition.loader.get(mobile.effects[i_0_].id
                             * -2008549027);
                     Animation animation = animator.getAnimation();
                     if (graphic.aBool7986) {
@@ -30,7 +30,7 @@ class Class449 implements Interface37 {
                             if (135669775 * mobile.anInt11550 > 0 && mobile.anInt11560 * -589638007 <= Client.engineCycle
                                     && mobile.anInt11522 * -1506188915 < Client.engineCycle) {
                                 animator.update(-1);
-                                mobile.graphics[i_0_].graphic = 738188555;
+                                mobile.effects[i_0_].id = 738188555;
                                 continue;
                             }
                         } else if (animation.animatingPrecedence * -999236133 == 1 && 135669775 * mobile.anInt11550 > 0
@@ -42,7 +42,7 @@ class Class449 implements Interface37 {
                 }
                 if (animator.method13465(1) && animator.method13461()) {
                     animator.update(-1);
-                    mobile.graphics[i_0_].graphic = 738188555;
+                    mobile.effects[i_0_].id = 738188555;
                 }
             }
         }

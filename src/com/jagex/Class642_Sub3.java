@@ -72,7 +72,7 @@ public class Class642_Sub3 extends Class642 {
     public void method13244(Buffer buffer, int i) {
         CharacterType class260 = CharacterType.valueOf(buffer.readUByte());
         int i_2_ = buffer.readUShort();
-        character = aClass261_8163.method4835().get(class260, i_2_);
+        character = aClass261_8163.getCharacterProvider().get(class260, i_2_);
         aVector3f_10555.decode(buffer);
         aBool10556 = buffer.readUByte() == 1;
     }
@@ -90,7 +90,7 @@ public class Class642_Sub3 extends Class642 {
 
     public void method16723() {
         if (character != null) {
-            character = aClass261_8163.method4835().get(character.getType(),
+            character = aClass261_8163.getCharacterProvider().get(character.getType(),
                     character.getIndex());
         }
     }

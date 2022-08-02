@@ -4296,9 +4296,9 @@ public class ScriptExecutionContext {
         Client.lobbyConnection.sendFrame(class480_sub15);
     }
 
-    static final void method10160(ScriptExecutionContext class613) {
+    static final void sendFriendsChatMessage(ScriptExecutionContext class613) {
         String string = (String) class613.anObjectArray7918[(class613.anInt7929 -= -1356601931) * 211787933];
-        CalendarUtils.method524(string);
+        CalendarUtils.sendFriendsChatMessage(string);
     }
 
     static void method8725(ScriptExecutionContext class613) {

@@ -251,9 +251,9 @@ public class HostNameIdentifier implements Runnable {
                 if (localX >= 0 && localZ >= 0 && localX < Client.scene.getMapWidth()
                         && localZ < Client.scene.getMapLength()) {
                     if (graphic == -1) {
-                        CacheableDynamicEntity cached = Client.cacheableDynamicEntities.get(localX << 16 | localZ);
+                        CacheableEffect cached = Client.effects.get(localX << 16 | localZ);
                         if (cached != null) {
-                            cached.animated.method18224();
+                            cached.object.method18224();
                             cached.unlink();
                         }
                     } else {
@@ -265,12 +265,12 @@ public class HostNameIdentifier implements Runnable {
                             collisionPlane++;
                         }
 
-                        DynamicEntity animable = new DynamicEntity(Client.scene.getGraph(), graphic,
+                        Effect animable = new Effect(Client.scene.getGraph(), graphic,
                                 i_67_, SceneGraph.floorLevel * -1123616625, collisionPlane, worldX,
                                 SceneGraph.getAverageHeight(worldX, worldZ, SceneGraph.floorLevel
                                         * -1123616625)
                                         - heightOffset, worldZ, localX, localX, localZ, localZ, i_68_, false, i_69_);
-                        Client.cacheableDynamicEntities.put(localX << 16 | localZ, new CacheableDynamicEntity(animable));
+                        Client.effects.put(localX << 16 | localZ, new CacheableEffect(animable));
                     }
                 }
             }

@@ -1,6 +1,6 @@
 package com.jagex;
 
-public class GraphicDefinitionLoader extends CachedDefinitionLoader<GraphicDefinition> {
+public class GraphicDefinitionLoader extends CachedDefinitionLoader<EffectDefinition> {
 
     public GraphicDefinitionLoader(GameContext context, Language language, Archive spotAnimations, Archive models) {
         super(context, language, spotAnimations, Js5ConfigGroup.GRAPHICS, 64, new GraphicDefinitionProvider(models));

@@ -30,7 +30,7 @@ public class OutgoingFrameMeta {
     public static OutgoingFrameMeta aClass366_3947;
     public static OutgoingFrameMeta aClass366_3948;
     public static OutgoingFrameMeta aClass366_3949;
-    public static OutgoingFrameMeta aClass366_3950;
+    public static OutgoingFrameMeta SEND_FRIENDSCHAT_MESSAGE;
     public static OutgoingFrameMeta aClass366_3951;
     public static OutgoingFrameMeta aClass366_3952;
     public static OutgoingFrameMeta aClass366_3953;
@@ -173,7 +173,7 @@ public class OutgoingFrameMeta {
         aClass366_3968 = new OutgoingFrameMeta(47, -1);
         aClass366_3969 = new OutgoingFrameMeta(48, -2);
         aClass366_3970 = new OutgoingFrameMeta(49, 15);
-        aClass366_3950 = new OutgoingFrameMeta(50, -1);
+        SEND_FRIENDSCHAT_MESSAGE = new OutgoingFrameMeta(50, -1);
         aClass366_3972 = new OutgoingFrameMeta(51, 3);
         aClass366_3973 = new OutgoingFrameMeta(52, -1);
         aClass366_3974 = new OutgoingFrameMeta(53, 3);

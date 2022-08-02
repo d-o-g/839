@@ -214,13 +214,13 @@ public class Class531 implements Encodeable {
                         }
                     }
                 }
-                LoadedEntityContainer container = Client.scene.getGraph().aClass497_6711;
+                MouseOverEntities container = Client.scene.getGraph().aClass497_6711;
                 int i_29_ = i;
                 int i_30_ = i_10_;
                 List list = container.elements;
                 Iterator iterator = list.iterator();
                 while (iterator.hasNext()) {
-                    LoadedEntity elem = (LoadedEntity) iterator.next();
+                    MouseOverEntity elem = (MouseOverEntity) iterator.next();
                     if ((Client.aBool10687 || elem.node.plane == Client.localPlayer.plane)
                             && elem.isUnderPoint(class134, i_29_, i_30_)) {
                         int i_32_;

@@ -30,12 +30,12 @@ public class ArchiveResourceProvider extends ResourceProvider {
     private final CacheResourceWorker cacheWorker;
     private Deque<Node> extras;
     private final ParallelHttpProvider parallelProvider;
-    private final PaddedResourceWorker serialProvider;
+    private final PaddedResourceWorker<Connection> serialProvider;
     private ResourceRequest tableRequest;
     private final Deque<Node> mandatory = new Deque<>();
     private final HashTable<ResourceRequest> waiting = new HashTable<>(16);
 
-    ArchiveResourceProvider(int type, ResourceCache archives, ResourceCache meta, PaddedResourceWorker net,
+    ArchiveResourceProvider(int type, ResourceCache archives, ResourceCache meta, PaddedResourceWorker<Connection> net,
                             ParallelHttpProvider provider, CacheResourceWorker cache, int tableChecksum, byte[] tableHash,
                             int tableVersion, boolean clearIdle) {
         this.type = -1226497139 * type;

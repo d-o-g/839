@@ -237,13 +237,13 @@ public class DynamicGameObject extends SceneEntity implements SceneObject {
     }
 
     @Override
-    LoadedEntity method16271(Toolkit toolkit) {
+    MouseOverEntity method16271(Toolkit toolkit) {
         if (null == model) {
             return null;
         }
 
         Matrix4x3 class405 = updateAndGetMatrix();
-        LoadedEntity class506 = LoadedEntity.method570(aBool11612);
+        MouseOverEntity class506 = MouseOverEntity.method570(aBool11612);
         Class379 class379 = loader.get(id * 2076385829).aClass379_7439;
 
         if (class379 != null) {

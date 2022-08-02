@@ -817,9 +817,9 @@ public class TranslatableString {
                 || (int) vector3f.z >= (Client.scene.getMapLength() - 1) * 512) {
             mobile.animator.update(-1);
 
-            for (int i_13_ = 0; i_13_ < mobile.graphics.length; i_13_++) {
-                mobile.graphics[i_13_].graphic = 738188555;
-                mobile.graphics[i_13_].animator.update(-1);
+            for (int i_13_ = 0; i_13_ < mobile.effects.length; i_13_++) {
+                mobile.effects[i_13_].id = 738188555;
+                mobile.effects[i_13_].animator.update(-1);
             }
 
             mobile.anIntArray11538 = null;
@@ -838,9 +838,9 @@ public class TranslatableString {
                 .getMapLength() - 12) * 512)) {
             mobile.animator.update(-1);
 
-            for (int i_14_ = 0; i_14_ < mobile.graphics.length; i_14_++) {
-                mobile.graphics[i_14_].graphic = 738188555;
-                mobile.graphics[i_14_].animator.update(-1);
+            for (int i_14_ = 0; i_14_ < mobile.effects.length; i_14_++) {
+                mobile.effects[i_14_].id = 738188555;
+                mobile.effects[i_14_].animator.update(-1);
             }
 
             mobile.anIntArray11538 = null;

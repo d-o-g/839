@@ -53,7 +53,7 @@ public class Class252 {
                 if (!bool) {
                     method4719();
                 }
-                DynamicEntity.method916();
+                Effect.method916();
                 for (int i_10_ = 0; i_10_ < Client.aClass473Array10624.length; i_10_++) {
                     if (Client.aClass473Array10624[i_10_] != null && !Client.aClass473Array10624[i_10_].method8067()
                             && Client.aClass473Array10624[i_10_].hasModel(Class60.activeToolkit)) {

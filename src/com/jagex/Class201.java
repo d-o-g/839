@@ -16,10 +16,10 @@ public class Class201 implements VarpInstrution {
     }
 
     static final void method3943() {
-        Iterator<CacheableDynamicEntity> iterator = Client.cacheableDynamicEntities.iterator();
+        Iterator<CacheableEffect> iterator = Client.effects.iterator();
         while (iterator.hasNext()) {
-            CacheableDynamicEntity cached = iterator.next();
-            DynamicEntity animated = cached.animated;
+            CacheableEffect cached = iterator.next();
+            Effect animated = cached.object;
             animated.method18222(1);
 
             if (animated.method18212()) {

@@ -1,20 +1,19 @@
 package com.jagex;
 
-import java.awt.*;
 import java.awt.Component;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class LoadedEntityContainer {
+public class MouseOverEntities {
 
-    public List<LoadedEntity> elements = new LinkedList<>();
+    public List<MouseOverEntity> elements = new LinkedList<>();
     boolean aBool6882 = false;
     int anInt6883 = 0;
     int anInt6884 = 0;
 
-    LoadedEntityContainer(boolean bool) {
+    MouseOverEntities(boolean bool) {
         aBool6882 = bool;
     }
 
@@ -108,15 +107,15 @@ public class LoadedEntityContainer {
     }
 
     public void method8666() {
-        Iterator<LoadedEntity> iterator = elements.iterator();
+        Iterator<MouseOverEntity> iterator = elements.iterator();
         while (iterator.hasNext()) {
-            LoadedEntity class506 = iterator.next();
+            MouseOverEntity class506 = iterator.next();
             iterator.remove();
             ArchiveFileLoader.method6965(class506);
         }
     }
 
-    void method8668(LoadedEntity class506, byte i) {
+    void method8668(MouseOverEntity class506, byte i) {
         SceneNode class600_sub1 = class506.node;
         boolean bool = true;
         Class139[] class139s = class506.node.class139Array;
@@ -129,18 +128,18 @@ public class LoadedEntityContainer {
         if (!bool) {
             class506.container = this;
             if (aBool6882) {
-                Iterator<LoadedEntity> iterator = elements.iterator();
+                Iterator<MouseOverEntity> iterator = elements.iterator();
                 while (iterator.hasNext()) {
-                    LoadedEntity class506_1_ = iterator.next();
+                    MouseOverEntity class506_1_ = iterator.next();
                     if (class506_1_.node == class600_sub1) {
                         iterator.remove();
                         ArchiveFileLoader.method6965(class506_1_);
                     }
                 }
             }
-            ListIterator<LoadedEntity> listiterator = elements.listIterator();
+            ListIterator<MouseOverEntity> listiterator = elements.listIterator();
             while (listiterator.hasNext()) {
-                LoadedEntity class506_2_ = listiterator.next();
+                MouseOverEntity class506_2_ = listiterator.next();
                 if (-1777491969 * class600_sub1.anInt10377 >= class506_2_.node.anInt10377 * -1777491969) {
                     listiterator.previous();
                     listiterator.add(class506);

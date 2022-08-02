@@ -181,14 +181,14 @@ public class DynamicBoundaryDecoration extends BoundaryDecoration implements Sce
     }
 
     @Override
-    LoadedEntity method16271(Toolkit toolkit) {
+    MouseOverEntity method16271(Toolkit toolkit) {
         if (aClass143_11628 == null) {
             return null;
         }
         Matrix4x3 class405 = toolkit.getMatrix4x3();
         class405.copyFrom(updateAndGetMatrix());
         class405.method6744(aShort11453, 0.0F, aShort11451);
-        LoadedEntity class506 = LoadedEntity.method570(aBool11635);
+        MouseOverEntity class506 = MouseOverEntity.method570(aBool11635);
         Class379 class379 = loader.get(569455663 * anInt11631).aClass379_7439;
         if (class379 != null) {
             aClass143_11628.method2917(class405, null, 0);

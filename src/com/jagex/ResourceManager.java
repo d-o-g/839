@@ -3,18 +3,20 @@ package com.jagex;
 import java.math.BigInteger;
 
 public class ResourceManager {
+
     boolean aBool4545 = false;
     AsynchronousRequest asyncMetaRequest;
     ChecksumTable asyncTable;
     CacheResourceWorker cacheWorker;
     BigInteger exponent;
-    PaddedResourceWorker netWorker;
+    PaddedResourceWorker<Connection> netWorker;
     ParallelHttpProvider parallelProvider;
     ArchiveResourceProvider[] providers;
     BigInteger publicKey;
     ChecksumTable table;
     PaddedResourceRequest tableRequest;
-    public ResourceManager(PaddedResourceWorker netWorker, ParallelHttpProvider parallelProvider,
+
+    public ResourceManager(PaddedResourceWorker<Connection> netWorker, ParallelHttpProvider parallelProvider,
                            CacheResourceWorker cacheWorker, BigInteger exponent, BigInteger modulus) {
         this.netWorker = netWorker;
         this.parallelProvider = parallelProvider;

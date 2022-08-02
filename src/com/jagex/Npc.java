@@ -260,15 +260,15 @@ public class Npc extends Mobile {
             animator.update(-1);
         }
 
-        for (int index = 0; index < graphics.length; index++) {
-            if (-2008549027 * graphics[index].graphic != -1) {
-                GraphicDefinition graphic = GraphicDefinition.loader.get(-2008549027
-                        * graphics[index].graphic);
+        for (int index = 0; index < effects.length; index++) {
+            if (-2008549027 * effects[index].id != -1) {
+                EffectDefinition graphic = EffectDefinition.loader.get(-2008549027
+                        * effects[index].id);
                 if (graphic.aBool7986
                         && graphic.animation * 2053507375 != -1
                         && Animation.loader.get(graphic.animation * 2053507375).walkingPrecedence * 1425418197 == 1) {
-                    graphics[index].animator.update(-1);
-                    graphics[index].graphic = 738188555;
+                    effects[index].animator.update(-1);
+                    effects[index].id = 738188555;
                 }
             }
         }
@@ -353,15 +353,15 @@ public class Npc extends Mobile {
             animator.update(-1);
         }
 
-        for (int i_34_ = 0; i_34_ < graphics.length; i_34_++) {
-            if (-2008549027 * graphics[i_34_].graphic != -1) {
-                GraphicDefinition graphic = GraphicDefinition.loader.get(-2008549027
-                        * graphics[i_34_].graphic);
+        for (int i_34_ = 0; i_34_ < effects.length; i_34_++) {
+            if (-2008549027 * effects[i_34_].id != -1) {
+                EffectDefinition graphic = EffectDefinition.loader.get(-2008549027
+                        * effects[i_34_].id);
                 if (graphic.aBool7986
                         && -1 != 2053507375 * graphic.animation
                         && Animation.loader.get(2053507375 * graphic.animation).walkingPrecedence * 1425418197 == 1) {
-                    graphics[i_34_].animator.update(-1);
-                    graphics[i_34_].graphic = 738188555;
+                    effects[i_34_].animator.update(-1);
+                    effects[i_34_].id = 738188555;
                 }
             }
         }
@@ -473,7 +473,7 @@ public class Npc extends Mobile {
     }
 
     @Override
-    LoadedEntity method16271(Toolkit toolkit) {
+    MouseOverEntity method16271(Toolkit toolkit) {
         if (definition == null || !method18272(toolkit, 526336)) {
             return null;
         }
@@ -498,7 +498,7 @@ public class Npc extends Mobile {
                 PlayerFacade.instance, PlayerFacade.instance) : definition;
         boolean bool = null != dfinition.aClass379_3043;
         aBool11554 = false;
-        LoadedEntity class506 = null;
+        MouseOverEntity class506 = null;
         if (Class199.preferences.mobShadows.getValue() == 1 && dfinition.animateIdle && class515.aBool7015) {
             Animator animator = this.animator.hasAnimation() && this.animator.method13515() ? this.animator
                     : null;
@@ -516,13 +516,13 @@ public class Npc extends Mobile {
                         anInt11505 * 2119207177, cachedModels[0], i_39_, i_40_,
                         null != class650_sub2 ? class650_sub2 : animator, 1895096767);
             } else {
-                model = LoadedEntityContainer.getMobModel(toolkit, i_37_, -170688293 * anInt11507, 1861793885 * anInt11551,
+                model = MouseOverEntities.getMobModel(toolkit, i_37_, -170688293 * anInt11507, 1861793885 * anInt11551,
                         anInt11505 * 2119207177, definition.boundSize * 2117527163, cachedModels[0],
                         definition.aShort3055 & 0xffff, definition.aShort3067 & 0xffff, definition.aByte3024 & 0xff,
                         definition.aByte3058 & 0xff, null != class650_sub2 ? class650_sub2 : animator);
             }
             if (model != null) {
-                class506 = LoadedEntity.method570(method18275(408991959));
+                class506 = MouseOverEntity.method570(method18275(408991959));
                 aBool11554 = true;
                 toolkit.method2473(false);
                 if (bool) {
@@ -545,7 +545,7 @@ public class Npc extends Mobile {
             method16274(cachedModels.length);
         }
         if (null == class506) {
-            class506 = LoadedEntity.method570(method18275(-1246690340));
+            class506 = MouseOverEntity.method570(method18275(-1246690340));
         }
         method17948(toolkit, cachedModels, class405_36_, false);
         for (int i_41_ = 0; i_41_ < cachedModels.length; i_41_++) {

@@ -85,7 +85,7 @@ public final class Client extends Engine {
     public static float aFloat10708;
     public static float aFloat10787;
     public static float[] aFloatArray10736;
-    public static HashTable<CacheableDynamicEntity> cacheableDynamicEntities;
+    public static HashTable<CacheableEffect> effects;
     public static int affiliateId;
     public static int anInt10593;
     public static int anInt10596;
@@ -463,7 +463,7 @@ public final class Client extends Engine {
         anInt10775 = 735641993;
         groundItems = new HashTable<>(64);
         projectiles = new Deque<>();
-        cacheableDynamicEntities = new HashTable<>(16);
+        effects = new HashTable<>(16);
         aClass649_10779 = new EntityList<>();
         anInt10781 = -897408463;
         anInt10782 = -2101032765;
@@ -1098,7 +1098,7 @@ public final class Client extends Engine {
                                             aBool10817 = true;
                                             Class578.anInt7740 = is[0] * 1358697747;
                                             Mobile.anInt11561 = -1634396677 * is[1];
-                                            LoadedEntity.anInt6966 = is[2] * 2011201699;
+                                            MouseOverEntity.anInt6966 = is[2] * 2011201699;
                                             anInt10815 = -702976661;
                                             aBool10816 = false;
                                             mouseX = Client.recorder.getMouseX() * 2080472875;
@@ -2993,7 +2993,7 @@ public final class Client extends Engine {
                                 int size = Class31.activeConnection.currentFrameSize * -842560185;
                                 Class31.loginState = -2074489177;
                                 HashTableIterator.method13671(2);
-                                LoadedEntity.method8737();
+                                MouseOverEntity.method8737();
 
                                 Player.decodePlayerInfo(Class31.activeConnection.buffer);
                                 int remaining = size - Class31.activeConnection.buffer.caret * -165875887;
@@ -3139,7 +3139,7 @@ public final class Client extends Engine {
             NpcDefinition.loader.reset();
             ItemDefinition.loader.reset();
             Animation.loader.reset();
-            GraphicDefinition.loader.reset();
+            EffectDefinition.loader.reset();
             VarpBit.loader.reset();
             Varp.varpLoader.clear();
             Npc.varpLoader.clear();
@@ -4768,7 +4768,7 @@ public final class Client extends Engine {
 
         }
 
-        Class193.keyRecorder = LoadedEntityContainer.method8673(gameCanvas);
+        Class193.keyRecorder = MouseOverEntities.method8673(gameCanvas);
         Client.recorder = ComponentMouseRecorder.create(gameCanvas, true);
 
         if (null != dataFile) {

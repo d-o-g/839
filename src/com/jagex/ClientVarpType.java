@@ -232,7 +232,7 @@ final class ClientVarpType extends VarpType {
                     TranslatableString.animations, Deque.frames, Class340_Sub3.frameBases, Class453.aClass678_Sub3_5096);
             SkyboxDefinition.loader = new SkyboxDefinitionLoader(Client.game, Client.currentLanguage, Class350.config);
             SunDefinition.loader = new SunDefinitionLoader(Client.game, Client.currentLanguage, Class350.config);
-            GraphicDefinition.loader = new GraphicDefinitionLoader(Client.game, Client.currentLanguage,
+            EffectDefinition.loader = new GraphicDefinitionLoader(Client.game, Client.currentLanguage,
                     SceneGraphLevel.graphics, Class436.models);
             Class548.aClass7_Sub1_7467 = new Class7_Sub1(Client.game, Client.currentLanguage, Class501.varpbits, true);
             Varcs.varcLoader = new VarDefinitionLoader(Client.game, VarpType.CLIENT,

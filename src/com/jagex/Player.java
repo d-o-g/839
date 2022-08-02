@@ -960,15 +960,15 @@ public class Player extends Mobile {
             animator.update(-1);
         }
 
-        for (int index = 0; index < graphics.length; index++) {
-            if (-1 != graphics[index].graphic * -2008549027) {
-                GraphicDefinition animation = GraphicDefinition.loader.get(-2008549027
-                        * graphics[index].graphic);
+        for (int index = 0; index < effects.length; index++) {
+            if (-1 != effects[index].id * -2008549027) {
+                EffectDefinition animation = EffectDefinition.loader.get(-2008549027
+                        * effects[index].id);
                 if (animation.aBool7986
                         && animation.animation * 2053507375 != -1
                         && Animation.loader.get(animation.animation * 2053507375).walkingPrecedence * 1425418197 == 1) {
-                    graphics[index].animator.update(-1);
-                    graphics[index].graphic = 738188555;
+                    effects[index].animator.update(-1);
+                    effects[index].id = 738188555;
                 }
             }
         }
@@ -1175,7 +1175,7 @@ public class Player extends Mobile {
     }
 
     @Override
-    LoadedEntity method16271(Toolkit toolkit) {
+    MouseOverEntity method16271(Toolkit toolkit) {
         if (null == appearance || !method18243(toolkit, 2048)) {
             return null;
         }
@@ -1192,7 +1192,7 @@ public class Player extends Mobile {
         }
         class405.copyFrom(class405_6_);
         class405.method6744(0.0F, -20 - -635471227 * anInt11506, 0.0F);
-        LoadedEntity class506 = null;
+        MouseOverEntity class506 = null;
         aBool11554 = false;
         if (Class199.preferences.mobShadows.getValue() == 1) {
             Class515 class515 = method17958();
@@ -1214,7 +1214,7 @@ public class Player extends Mobile {
                             2119207177 * anInt11505, cachedModels[0], i_9_, i_10_,
                             class650_sub2 != null ? class650_sub2 : animator, 1895096767);
                 } else {
-                    class143 = LoadedEntityContainer.getMobModel(toolkit, i_7_, anInt11507 * -170688293, 1861793885 * anInt11551,
+                    class143 = MouseOverEntities.getMobModel(toolkit, i_7_, anInt11507 * -170688293, 1861793885 * anInt11551,
                             2119207177 * anInt11505, 1, cachedModels[0], 0, 0, 160, 240,
                             null != class650_sub2 ? class650_sub2 : animator);
                 }
@@ -1222,7 +1222,7 @@ public class Player extends Mobile {
                     if (null == class139Array || class139Array.length < 1 + cachedModels.length) {
                         method16274(1 + cachedModels.length);
                     }
-                    class506 = LoadedEntity.method570(true);
+                    class506 = MouseOverEntity.method570(true);
                     aBool11554 = true;
                     toolkit.method2473(false);
                     class143.method2917(class405, class139Array[cachedModels.length], 0);
@@ -1276,7 +1276,7 @@ public class Player extends Mobile {
             method16274(cachedModels.length);
         }
         if (class506 == null) {
-            class506 = LoadedEntity.method570(true);
+            class506 = MouseOverEntity.method570(true);
         }
         method17948(toolkit, cachedModels, class405, false);
         for (int i_19_ = 0; i_19_ < cachedModels.length; i_19_++) {

@@ -2,16 +2,16 @@ package com.jagex;
 
 import java.util.Stack;
 
-public class LoadedEntity {
+public class MouseOverEntity {
 
-    static Stack<LoadedEntity> stack = new Stack<>();
+    static Stack<MouseOverEntity> stack = new Stack<>();
     static int anInt6966;
 
     public SceneNode node;
-    LoadedEntityContainer container;
+    MouseOverEntities container;
     boolean aBool6964;
 
-    LoadedEntity() {
+    MouseOverEntity() {
 
     }
 
@@ -115,7 +115,7 @@ public class LoadedEntity {
         Client.anInt10862 = 0;
         Client.npcTable.clear();
         Client.projectiles.clear();
-        Client.cacheableDynamicEntities.clear();
+        Client.effects.clear();
         Client.aClass649_10779.clear();
         Client.groundItems.clear();
         SceneMod.pendingSpawns = new Deque<>();
@@ -172,9 +172,9 @@ public class LoadedEntity {
         Class224.aLong2344 = 0L;
     }
 
-    public static LoadedEntity method570(boolean bool) {
+    public static MouseOverEntity method570(boolean bool) {
         synchronized (stack) {
-            LoadedEntity class506 = stack.isEmpty() ? new LoadedEntity() : stack.pop();
+            MouseOverEntity class506 = stack.isEmpty() ? new MouseOverEntity() : stack.pop();
             class506.aBool6964 = bool;
             return class506;
         }

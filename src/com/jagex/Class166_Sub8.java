@@ -24,7 +24,7 @@ public class Class166_Sub8 extends CutsceneAction {
         Class642_Sub3.aclient10561.method7919();
         Engine.gameCanvas.setBackground(Color.black);
         Client.anInt10784 = -1137457249;
-        Class193.keyRecorder = LoadedEntityContainer.method8673(Engine.gameCanvas);
+        Class193.keyRecorder = MouseOverEntities.method8673(Engine.gameCanvas);
         Client.recorder = ComponentMouseRecorder.create(Engine.gameCanvas, true);
     }
 

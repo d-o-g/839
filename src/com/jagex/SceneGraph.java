@@ -24,7 +24,7 @@ public class SceneGraph {
     public SceneGraphTile[][][] tiles1;
     public SceneGraphTile[][][] tiles;
     public Class492 aClass492_6695;
-    public LoadedEntityContainer aClass497_6711;
+    public MouseOverEntities aClass497_6711;
     int anInt6686;
     int anInt6688;
     int anInt6689;
@@ -135,7 +135,7 @@ public class SceneGraph {
         aBoolArrayArray6747 = new boolean[1414880535 * anInt6686 + 1414880535 * anInt6686 + 2][2 + anInt6686
                 * 1414880535 + 1414880535 * anInt6686];
         anIntArray6748 = new int[2 + 1414880535 * anInt6686 + 1414880535 * anInt6686];
-        aClass497_6711 = new LoadedEntityContainer(false);
+        aClass497_6711 = new MouseOverEntities(false);
     }
 
     public static final void method8472() {
@@ -701,7 +701,7 @@ public class SceneGraph {
         if (!aClass497_6711.aBool6882) {
             Iterator iterator = aClass497_6711.elements.iterator();
             while (iterator.hasNext()) {
-                LoadedEntity class506 = (LoadedEntity) iterator.next();
+                MouseOverEntity class506 = (MouseOverEntity) iterator.next();
                 iterator.remove();
                 ArchiveFileLoader.method6965(class506);
             }
@@ -1364,7 +1364,7 @@ public class SceneGraph {
             class150.anInt1846 = getConfig3(i, i_154_) * -1720335367;
             toolkit.method2804(levels[0].averageHeightAt((int) vector3f.x, (int) vector3f.z), class150);
         }
-        LoadedEntity class506 = class600_sub1.method16271(toolkit);
+        MouseOverEntity class506 = class600_sub1.method16271(toolkit);
         if (null != class506) {
             if (class506.aBool6964) {
                 class506.node = class600_sub1;

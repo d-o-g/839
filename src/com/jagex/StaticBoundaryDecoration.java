@@ -167,7 +167,7 @@ public class StaticBoundaryDecoration extends BoundaryDecoration implements Scen
     }
 
     @Override
-    LoadedEntity method16271(Toolkit toolkit) {
+    MouseOverEntity method16271(Toolkit toolkit) {
         Model class143 = config.method8201(toolkit, 2048, false, true);
         if (null == class143) {
             return null;
@@ -176,7 +176,7 @@ public class StaticBoundaryDecoration extends BoundaryDecoration implements Scen
         class405.copyFrom(updateAndGetMatrix());
         class405.method6744(aShort11453, 0.0F, aShort11451);
         CoordinateSpace coordinateSpace = getCoordinateSpace();
-        LoadedEntity class506 = LoadedEntity.method570(aBool11624);
+        MouseOverEntity class506 = MouseOverEntity.method570(aBool11624);
         int i_14_ = (int) coordinateSpace.translation.x >> 9;
         int i_15_ = (int) coordinateSpace.translation.z >> 9;
         config.method8184(toolkit, class143, class405, i_14_, i_14_, i_15_, i_15_, true);

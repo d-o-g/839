@@ -46,7 +46,7 @@ public class Projectile extends SceneEntity {
         aBool11713 = false;
         this.equipmentSlot = 1421371761 * equipmentSlot;
         anInt11702 = i_34_ * 9261423;
-        int animation = GraphicDefinition.loader.get(graphic * 926720715).animation * 2053507375;
+        int animation = EffectDefinition.loader.get(graphic * 926720715).animation * 2053507375;
         aAnimator_11723 = new EntityAnimator(this, false);
         aAnimator_11723.update(animation);
         method16274(1);
@@ -290,7 +290,7 @@ public class Projectile extends SceneEntity {
     }
 
     @Override
-    LoadedEntity method16271(Toolkit toolkit) {
+    MouseOverEntity method16271(Toolkit toolkit) {
         Model model = method18194(toolkit, 2048);
         if (model == null) {
             return null;
@@ -298,7 +298,7 @@ public class Projectile extends SceneEntity {
 
         Matrix4x3 class405 = updateAndGetMatrix();
         method18205(toolkit, model, class405);
-        LoadedEntity class506 = LoadedEntity.method570(false);
+        MouseOverEntity class506 = MouseOverEntity.method570(false);
         model.method2917(class405, class139Array[0], 0);
 
         if (particles != null) {
@@ -325,7 +325,7 @@ public class Projectile extends SceneEntity {
     }
 
     Model method18194(Toolkit toolkit, int i) {
-        GraphicDefinition graphic = GraphicDefinition.loader.get(926720715 * this.graphic);
+        EffectDefinition graphic = EffectDefinition.loader.get(926720715 * this.graphic);
         return graphic.method10394(toolkit, i, aAnimator_11723, (byte) 2);
     }
 

@@ -15,8 +15,8 @@ public class Class23 {
     }
 
     public static void method752() {
-        synchronized (LoadedEntity.stack) {
-            LoadedEntity.stack = new Stack();
+        synchronized (MouseOverEntity.stack) {
+            MouseOverEntity.stack = new Stack();
         }
     }
 

@@ -56,7 +56,7 @@ public class HighObject extends SceneEntity {
     }
 
     @Override
-    LoadedEntity method16271(Toolkit toolkit) {
+    MouseOverEntity method16271(Toolkit toolkit) {
         if (aClass473_11701.model == null) {
             return null;
         }

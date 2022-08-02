@@ -411,7 +411,7 @@ public class AnimateObjectCutsceneAction extends CutsceneAction {
                             OutgoingFrame class480_sub15 = OutgoingFrame.prepare(OutgoingFrameMeta.aClass366_3949,
                                     Client.gameConnection.encryptor);
                             class480_sub15.payload.writeMEInt(Class578.anInt7740 * 701693211 << 28
-                                    | Mobile.anInt11561 * -1732858573 << 14 | 1795044107 * LoadedEntity.anInt6966);
+                                    | Mobile.anInt11561 * -1732858573 << 14 | 1795044107 * MouseOverEntity.anInt6966);
                             Client.gameConnection.sendFrame(class480_sub15);
                             Client.aBool10817 = false;
                         }

@@ -1,14 +1,16 @@
 package com.jagex;
 
-public class MobileSpotAnimation {
+public class MobileEffect {
 
-    public int graphic = 738188555;
-    public int anInt6481;
-    public int yTranslation;
-    public int anInt6483;
     public Animator animator;
 
-    MobileSpotAnimation(Mobile mobile) {
+    public int id = 738188555;
+    public int yTranslation;
+    //both related to yaw
+    public int anInt6481;
+    public int anInt6483;
+
+    MobileEffect(Mobile mobile) {
         animator = new EntityAnimator(mobile, false);
     }
 

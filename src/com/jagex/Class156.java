@@ -55,7 +55,7 @@ public class Class156 {
         NpcDefinition.loader.clearSoft();
         ItemDefinition.loader.clearSoft();
         Animation.loader.clearSoft();
-        GraphicDefinition.loader.clearSoft();
+        EffectDefinition.loader.clearSoft();
         VarpBit.loader.clearSoft();
         Varp.varpLoader.clearSoft();
         Npc.varpLoader.clearSoft();

@@ -64,7 +64,7 @@ public abstract class SceneNode extends Locatable {
         return i_9_;
     }
 
-    abstract LoadedEntity method16271(Toolkit toolkit);
+    abstract MouseOverEntity method16271(Toolkit toolkit);
 
     void method16274(int i) {
         class139Array = new Class139[i];

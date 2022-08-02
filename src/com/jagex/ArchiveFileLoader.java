@@ -9,11 +9,11 @@ public class ArchiveFileLoader implements Loader {
         name = string;
     }
 
-    static void method6965(LoadedEntity class506) {
+    static void method6965(MouseOverEntity class506) {
         class506.node = null;
-        synchronized (LoadedEntity.stack) {
-            if (LoadedEntity.stack.size() < 200) {
-                LoadedEntity.stack.push(class506);
+        synchronized (MouseOverEntity.stack) {
+            if (MouseOverEntity.stack.size() < 200) {
+                MouseOverEntity.stack.push(class506);
             }
         }
     }

@@ -1,7 +1,9 @@
 package com.jagex;
 
 public class Class364 implements Interface44 {
-    public static PaddedResourceWorker netWorker;
+
+    public static PaddedResourceWorker<Connection> netWorker;
+
     ReferenceCache<Class361> cache = new ReferenceCache<Class361>(64);
     Archive particles;
 
@@ -25,7 +27,7 @@ public class Class364 implements Interface44 {
         NpcDefinition.loader.sweep(5);
         ItemDefinition.loader.sweep(5);
         Animation.loader.sweep(5);
-        GraphicDefinition.loader.sweep(5);
+        EffectDefinition.loader.sweep(5);
         VarpBit.loader.sweep(5);
         Varp.varpLoader.sweep(5);
         Npc.varpLoader.sweep(5);

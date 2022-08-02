@@ -19,12 +19,12 @@ public class CalendarUtils {
         throw new Error();
     }
 
-    public static final void method524(String string) {
+    public static final void sendFriendsChatMessage(String message) {
         if (Class551.friendsChat != null) {
             BufferedConnectionContext connection = Client.getActiveConnection();
-            OutgoingFrame frame = OutgoingFrame.prepare(OutgoingFrameMeta.aClass366_3950, connection.encryptor);
-            frame.payload.writeByte(Buffer.encodedStringLength(string));
-            frame.payload.writeCString(string);
+            OutgoingFrame frame = OutgoingFrame.prepare(OutgoingFrameMeta.SEND_FRIENDSCHAT_MESSAGE, connection.encryptor);
+            frame.payload.writeByte(Buffer.encodedStringLength(message));
+            frame.payload.writeCString(message);
             connection.sendFrame(frame);
         }
     }

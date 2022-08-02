@@ -1,6 +1,6 @@
 package com.jagex;
 
-public class GraphicDefinition implements Definition {
+public class EffectDefinition implements Definition {
     static final int anInt7978 = 8224;
     public static GraphicDefinitionLoader loader;
     public int animation = 2126520881;
@@ -21,7 +21,7 @@ public class GraphicDefinition implements Definition {
     byte aByte7985;
     int rotation;
     int anInt7988;
-    GraphicDefinition(int id, BaseGraphicDefinitionProvider provider) {
+    EffectDefinition(int id, BaseGraphicDefinitionProvider provider) {
         scaleXZ = -594705024;
         scaleY = 1898783360;
         anInt7988 = 1267317257;

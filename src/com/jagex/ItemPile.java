@@ -135,7 +135,7 @@ public class ItemPile extends TileObject {
     }
 
     @Override
-    LoadedEntity method16271(Toolkit toolkit) {
+    MouseOverEntity method16271(Toolkit toolkit) {
         Vector3f vector3f = Vector3f.copyOf(getCoordinateSpace().translation);
         EntityIterator entityIterator = graph
                 .getEntityIterator(plane, (int) vector3f.x >> 9, (int) vector3f.z >> 9, -1805913001);
@@ -203,7 +203,7 @@ public class ItemPile extends TileObject {
         vector3f.cache();
         Vector3f vector3f_24_ = getCoordinateSpace().translation;
         class405.method6744(vector3f_24_.x, vector3f_24_.y - 10.0F, vector3f_24_.z);
-        LoadedEntity class506 = LoadedEntity.method570(true);
+        MouseOverEntity class506 = MouseOverEntity.method570(true);
         aBool11759 = false;
         anInt11757 = 0;
         if (-1502690623 * tertiaryId != -1) {

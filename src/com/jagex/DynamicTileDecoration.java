@@ -228,13 +228,13 @@ public class DynamicTileDecoration extends TileDecoration implements SceneObject
     }
 
     @Override
-    LoadedEntity method16271(Toolkit toolkit) {
+    MouseOverEntity method16271(Toolkit toolkit) {
         if (aClass143_11582 == null) {
             return null;
         }
 
         Matrix4x3 class405 = updateAndGetMatrix();
-        LoadedEntity class506 = LoadedEntity.method570(aBool11577);
+        MouseOverEntity class506 = MouseOverEntity.method570(aBool11577);
         Class379 class379 = aClass678_Sub17_11584.get(-1979252017 * object).aClass379_7439;
 
         if (class379 != null) {

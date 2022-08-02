@@ -7,13 +7,13 @@ public class GraphicDefinitionProvider extends BaseGraphicDefinitionProvider {
     }
 
     @Override
-    public Class<GraphicDefinition> getClassType() {
-        return GraphicDefinition.class;
+    public Class<EffectDefinition> getClassType() {
+        return EffectDefinition.class;
     }
 
     @Override
-    public GraphicDefinition provide(int id, DefinitionLoader loader) {
-        return new GraphicDefinition(id, this);
+    public EffectDefinition provide(int id, DefinitionLoader loader) {
+        return new EffectDefinition(id, this);
     }
 
 }

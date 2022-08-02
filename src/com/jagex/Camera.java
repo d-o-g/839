@@ -257,7 +257,7 @@ public abstract class Camera {
         return aClass642_2915;
     }
 
-    public GameCharacterProvider method4835() {
+    public GameCharacterProvider getCharacterProvider() {
         return provider;
     }
 

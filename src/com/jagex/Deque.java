@@ -25,7 +25,7 @@ public class Deque<T extends Node> implements Iterable<T>, Collection<T> {
         int i_7_ = class613.anIntArray7942[(class613.anInt7924 -= 1122685165) * 1841827045];
         Component class226 = Component.lookup(i_7_);
         Interface class221 = Class598.loadedInterfaces[i_7_ >> 16];
-        MobileSpotAnimation.method7911(class226, class221, class613);
+        MobileEffect.method7911(class226, class221, class613);
     }
 
     static void method13349() {
@@ -63,7 +63,7 @@ public class Deque<T extends Node> implements Iterable<T>, Collection<T> {
                     }
                 }
             }
-            Client.cacheableDynamicEntities.clear();
+            Client.effects.clear();
             Class60.activeToolkit.method2373();
             Class60.activeToolkit = null;
         }

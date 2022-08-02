@@ -206,13 +206,13 @@ public class StaticGameObject extends SceneEntity implements SceneObject {
     }
 
     @Override
-    LoadedEntity method16271(Toolkit toolkit) {
+    MouseOverEntity method16271(Toolkit toolkit) {
         Model class143 = config.method8201(toolkit, 2048, false, true);
         if (class143 == null) {
             return null;
         }
         Matrix4x3 class405 = updateAndGetMatrix();
-        LoadedEntity class506 = LoadedEntity.method570(aBool11573);
+        MouseOverEntity class506 = MouseOverEntity.method570(aBool11573);
         config.method8184(toolkit, class143, class405, startX, endX, startY, endY,
                 true);
         ObjectDefinition class544 = config.method8206();

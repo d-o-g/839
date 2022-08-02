@@ -1792,7 +1792,7 @@ public class ScriptInterpreter {
                 int i_7_9 = context.anIntArray7942[(context.anInt7924 -= 1122685165) * 1841827045];
                 Component class22668 = Component.lookup(i_7_9);
                 Interface class22133 = Class598.loadedInterfaces[i_7_9 >> 16];
-                MobileSpotAnimation.method7911(class22668, class22133, context);
+                MobileEffect.method7911(class22668, class22133, context);
                 break;
             case 107:
                 int i_27_ = context.anIntArray7943[1523704279 * context.counter];
@@ -4236,7 +4236,7 @@ public class ScriptInterpreter {
                 LruDefinitionCacheIterator.method675(context);
                 break;
             case 502:
-                LoadedEntity.method8738();
+                MouseOverEntity.method8738();
                 break;
             case 1065:
                 context.anIntArray7942[(context.anInt7924 += 1122685165) * 1841827045 - 1] = Client.anInt10622
@@ -4663,7 +4663,7 @@ public class ScriptInterpreter {
                 ScriptExecutionContext.method7087(context);
                 break;
             case 356:
-                ScriptExecutionContext.method10160(context);
+                ScriptExecutionContext.sendFriendsChatMessage(context);
                 break;
             case 141:
                 ScriptExecutionContext.method3992(context);
@@ -5571,7 +5571,7 @@ public class ScriptInterpreter {
                 Class611 class61177 = context.aBool7932 ? context.aClass611_7945 : context.aClass611_7931;
                 Component class226142 = class61177.aClass226_7914;
                 Interface class22176 = class61177.aClass221_7913;
-                MobileSpotAnimation.method7911(class226142, class22176, context);
+                MobileEffect.method7911(class226142, class22176, context);
                 break;
             case 895:
                 ScriptExecutionContext.method1536(context);

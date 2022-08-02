@@ -11,7 +11,7 @@ public abstract class Mobile extends SceneEntity implements GameCharacter {
     public byte aByte11531;
     public byte aByte11533;
     public Model[] cachedModels;
-    public MobileSpotAnimation[] graphics;
+    public MobileEffect[] effects;
     public EntityList<CombatGauge> combatGauges;
     public Animator animator;
     public EntityAnimator_Sub1_[] aClass650_Sub1_Sub1Array11537;
@@ -105,9 +105,9 @@ public abstract class Mobile extends SceneEntity implements GameCharacter {
         pathZ = new int[maximumPath];
         pathSpeed = new byte[maximumPath];
         cachedModels = new Model[6];
-        graphics = new MobileSpotAnimation[5];
+        effects = new MobileEffect[5];
         for (int i_122_ = 0; i_122_ < 5; i_122_++) {
-            graphics[i_122_] = new MobileSpotAnimation(this);
+            effects[i_122_] = new MobileEffect(this);
         }
         aClass650_Sub1_Sub1Array11537 = new EntityAnimator_Sub1_[EquipmentDefaults.defaults.hidden.length];
         anInterface73_11556 = new DefaultHashMap(class77_sub1);
@@ -599,11 +599,11 @@ public abstract class Mobile extends SceneEntity implements GameCharacter {
     }
 
     public final void method18035(int primaryId, int height, int i_149_, int i_150_, boolean bool, int i_151_) {
-        MobileSpotAnimation mobileSpotAnimation = graphics[i_151_];
-        int secondaryId = mobileSpotAnimation.graphic * -2008549027;
+        MobileEffect effect = effects[i_151_];
+        int secondaryId = effect.id * -2008549027;
         if (primaryId != -1 && -1 != secondaryId) {
             if (primaryId == secondaryId) {
-                GraphicDefinition graphic = GraphicDefinition.loader.get(primaryId);
+                EffectDefinition graphic = EffectDefinition.loader.get(primaryId);
 
                 if (graphic.aBool7986 && graphic.animation * 2053507375 != -1) {
                     Animation animation = Animation.loader.get(2053507375 * graphic.animation);
@@ -614,13 +614,13 @@ public abstract class Mobile extends SceneEntity implements GameCharacter {
                     }
 
                     if (2 == mode) {
-                        mobileSpotAnimation.animator.method13496();
+                        effect.animator.method13496();
                         return;
                     }
                 }
             } else {
-                GraphicDefinition primary = GraphicDefinition.loader.get(primaryId);
-                GraphicDefinition secondary = GraphicDefinition.loader.get(secondaryId);
+                EffectDefinition primary = EffectDefinition.loader.get(primaryId);
+                EffectDefinition secondary = EffectDefinition.loader.get(secondaryId);
 
                 if (primary.animation * 2053507375 != -1 && 2053507375 * secondary.animation != -1) {
                     Animation primaryAnimation = Animation.loader
@@ -635,7 +635,7 @@ public abstract class Mobile extends SceneEntity implements GameCharacter {
         }
 
         int i_157_ = 0;
-        if (primaryId != -1 && !GraphicDefinition.loader.get(primaryId).aBool7986) {
+        if (primaryId != -1 && !EffectDefinition.loader.get(primaryId).aBool7986) {
             i_157_ = 2;
         }
 
@@ -643,12 +643,12 @@ public abstract class Mobile extends SceneEntity implements GameCharacter {
             i_157_ = 1;
         }
 
-        mobileSpotAnimation.graphic = -738188555 * primaryId;
-        mobileSpotAnimation.anInt6481 = i_150_ * -508611417;
-        mobileSpotAnimation.yTranslation = (height >> 16) * 272663415;
-        mobileSpotAnimation.anInt6483 = 925563113 * i_149_;
-        mobileSpotAnimation.animator.method13453(
-                primaryId != -1 ? GraphicDefinition.loader.get(primaryId).animation * 2053507375 : -1, height & 0xffff,
+        effect.id = -738188555 * primaryId;
+        effect.anInt6481 = i_150_ * -508611417;
+        effect.yTranslation = (height >> 16) * 272663415;
+        effect.anInt6483 = 925563113 * i_149_;
+        effect.animator.method13453(
+                primaryId != -1 ? EffectDefinition.loader.get(primaryId).animation * 2053507375 : -1, height & 0xffff,
                 i_157_, false);
     }
 
@@ -778,7 +778,7 @@ public abstract class Mobile extends SceneEntity implements GameCharacter {
     }
 
     void method17957(Toolkit toolkit, Class515 class515, int i, int i_52_, int i_53_, int i_54_) {
-        for (int i_56_ = 0; i_56_ < graphics.length; i_56_++) {
+        for (int i_56_ = 0; i_56_ < effects.length; i_56_++) {
             byte i_57_ = 0;
             if (i_56_ == 0) {
                 i_57_ = (byte) 2;
@@ -791,45 +791,45 @@ public abstract class Mobile extends SceneEntity implements GameCharacter {
             } else if (4 == i_56_) {
                 i_57_ = (byte) 8;
             }
-            MobileSpotAnimation mobileSpotAnimation = graphics[i_56_];
-            if (-1 != mobileSpotAnimation.graphic * -2008549027 && !mobileSpotAnimation.animator.method13515()) {
-                GraphicDefinition graphic = GraphicDefinition.loader.get(-2008549027 * mobileSpotAnimation.graphic);
+            MobileEffect effect = effects[i_56_];
+            if (-1 != effect.id * -2008549027 && !effect.animator.method13515()) {
+                EffectDefinition graphic = EffectDefinition.loader.get(-2008549027 * effect.id);
                 int i_58_ = i;
-                if (0 != mobileSpotAnimation.anInt6483 * 1938382681) {
+                if (0 != effect.anInt6483 * 1938382681) {
                     i_58_ |= 0x5;
                 }
-                if (0 != mobileSpotAnimation.yTranslation * -1218492857) {
+                if (0 != effect.yTranslation * -1218492857) {
                     i_58_ |= 0x2;
                 }
-                if (mobileSpotAnimation.anInt6481 * 397619991 >= 0) {
+                if (effect.anInt6481 * 397619991 >= 0) {
                     i_58_ |= 0x7;
                 }
-                if (mobileSpotAnimation.anInt6481 * 397619991 >= 0 && null != class515.anIntArrayArray7043
-                        && class515.anIntArrayArray7043[397619991 * mobileSpotAnimation.anInt6481] != null) {
+                if (effect.anInt6481 * 397619991 >= 0 && null != class515.anIntArrayArray7043
+                        && class515.anIntArrayArray7043[397619991 * effect.anInt6481] != null) {
                     Model model = cachedModels[i_56_ + 1] = graphic.method10394(toolkit, i_58_,
-                            mobileSpotAnimation.animator, i_57_);
+                            effect.animator, i_57_);
                     if (model != null) {
                         int i_59_ = 0;
                         int i_60_ = 0;
                         int i_61_ = 0;
                         if (null != class515.anIntArrayArray7043
-                                && class515.anIntArrayArray7043[397619991 * mobileSpotAnimation.anInt6481] != null) {
-                            i_59_ += class515.anIntArrayArray7043[397619991 * mobileSpotAnimation.anInt6481][0];
-                            i_60_ += class515.anIntArrayArray7043[397619991 * mobileSpotAnimation.anInt6481][1];
-                            i_61_ += class515.anIntArrayArray7043[397619991 * mobileSpotAnimation.anInt6481][2];
+                                && class515.anIntArrayArray7043[397619991 * effect.anInt6481] != null) {
+                            i_59_ += class515.anIntArrayArray7043[397619991 * effect.anInt6481][0];
+                            i_60_ += class515.anIntArrayArray7043[397619991 * effect.anInt6481][1];
+                            i_61_ += class515.anIntArrayArray7043[397619991 * effect.anInt6481][2];
                         }
                         if (null != class515.anIntArrayArray7044
-                                && class515.anIntArrayArray7044[mobileSpotAnimation.anInt6481 * 397619991] != null) {
-                            i_59_ += class515.anIntArrayArray7044[mobileSpotAnimation.anInt6481 * 397619991][0];
-                            i_60_ += class515.anIntArrayArray7044[mobileSpotAnimation.anInt6481 * 397619991][1];
-                            i_61_ += class515.anIntArrayArray7044[397619991 * mobileSpotAnimation.anInt6481][2];
+                                && class515.anIntArrayArray7044[effect.anInt6481 * 397619991] != null) {
+                            i_59_ += class515.anIntArrayArray7044[effect.anInt6481 * 397619991][0];
+                            i_60_ += class515.anIntArrayArray7044[effect.anInt6481 * 397619991][1];
+                            i_61_ += class515.anIntArrayArray7044[397619991 * effect.anInt6481][2];
                         }
                         if (0 != i_61_ || i_59_ != 0) {
                             int i_62_ = i_54_;
-                            if (anIntArray11518 != null && anIntArray11518[mobileSpotAnimation.anInt6481 * 397619991] != -1) {
-                                i_62_ = anIntArray11518[397619991 * mobileSpotAnimation.anInt6481];
+                            if (anIntArray11518 != null && anIntArray11518[effect.anInt6481 * 397619991] != -1) {
+                                i_62_ = anIntArray11518[397619991 * effect.anInt6481];
                             }
-                            int i_63_ = mobileSpotAnimation.anInt6483 * 1257949184 + i_62_ - i_54_ & 0x3fff;
+                            int i_63_ = effect.anInt6483 * 1257949184 + i_62_ - i_54_ & 0x3fff;
                             if (0 != i_63_) {
                                 model.yaw(i_63_);
                             }
@@ -840,18 +840,18 @@ public abstract class Mobile extends SceneEntity implements GameCharacter {
                             i_59_ = i_66_;
                         }
                         model.translate(i_59_, i_60_, i_61_);
-                        if (mobileSpotAnimation.yTranslation * -1218492857 != 0) {
-                            model.translate(0, -(mobileSpotAnimation.yTranslation * -1218492857) << 2, 0);
+                        if (effect.yTranslation * -1218492857 != 0) {
+                            model.translate(0, -(effect.yTranslation * -1218492857) << 2, 0);
                         }
                         model.aBool1751 = false;
                     }
                 } else {
                     Model class143 = cachedModels[1 + i_56_] = graphic.method10402(toolkit, i_58_,
-                            mobileSpotAnimation.anInt6483 * 1257949184, -170688293 * anInt11507, anInt11551 * 1861793885,
-                            2119207177 * anInt11505, mobileSpotAnimation.animator, i_57_, 1158820469);
+                            effect.anInt6483 * 1257949184, -170688293 * anInt11507, anInt11551 * 1861793885,
+                            2119207177 * anInt11505, effect.animator, i_57_, 1158820469);
                     if (class143 != null) {
-                        if (-1218492857 * mobileSpotAnimation.yTranslation != 0) {
-                            class143.translate(0, -(-1218492857 * mobileSpotAnimation.yTranslation) << 2, 0);
+                        if (-1218492857 * effect.yTranslation != 0) {
+                            class143.translate(0, -(-1218492857 * effect.yTranslation) << 2, 0);
                         }
                         class143.aBool1751 = false;
                     }

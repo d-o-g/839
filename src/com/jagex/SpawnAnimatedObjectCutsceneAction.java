@@ -24,11 +24,11 @@ public class SpawnAnimatedObjectCutsceneAction extends AnimatingCutsceneAction {
             collisionPlane++;
         }
 
-        DynamicEntity object = new DynamicEntity(Client.scene.getGraph(), -1061921263 * graphic, 0,
+        Effect object = new Effect(Client.scene.getGraph(), -1061921263 * graphic, 0,
                 -90217393 * plane, collisionPlane, worldX, SceneGraph.getAverageHeight(worldX, worldZ, plane * -90217393)
                 - 988906481 * heightOffset, worldZ, x * -902730247, x * -902730247, z * -1033854327, z
                 * -1033854327, -1659203509 * anInt9559, false, 0);
-        Client.cacheableDynamicEntities.put(x * -902730247 << 16 | z * -1033854327, new CacheableDynamicEntity(object));
+        Client.effects.put(x * -902730247 << 16 | z * -1033854327, new CacheableEffect(object));
     }
 
 }

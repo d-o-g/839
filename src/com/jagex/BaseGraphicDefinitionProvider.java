@@ -2,7 +2,7 @@ package com.jagex;
 
 import com.jagex.twitch.TwitchTV;
 
-public abstract class BaseGraphicDefinitionProvider implements DefinitionProvider<GraphicDefinition> {
+public abstract class BaseGraphicDefinitionProvider implements DefinitionProvider<EffectDefinition> {
     Archive models;
     ReferenceCache cache = new ReferenceCache(60);
     int anInt7910;

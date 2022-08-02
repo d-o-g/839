@@ -15,7 +15,7 @@ public abstract class AnimatingCutsceneAction extends CutsceneAction {
 
     @Override
     boolean ready() {
-        GraphicDefinition graphic = GraphicDefinition.loader.get(-1061921263 * this.graphic);
+        EffectDefinition graphic = EffectDefinition.loader.get(-1061921263 * this.graphic);
         boolean loaded = graphic.loaded();
         Animation animation = Animation.loader.get(graphic.animation * 2053507375);
         loaded &= animation.ready();

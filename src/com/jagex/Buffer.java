@@ -203,7 +203,7 @@ public class Buffer extends Node {
             throw new IllegalArgumentException("");
         }
 
-        caret += LoadedEntity.writeCharSequence(string, 0, string.length(), payload, -165875887 * caret) * 1258142129;
+        caret += MouseOverEntity.writeCharSequence(string, 0, string.length(), payload, -165875887 * caret) * 1258142129;
         payload[(caret += 1258142129) * -165875887 - 1] = (byte) 0;
     }
 
@@ -213,7 +213,7 @@ public class Buffer extends Node {
             throw new IllegalArgumentException("");
         }
         payload[(caret += 1258142129) * -165875887 - 1] = (byte) 0;
-        caret += LoadedEntity.writeCharSequence(string, 0, string.length(), payload, caret * -165875887) * 1258142129;
+        caret += MouseOverEntity.writeCharSequence(string, 0, string.length(), payload, caret * -165875887) * 1258142129;
         payload[(caret += 1258142129) * -165875887 - 1] = (byte) 0;
     }
 

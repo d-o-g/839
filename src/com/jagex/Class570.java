@@ -1679,9 +1679,9 @@ public class Class570 {
                 if (x >= 0 && z >= 0 && x < Client.scene.getMapWidth()
                         && z < Client.scene.getMapLength()) {
                     if (-1 == graphicId) {
-                        CacheableDynamicEntity cached = Client.cacheableDynamicEntities.get(x << 16 | z);
+                        CacheableEffect cached = Client.effects.get(x << 16 | z);
                         if (null != cached) {
-                            cached.animated.method18224();
+                            cached.object.method18224();
                             cached.unlink();
                         }
                     } else {
@@ -1692,10 +1692,10 @@ public class Class570 {
                             collisionPlane++;
                         }
 
-                        DynamicEntity animated = new DynamicEntity(Client.scene.getGraph(), graphicId,
+                        Effect animated = new Effect(Client.scene.getGraph(), graphicId,
                                 i_243_, plane, collisionPlane, worldX, SceneGraph.getAverageHeight(worldX, worldZ, plane)
                                 - heightOffset, worldZ, x, x, z, z, i_245_, bool, 0);
-                        Client.cacheableDynamicEntities.put(x << 16 | z, new CacheableDynamicEntity(animated));
+                        Client.effects.put(x << 16 | z, new CacheableEffect(animated));
                     }
                 }
             } else if (0 != position >> 29) {
@@ -1703,17 +1703,17 @@ public class Class570 {
                 ObjectNode linkable = Client.npcTable.get(index);
                 if (null != linkable) {
                     Npc npc = (Npc) linkable.referent;
-                    MobileSpotAnimation mobileSpotAnimation = npc.graphics[i_244_];
+                    MobileEffect effect = npc.effects[i_244_];
                     if (graphicId == 65535) {
                         graphicId = -1;
                     }
 
                     boolean replace = true;
-                    int currentGraphic = mobileSpotAnimation.graphic * -2008549027;
+                    int currentGraphic = effect.id * -2008549027;
 
                     if (-1 != graphicId && currentGraphic != -1) {
                         if (graphicId == currentGraphic) {
-                            GraphicDefinition graphic = GraphicDefinition.loader.get(graphicId);
+                            EffectDefinition graphic = EffectDefinition.loader.get(graphicId);
 
                             if (graphic.aBool7986 && -1 != 2053507375 * graphic.animation) {
                                 Animation animation = Animation.loader
@@ -1727,8 +1727,8 @@ public class Class570 {
                                 }
                             }
                         } else {
-                            GraphicDefinition replacement = GraphicDefinition.loader.get(graphicId);
-                            GraphicDefinition current = GraphicDefinition.loader.get(currentGraphic);
+                            EffectDefinition replacement = EffectDefinition.loader.get(graphicId);
+                            EffectDefinition current = EffectDefinition.loader.get(currentGraphic);
                             if (2053507375 * replacement.animation != -1 && 2053507375 * current.animation != -1) {
                                 Animation replacementAnimation = Animation.loader
                                         .get(2053507375 * replacement.animation);
@@ -1742,20 +1742,20 @@ public class Class570 {
                     }
 
                     if (replace) {
-                        mobileSpotAnimation.graphic = graphicId * -738188555;
-                        mobileSpotAnimation.yTranslation = heightOffset * 272663415;
-                        mobileSpotAnimation.anInt6481 = -508611417 * i_246_;
+                        effect.id = graphicId * -738188555;
+                        effect.yTranslation = heightOffset * 272663415;
+                        effect.anInt6481 = -508611417 * i_246_;
 
                         if (-1 != graphicId) {
-                            GraphicDefinition graphic = GraphicDefinition.loader.get(graphicId);
+                            EffectDefinition graphic = EffectDefinition.loader.get(graphicId);
                             int i_259_ = graphic.aBool7986 ? 0 : 2;
                             if (bool) {
                                 i_259_ = 1;
                             }
 
-                            mobileSpotAnimation.animator.method13453(graphic.animation * 2053507375, i_243_, i_259_, false);
+                            effect.animator.method13453(graphic.animation * 2053507375, i_243_, i_259_, false);
                         } else {
-                            mobileSpotAnimation.animator.update(-1);
+                            effect.animator.update(-1);
                         }
                     }
                 }
@@ -1769,16 +1769,16 @@ public class Class570 {
                 }
 
                 if (player != null) {
-                    MobileSpotAnimation mobileSpotAnimation = player.graphics[i_244_];
+                    MobileEffect effect = player.effects[i_244_];
                     if (65535 == graphicId) {
                         graphicId = -1;
                     }
 
                     boolean replace = true;
-                    int currentGraphic = -2008549027 * mobileSpotAnimation.graphic;
+                    int currentGraphic = -2008549027 * effect.id;
                     if (graphicId != -1 && -1 != currentGraphic) {
                         if (currentGraphic == graphicId) {
-                            GraphicDefinition graphic = GraphicDefinition.loader.get(graphicId);
+                            EffectDefinition graphic = EffectDefinition.loader.get(graphicId);
 
                             if (graphic.aBool7986 && 2053507375 * graphic.animation != -1) {
                                 Animation animation = Animation.loader
@@ -1792,8 +1792,8 @@ public class Class570 {
                                 }
                             }
                         } else {
-                            GraphicDefinition graphic = GraphicDefinition.loader.get(graphicId);
-                            GraphicDefinition current = GraphicDefinition.loader.get(currentGraphic);
+                            EffectDefinition graphic = EffectDefinition.loader.get(graphicId);
+                            EffectDefinition current = EffectDefinition.loader.get(currentGraphic);
 
                             if (-1 != graphic.animation * 2053507375 && -1 != 2053507375 * current.animation) {
                                 Animation animation = Animation.loader
@@ -1809,21 +1809,21 @@ public class Class570 {
                     }
 
                     if (replace) {
-                        mobileSpotAnimation.graphic = -738188555 * graphicId;
-                        mobileSpotAnimation.yTranslation = heightOffset * 272663415;
-                        mobileSpotAnimation.anInt6481 = i_246_ * -508611417;
-                        mobileSpotAnimation.anInt6483 = 925563113 * i_245_;
+                        effect.id = -738188555 * graphicId;
+                        effect.yTranslation = heightOffset * 272663415;
+                        effect.anInt6481 = i_246_ * -508611417;
+                        effect.anInt6483 = 925563113 * i_245_;
 
                         if (-1 != graphicId) {
-                            GraphicDefinition graphic = GraphicDefinition.loader.get(graphicId);
+                            EffectDefinition graphic = EffectDefinition.loader.get(graphicId);
                             int i_266_ = graphic.aBool7986 ? 0 : 2;
                             if (bool) {
                                 i_266_ = 1;
                             }
 
-                            mobileSpotAnimation.animator.method13453(graphic.animation * 2053507375, i_243_, i_266_, false);
+                            effect.animator.method13453(graphic.animation * 2053507375, i_243_, i_266_, false);
                         } else {
-                            mobileSpotAnimation.animator.update(-1);
+                            effect.animator.update(-1);
                         }
                     }
                 }

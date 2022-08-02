@@ -102,7 +102,7 @@ public class ProjectileCutsceneAction extends CutsceneAction {
 
     @Override
     boolean ready() {
-        GraphicDefinition graphic = GraphicDefinition.loader.get(this.graphic * 967716735);
+        EffectDefinition graphic = EffectDefinition.loader.get(this.graphic * 967716735);
         boolean loaded = graphic.loaded();
         Animation animation = Animation.loader.get(2053507375 * graphic.animation);
         loaded &= animation.ready();

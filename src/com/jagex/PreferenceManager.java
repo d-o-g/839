@@ -92,7 +92,7 @@ public class PreferenceManager extends Node {
         ChatContainer.aClass461_2622.method7827().getObjectLoader().clear(attributes);
         ItemDefinition.loader.clearModelsCache(attributes);
         NpcDefinition.loader.clear(attributes);
-        GraphicDefinition.loader.reset(attributes);
+        EffectDefinition.loader.reset(attributes);
         method6962(attributes);
         Program.method4568(attributes);
         Class298_Sub1.method15207(attributes);

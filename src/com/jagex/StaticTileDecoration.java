@@ -146,14 +146,14 @@ public class StaticTileDecoration extends TileDecoration implements SceneObject 
     }
 
     @Override
-    LoadedEntity method16271(Toolkit toolkit) {
+    MouseOverEntity method16271(Toolkit toolkit) {
         Model class143 = config.method8201(toolkit, 2048, false, true);
         if (null == class143) {
             return null;
         }
         Matrix4x3 class405 = updateAndGetMatrix();
         CoordinateSpace coordinateSpace = getCoordinateSpace();
-        LoadedEntity class506 = LoadedEntity.method570(aBool11587);
+        MouseOverEntity class506 = MouseOverEntity.method570(aBool11587);
         int i_7_ = (int) coordinateSpace.translation.x >> 9;
         int i_8_ = (int) coordinateSpace.translation.z >> 9;
         config.method8184(toolkit, class143, class405, i_7_, i_7_, i_8_, i_8_, true);

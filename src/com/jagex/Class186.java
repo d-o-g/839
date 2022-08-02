@@ -662,8 +662,8 @@ public class Class186 {
                     int i_79_ = 0;
                     if (class600_sub1 instanceof Mobile) {
                         i_79_ = ((Mobile) class600_sub1).method17969();
-                    } else if (class600_sub1 instanceof DynamicEntity) {
-                        i_79_ = ((DynamicEntity) class600_sub1).method18210();
+                    } else if (class600_sub1 instanceof Effect) {
+                        i_79_ = ((Effect) class600_sub1).method18210();
                     } else if (class600_sub1 instanceof Projectile) {
                         i_79_ = ((Projectile) class600_sub1).method18191();
                     }
